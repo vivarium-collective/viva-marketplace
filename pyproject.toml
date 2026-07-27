@@ -1,0 +1,25 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "viva-marketplace"
+version = "0.1.0"
+description = "Ecosystem ledger for the vivarium / process-bigraph workbench: the registry of repos + an aggregated artifact index."
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+authors = [{ name = "Vivarium Collective" }]
+keywords = ["vivarium", "process-bigraph", "workbench", "marketplace"]
+
+[project.urls]
+Homepage = "https://github.com/vivarium-collective/viva-marketplace"
+
+[tool.hatch.build.targets.wheel]
+packages = ["viva_marketplace"]
+
+# Ship the ledger data files inside the wheel so consumers can read them via
+# viva_marketplace.load_modules() / load_ecosystem_index().
+[tool.hatch.build.targets.wheel.force-include]
+"viva_marketplace/modules.json" = "viva_marketplace/modules.json"
+"viva_marketplace/ecosystem-index.json" = "viva_marketplace/ecosystem-index.json"

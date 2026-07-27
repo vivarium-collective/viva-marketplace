@@ -1,0 +1,1632 @@
+{
+  "generated_at": "2026-07-27T00:00:00+00:00",
+  "n_repos": 28,
+  "n_published": 1,
+  "repos": [
+    {
+      "name": "Viva-munk",
+      "repo": "Viva-munk",
+      "source": "https://github.com/vivarium-collective/Viva-munk",
+      "homepage": "https://github.com/vivarium-collective/Viva-munk",
+      "description": "",
+      "tags": [],
+      "published": false,
+      "dashboard": null,
+      "processes": [],
+      "steps": [],
+      "composites": [],
+      "studies": [],
+      "investigations": [],
+      "counts": {
+        "processes": 0,
+        "steps": 0,
+        "composites": 0,
+        "studies": 0,
+        "investigations": 0
+      }
+    },
+    {
+      "name": "pbg-amici",
+      "repo": "pbg-amici",
+      "source": "https://github.com/vivarium-collective/pbg-amici",
+      "homepage": "https://github.com/vivarium-collective/pbg-amici",
+      "description": "Process-bigraph wrapper for AMICI (CVODES-based ODE/DAE simulator). Real bridge to https://github.com/AMICI-dev/AMICI.",
+      "tags": [
+        "ode"
+      ],
+      "published": false,
+      "dashboard": null,
+      "processes": [],
+      "steps": [],
+      "composites": [],
+      "studies": [],
+      "investigations": [],
+      "counts": {
+        "processes": 0,
+        "steps": 0,
+        "composites": 0,
+        "studies": 0,
+        "investigations": 0
+      }
+    },
+    {
+      "name": "pbg-biomodels",
+      "repo": "pbg-biomodels",
+      "source": "https://github.com/vivarium-collective/pbg-biomodels",
+      "homepage": "https://github.com/vivarium-collective/pbg-biomodels",
+      "description": "Process-bigraph workspace: BIOMODELS regression \u2014 installs pbg-biomodels-bundle and drives investigations against the BioModels corpus",
+      "tags": [],
+      "published": false,
+      "dashboard": null,
+      "processes": [],
+      "steps": [],
+      "composites": [],
+      "studies": [],
+      "investigations": [],
+      "counts": {
+        "processes": 0,
+        "steps": 0,
+        "composites": 0,
+        "studies": 0,
+        "investigations": 0
+      }
+    },
+    {
+      "name": "pbg-biomodels-bundle",
+      "repo": "pbg-biomodels-bundle",
+      "source": "https://github.com/vivarium-collective/pbg-biomodels-bundle",
+      "homepage": "https://github.com/vivarium-collective/pbg-biomodels-bundle",
+      "description": "Regression harness for BioModels: runs each model under multiple simulators (COPASI, Tellurium) and renders an interactive comparison report.",
+      "tags": [],
+      "published": false,
+      "dashboard": null,
+      "processes": [],
+      "steps": [],
+      "composites": [],
+      "studies": [],
+      "investigations": [],
+      "counts": {
+        "processes": 0,
+        "steps": 0,
+        "composites": 0,
+        "studies": 0,
+        "investigations": 0
+      }
+    },
+    {
+      "name": "pbg-bioreactordesign",
+      "repo": "pbg-bioreactordesign",
+      "source": "https://github.com/vivarium-collective/pbg-bioreactordesign",
+      "homepage": "https://github.com/vivarium-collective/pbg-bioreactordesign",
+      "description": "Process-bigraph wrapper for BioReactorDesign (BiRD) bioreactor simulation",
+      "tags": [
+        "bioreactor"
+      ],
+      "published": false,
+      "dashboard": null,
+      "processes": [],
+      "steps": [],
+      "composites": [],
+      "studies": [],
+      "investigations": [],
+      "counts": {
+        "processes": 0,
+        "steps": 0,
+        "composites": 0,
+        "studies": 0,
+        "investigations": 0
+      }
+    },
+    {
+      "name": "pbg-caspule",
+      "repo": "pbg-caspule",
+      "source": "https://github.com/vivarium-collective/pbg-caspule",
+      "homepage": "https://github.com/vivarium-collective/pbg-caspule",
+      "description": "Process-bigraph wrapper for CASPULE (a LAMMPS variant with dynamic bond formation/breaking)",
+      "tags": [
+        "lammps"
+      ],
+      "published": false,
+      "dashboard": null,
+      "processes": [],
+      "steps": [],
+      "composites": [],
+      "studies": [],
+      "investigations": [],
+      "counts": {
+        "processes": 0,
+        "steps": 0,
+        "composites": 0,
+        "studies": 0,
+        "investigations": 0
+      }
+    },
+    {
+      "name": "pbg-comets",
+      "repo": "pbg-comets",
+      "source": "https://github.com/vivarium-collective/pbg-comets",
+      "homepage": "https://github.com/vivarium-collective/pbg-comets",
+      "description": "Process-bigraph wrapper for COMETS (dynamic FBA + 2D spatial microbial ecosystems)",
+      "tags": [
+        "microbial",
+        "spatial",
+        "fba"
+      ],
+      "published": false,
+      "dashboard": null,
+      "processes": [],
+      "steps": [],
+      "composites": [],
+      "studies": [],
+      "investigations": [],
+      "counts": {
+        "processes": 0,
+        "steps": 0,
+        "composites": 0,
+        "studies": 0,
+        "investigations": 0
+      }
+    },
+    {
+      "name": "pbg-composite-nfsim-caspule",
+      "repo": "pbg-composite-nfsim-caspule",
+      "source": "https://github.com/vivarium-collective/pbg-composite-nfsim-caspule",
+      "homepage": "https://github.com/vivarium-collective/pbg-composite-nfsim-caspule",
+      "description": "Process-bigraph composite: CASPULE bond-aware MD coupled to NFSim rule-based kinetics through a configurable observable detector that converts spatial bond clusters into non-spatial species counts.",
+      "tags": [
+        "spatial",
+        "rule-based",
+        "kinetics",
+        "md",
+        "composite"
+      ],
+      "published": false,
+      "dashboard": null,
+      "processes": [],
+      "steps": [],
+      "composites": [],
+      "studies": [],
+      "investigations": [],
+      "counts": {
+        "processes": 0,
+        "steps": 0,
+        "composites": 0,
+        "studies": 0,
+        "investigations": 0
+      }
+    },
+    {
+      "name": "pbg-compucell3d",
+      "repo": "pbg-compucell3d",
+      "source": "https://github.com/vivarium-collective/pbg-compucell3d",
+      "homepage": "https://github.com/vivarium-collective/pbg-compucell3d",
+      "description": "Process-bigraph wrapper for the CompuCell3D multicellular simulation environment",
+      "tags": [
+        "multicellular"
+      ],
+      "published": false,
+      "dashboard": null,
+      "processes": [],
+      "steps": [],
+      "composites": [],
+      "studies": [],
+      "investigations": [],
+      "counts": {
+        "processes": 0,
+        "steps": 0,
+        "composites": 0,
+        "studies": 0,
+        "investigations": 0
+      }
+    },
+    {
+      "name": "pbg-copasi",
+      "repo": "pbg-copasi",
+      "source": "https://github.com/vivarium-collective/pbg-copasi",
+      "homepage": "https://github.com/vivarium-collective/pbg-copasi",
+      "description": "process-bigraph-compatible COPASI Steps and Processes for SBML simulation",
+      "tags": [
+        "sbml"
+      ],
+      "published": false,
+      "dashboard": null,
+      "processes": [],
+      "steps": [],
+      "composites": [],
+      "studies": [],
+      "investigations": [],
+      "counts": {
+        "processes": 0,
+        "steps": 0,
+        "composites": 0,
+        "studies": 0,
+        "investigations": 0
+      }
+    },
+    {
+      "name": "pbg-emitters",
+      "repo": "pbg-emitters",
+      "source": "https://github.com/vivarium-collective/pbg-emitters",
+      "homepage": "https://github.com/vivarium-collective/pbg-emitters",
+      "description": "Focused emitter library for process-bigraph composites",
+      "tags": [],
+      "published": false,
+      "dashboard": null,
+      "processes": [],
+      "steps": [],
+      "composites": [],
+      "studies": [],
+      "investigations": [],
+      "counts": {
+        "processes": 0,
+        "steps": 0,
+        "composites": 0,
+        "studies": 0,
+        "investigations": 0
+      }
+    },
+    {
+      "name": "pbg-idynomics2",
+      "repo": "pbg-idynomics2",
+      "source": "https://github.com/vivarium-collective/pbg-idynomics2",
+      "homepage": "https://github.com/vivarium-collective/pbg-idynomics2",
+      "description": "Process-bigraph wrapper for IDynoMiCS 2.0, the Kreft lab's Java-based individual-based biofilm simulator",
+      "tags": [],
+      "published": false,
+      "dashboard": null,
+      "processes": [],
+      "steps": [],
+      "composites": [],
+      "studies": [],
+      "investigations": [],
+      "counts": {
+        "processes": 0,
+        "steps": 0,
+        "composites": 0,
+        "studies": 0,
+        "investigations": 0
+      }
+    },
+    {
+      "name": "pbg-lammps",
+      "repo": "pbg-lammps",
+      "source": "https://github.com/vivarium-collective/pbg-lammps",
+      "homepage": "https://github.com/vivarium-collective/pbg-lammps",
+      "description": "Process-bigraph wrapper for the LAMMPS molecular dynamics simulator",
+      "tags": [
+        "lammps",
+        "md"
+      ],
+      "published": false,
+      "dashboard": null,
+      "processes": [],
+      "steps": [],
+      "composites": [],
+      "studies": [],
+      "investigations": [],
+      "counts": {
+        "processes": 0,
+        "steps": 0,
+        "composites": 0,
+        "studies": 0,
+        "investigations": 0
+      }
+    },
+    {
+      "name": "pbg-martini",
+      "repo": "pbg-martini",
+      "source": "https://github.com/vivarium-collective/pbg-martini",
+      "homepage": "https://github.com/vivarium-collective/pbg-martini",
+      "description": "Process-bigraph wrapper for the Martini coarse-grained force field \u2014 membrane systems, micelles, protein-lipid complexes, and vesicles",
+      "tags": [
+        "membrane",
+        "coarse-grained"
+      ],
+      "published": false,
+      "dashboard": null,
+      "processes": [],
+      "steps": [],
+      "composites": [],
+      "studies": [],
+      "investigations": [],
+      "counts": {
+        "processes": 0,
+        "steps": 0,
+        "composites": 0,
+        "studies": 0,
+        "investigations": 0
+      }
+    },
+    {
+      "name": "pbg-medyan",
+      "repo": "pbg-medyan",
+      "source": "https://github.com/vivarium-collective/pbg-medyan",
+      "homepage": "https://github.com/vivarium-collective/pbg-medyan",
+      "description": "Process-bigraph wrapper for the MEDYAN cytoskeleton simulator: pure-Python re-implementation + a subprocess-driven bridge to the real MEDYAN C++ binary (with checkpoint-restart and HDF5 vesicle support).",
+      "tags": [
+        "cytoskeleton",
+        "membrane"
+      ],
+      "published": false,
+      "dashboard": null,
+      "processes": [],
+      "steps": [],
+      "composites": [],
+      "studies": [],
+      "investigations": [],
+      "counts": {
+        "processes": 0,
+        "steps": 0,
+        "composites": 0,
+        "studies": 0,
+        "investigations": 0
+      }
+    },
+    {
+      "name": "pbg-mem3dg",
+      "repo": "pbg-mem3dg",
+      "source": "https://github.com/vivarium-collective/pbg-mem3dg",
+      "homepage": "https://github.com/vivarium-collective/pbg-mem3dg",
+      "description": "Process-bigraph wrapper for Mem3DG membrane mechanics simulator",
+      "tags": [
+        "membrane"
+      ],
+      "published": false,
+      "dashboard": null,
+      "processes": [],
+      "steps": [],
+      "composites": [],
+      "studies": [],
+      "investigations": [],
+      "counts": {
+        "processes": 0,
+        "steps": 0,
+        "composites": 0,
+        "studies": 0,
+        "investigations": 0
+      }
+    },
+    {
+      "name": "pbg-membrane-actin-composite",
+      "repo": "pbg-membrane-actin-composite",
+      "source": "https://github.com/vivarium-collective/pbg-membrane-actin-composite",
+      "homepage": "https://github.com/vivarium-collective/pbg-membrane-actin-composite",
+      "description": "Process-bigraph composite: pbg-mem3dg + pbg-readdy as a Brownian ratchet (actin pushing on membrane, closed-loop)",
+      "tags": [
+        "membrane",
+        "composite",
+        "particle"
+      ],
+      "published": false,
+      "dashboard": null,
+      "processes": [],
+      "steps": [],
+      "composites": [],
+      "studies": [],
+      "investigations": [],
+      "counts": {
+        "processes": 0,
+        "steps": 0,
+        "composites": 0,
+        "studies": 0,
+        "investigations": 0
+      }
+    },
+    {
+      "name": "pbg-nfsim",
+      "repo": "pbg-nfsim",
+      "source": "https://github.com/vivarium-collective/pbg-nfsim",
+      "homepage": "https://github.com/vivarium-collective/pbg-nfsim",
+      "description": "A process-bigraph wrapper for BioNetGen/NFSim",
+      "tags": [
+        "rule-based"
+      ],
+      "published": false,
+      "dashboard": null,
+      "processes": [],
+      "steps": [],
+      "composites": [],
+      "studies": [],
+      "investigations": [],
+      "counts": {
+        "processes": 0,
+        "steps": 0,
+        "composites": 0,
+        "studies": 0,
+        "investigations": 0
+      }
+    },
+    {
+      "name": "pbg-oxidizeme",
+      "repo": "pbg-oxidizeme",
+      "source": "https://github.com/vivarium-collective/pbg-oxidizeme",
+      "homepage": "https://github.com/vivarium-collective/pbg-oxidizeme",
+      "description": "Process-bigraph wrapper for OxidizeME \u2014 a genome-scale ME-model of E. coli with ROS damage/repair (Yang et al. 2019 PNAS / Palsson lab)",
+      "tags": [],
+      "published": false,
+      "dashboard": null,
+      "processes": [],
+      "steps": [],
+      "composites": [],
+      "studies": [],
+      "investigations": [],
+      "counts": {
+        "processes": 0,
+        "steps": 0,
+        "composites": 0,
+        "studies": 0,
+        "investigations": 0
+      }
+    },
+    {
+      "name": "pbg-reactive-system",
+      "repo": "pbg-reactive-system",
+      "source": "https://github.com/vivarium-collective/pbg-reactive-system",
+      "homepage": "https://github.com/vivarium-collective/pbg-reactive-system",
+      "description": "Process-bigraph wrapper for Milner-style Bigraphical Reactive Systems, with a worked MAPK signalling example.",
+      "tags": [],
+      "published": false,
+      "dashboard": null,
+      "processes": [],
+      "steps": [],
+      "composites": [],
+      "studies": [],
+      "investigations": [],
+      "counts": {
+        "processes": 0,
+        "steps": 0,
+        "composites": 0,
+        "studies": 0,
+        "investigations": 0
+      }
+    },
+    {
+      "name": "pbg-readdy",
+      "repo": "pbg-readdy",
+      "source": "https://github.com/vivarium-collective/pbg-readdy",
+      "homepage": "https://github.com/vivarium-collective/pbg-readdy",
+      "description": "Process-bigraph wrapper for the ReaDDy particle-based reaction-diffusion simulator",
+      "tags": [
+        "particle",
+        "reaction-diffusion"
+      ],
+      "published": false,
+      "dashboard": null,
+      "processes": [],
+      "steps": [],
+      "composites": [],
+      "studies": [],
+      "investigations": [],
+      "counts": {
+        "processes": 0,
+        "steps": 0,
+        "composites": 0,
+        "studies": 0,
+        "investigations": 0
+      }
+    },
+    {
+      "name": "pbg-simbio",
+      "repo": "pbg-simbio",
+      "source": "https://github.com/vivarium-collective/pbg-simbio",
+      "homepage": "https://github.com/vivarium-collective/pbg-simbio",
+      "description": "Process-bigraph wrapper for simbio (Chemical Reaction Network simulation) \u2014 load models from Antimony, simulate with simbio",
+      "tags": [
+        "sbml"
+      ],
+      "published": false,
+      "dashboard": null,
+      "processes": [],
+      "steps": [],
+      "composites": [],
+      "studies": [],
+      "investigations": [],
+      "counts": {
+        "processes": 0,
+        "steps": 0,
+        "composites": 0,
+        "studies": 0,
+        "investigations": 0
+      }
+    },
+    {
+      "name": "pbg-smoldyn",
+      "repo": "pbg-smoldyn",
+      "source": "https://github.com/vivarium-collective/pbg-smoldyn",
+      "homepage": "https://github.com/vivarium-collective/pbg-smoldyn",
+      "description": "Process-bigraph wrapper for the Smoldyn particle-based spatial stochastic simulator",
+      "tags": [
+        "spatial",
+        "particle",
+        "stochastic"
+      ],
+      "published": false,
+      "dashboard": null,
+      "processes": [],
+      "steps": [],
+      "composites": [],
+      "studies": [],
+      "investigations": [],
+      "counts": {
+        "processes": 0,
+        "steps": 0,
+        "composites": 0,
+        "studies": 0,
+        "investigations": 0
+      }
+    },
+    {
+      "name": "pbg-tellurium",
+      "repo": "pbg-tellurium",
+      "source": "https://github.com/vivarium-collective/pbg-tellurium",
+      "homepage": "https://github.com/vivarium-collective/pbg-tellurium",
+      "description": "Process-bigraph wrapper for Tellurium / libroadrunner SBML & Antimony simulation",
+      "tags": [
+        "sbml"
+      ],
+      "published": false,
+      "dashboard": null,
+      "processes": [],
+      "steps": [],
+      "composites": [],
+      "studies": [],
+      "investigations": [],
+      "counts": {
+        "processes": 0,
+        "steps": 0,
+        "composites": 0,
+        "studies": 0,
+        "investigations": 0
+      }
+    },
+    {
+      "name": "pbg-vcell-fvsolver",
+      "repo": "pbg-vcell-fvsolver",
+      "source": "https://github.com/vivarium-collective/pbg-vcell-fvsolver",
+      "homepage": "https://github.com/vivarium-collective/pbg-vcell-fvsolver",
+      "description": "process-bigraph wrapper around pyvcell / pyvcell-fvsolver \u2014 VCell's finite-volume 3D reaction-diffusion PDE solver as a PBG Process",
+      "tags": [
+        "reaction-diffusion",
+        "pde"
+      ],
+      "published": false,
+      "dashboard": null,
+      "processes": [],
+      "steps": [],
+      "composites": [],
+      "studies": [],
+      "investigations": [],
+      "counts": {
+        "processes": 0,
+        "steps": 0,
+        "composites": 0,
+        "studies": 0,
+        "investigations": 0
+      }
+    },
+    {
+      "name": "pbg-yalla",
+      "repo": "pbg-yalla",
+      "source": "https://github.com/vivarium-collective/pbg-yalla",
+      "homepage": "https://github.com/vivarium-collective/pbg-yalla",
+      "description": "Process-bigraph wrapper for a NumPy port of ya||a's pair-wise agent-based morphogenesis simulator",
+      "tags": [
+        "agent-based",
+        "morphogenesis"
+      ],
+      "published": false,
+      "dashboard": null,
+      "processes": [],
+      "steps": [],
+      "composites": [],
+      "studies": [],
+      "investigations": [],
+      "counts": {
+        "processes": 0,
+        "steps": 0,
+        "composites": 0,
+        "studies": 0,
+        "investigations": 0
+      }
+    },
+    {
+      "name": "spatio-flux",
+      "repo": "spatio-flux",
+      "source": "https://github.com/vivarium-collective/spatio-flux",
+      "homepage": "https://github.com/vivarium-collective/spatio-flux",
+      "description": "spatio-temporal microbial simulations with Vivarium 2.0",
+      "tags": [
+        "microbial",
+        "metabolism"
+      ],
+      "published": false,
+      "dashboard": null,
+      "processes": [],
+      "steps": [],
+      "composites": [],
+      "studies": [],
+      "investigations": [],
+      "counts": {
+        "processes": 0,
+        "steps": 0,
+        "composites": 0,
+        "studies": 0,
+        "investigations": 0
+      }
+    },
+    {
+      "name": "v2ecoli",
+      "repo": "v2ecoli",
+      "source": "https://github.com/vivarium-collective/v2ecoli",
+      "homepage": "https://github.com/vivarium-collective/v2ecoli",
+      "description": "Whole-cell E. coli model in Vivarium 2",
+      "tags": [
+        "whole-cell",
+        "ecoli"
+      ],
+      "published": true,
+      "dashboard": "https://vivarium-collective.github.io/v2ecoli/dashboard",
+      "processes": [
+        {
+          "name": "AdderGrowDivide",
+          "description": "Growth/division using the adder model (Taheri-Araghi et al. 2015).\n\nEach cell:\n  * has its own per-cell \u03b1 (h\u207b\u00b9) and \u0394 (added length, \u00b5m)\n  * grows exponentially in length: L(t+dt) = L(t) \u00b7 exp(\u03b1 \u00b7 dt)\n  * divides when L >= L_birth + \u0394\n  * daughters get length (L_div / 2) \u00b7 LogNormal(1, division_noise_cv)\n    and fresh \u03b1, \u0394 samples"
+        },
+        {
+          "name": "BasePolypeptideElongation",
+          "description": "Polypeptide Elongation \u2014 ribosomes extend polypeptides by amino-acid polymerization.\n\n    seqs = buildSequences(protSeqs, ribo_pos, \u03bd\u00b7dt);  \u0394len = polymerize(seqs, aa, limit)\n    GTP_consumed = n_elongations \u00b7 gtpPerElongation  (\u22484.2 GTP/aa, EF-Tu/EF-G)\n  ppGpp regulation (optional): \u03bd = f_ppgpp([ppGpp]) [aa/s], with\n    d[ppGpp]/dt = RelA synth([uncharged_tRNA]) \u2212 SpoT deg([ppGpp]) + SpoT basal synth.\n  \u03bd = elongation rate (aa/s); dt = timestep."
+        },
+        {
+          "name": "BiRDReactorProcess",
+          "description": "0D bioreactor: gas-liquid transport + internal Monod biomass ODE.\n\nStandalone, single-process reactor. Behavior is preserved exactly across\nthe transport-module refactor: the transport coefficients come from\n`transport.compute_transport_state` and the kinetics from `monod_kinetics`,\nwhich are verbatim extractions of the pre-refactor inline computation.\n\nTime units: hours. All rates in 1/h, concentrations in mg/L or g/L."
+        },
+        {
+          "name": "BiRDTransportHours",
+          "description": "``BiRDTransportProcess`` with its update interval read in SECONDS.\n\nThe only behavioral change vs the upstream process: ``update`` receives a\nper-second ``interval`` (process-bigraph global-time units in v2ecoli) and\nconverts it to hours before the upstream hours-based transport math runs.\nAll ports and physics are inherited verbatim."
+        },
+        {
+          "name": "BiRDTransportProcess",
+          "description": "Transport-only reactor: emits ONLY the gas-liquid transport contribution.\n\nBiomass, substrate, and dissolved-gas concentrations are read-only INPUTS;\nthe process owns no biomass equation and no substrate consumption. It emits\nthe O2/CO2 transport deltas (kLa\u00b7(C*\u2212C)) as additive `float` updates to the\nshared dissolved stores, so it composes with a cell engine that supplies the\nconsumption side. It NEVER writes the biomass store (biomass is not an\noutput), and emits zero glucose transport (no gas-phase glucose).\n\nThis is the REACTOR side of the cell-side interface contract."
+        },
+        {
+          "name": "CellFieldExchange",
+          "description": "Per-cell sampling and deposition into a 2D concentration field map.\n\nRuns as a Process (not a Step) so it ticks every interval like the rest\nof the document, guaranteeing cell.local is refreshed every step and the\nfield is debited every step. Mirrors spatio-flux's ParticleExchange but\nkeyed to viva_munk's `pymunk_agent` cells using `location`."
+        },
+        {
+          "name": "Chemotaxis",
+          "description": "Process base class.\n\nA `Process` is a temporal unit of computation that operates on state and advances in time.\nEach subclass must implement the `update()` method and optionally the `invoke()` method.\n\nProcesses are stateful and typically used for simulations of continuous or discrete dynamics."
+        },
+        {
+          "name": "ChromosomePartition",
+          "description": "Chromosome partitioning at cell division.\n\nEnsures that each daughter cell receives exactly one complete chromosome\ncopy after replication terminates.  Coordinates with the MukBEF\ncondensin machinery and the MatP/ter-linkage anchoring system.\n\n(Skeleton \u2014 partitioning logic TBD.)"
+        },
+        {
+          "name": "ColonyPhenotypeRecorder",
+          "description": "Stream a per-cell phenotype panel to a zarr store with bounded RAM.\n\nWire it like PymunkProcess (a process, so it gets a leak-free typed view of\nthe cells), pointed at a store path::\n\n    {\n      '_type': 'process',\n      'address': 'local:ColonyPhenotypeRecorder',\n      'config': {'out_uri': '.../runs.<id>.zarr'},\n      'interval': 1.0,\n      'inputs': {'cells': ['cells'], 'global_time': ['global_time']},\n    }\n\nThe store holds one group of 1-D arrays along a ``record`` dimension:\n``time, cell_id, mass, length, volume, x, y, angle`` \u2014 tidy/long format,\nloaded with ``xarray.open_zarr`` and pivoted per cell."
+        },
+        {
+          "name": "CopasiUTCProcess",
+          "description": "Process base class.\n\nA `Process` is a temporal unit of computation that operates on state and advances in time.\nEach subclass must implement the `update()` method and optionally the `invoke()` method.\n\nProcesses are stateful and typically used for simulations of continuous or discrete dynamics."
+        },
+        {
+          "name": "DnaABinder",
+          "description": "DnaA Binder \u2014 DnaA-ATP occupancy of oriC gating replication initiation.\n\n    free_DnaA evolves under binding/unbinding rates (k_on, k_off);\n    oriC_state: 'free' \u2192 'bound' once DnaA occupancy \u2265 threshold.\n  free_DnaA: free DnaA-ATP level; k_on/k_off: binding/unbinding rate constants.\n  (Skeleton: update currently returns a no-op placeholder; kinetics TBD.)"
+        },
+        {
+          "name": "EcoliProcess",
+          "description": "Adapter: accepts vEcoli's ``parameters`` kwarg, delegates to PBG Process."
+        },
+        {
+          "name": "EcoliWCM",
+          "description": "Whole-cell E. coli as a single Process with bridge to internals.\n\nHolds an internal Composite (the full v2ecoli model) and exposes\nselected internal stores as external ports. Built lazily on first\nupdate() to avoid heavy imports at discovery time."
+        },
+        {
+          "name": "FBABridge",
+          "description": "Translate metabolite state between Millard ODE and v2ecoli bulk stores.\n\nScheduled Process (NOT a reactive Step) \u2014 the composite must declare an\nexplicit `interval` matching the upstream Millard process's interval\n(typically 1.0 s). This guarantees the bridge fires AFTER Millard has\npopulated its outputs for the current tick, avoiding the t=0.2s NaN\nthat bit the original Step-based implementation.\n\nTopology (composite-side):\n    inputs:\n      central_metabolites_millard: [\"shared\", \"central_metabolites\"]\n      v2ecoli_bulk:                [\"v2ecoli\", \"bulk\"]\n    outputs:\n      central_metabolites_millard: [\"shared\", \"central_metabolites\"]\n      v2ecoli_bulk:                [\"v2ecoli\", \"bulk\"]\n      bridge_diagnostics:          [\"shared\", \"bridge_diagnostics\"]\n\nDirection modes:\n  - \"millard_to_v2ecoli\" \u2014 Millard concentrations drive v2ecoli counts.\n  - \"v2ecoli_to_millard\" \u2014 v2ecoli counts drive Millard concentrations.\n  - \"bidirectional\"      \u2014 both directions; v2ecoli is treated as the\n                           authoritative state and Millard is rebound\n                           to match it (useful when v2ecoli's allocator\n                           just updated the bulk pool)."
+        },
+        {
+          "name": "FBAFluxCoupler",
+          "description": "Map+convert Millard central fluxes to FBA reaction-flux pins.\n\nTopology:\n  inputs:\n    central_fluxes: Millard reaction id -> flux (mM/s)\n  outputs:\n    pinned_flux_targets: FBA reaction id -> flux bound\n    bridge_diagnostics: per-tick coupler diagnostics"
+        },
+        {
+          "name": "FieldDecay",
+          "description": "Process base class.\n\nA `Process` is a temporal unit of computation that operates on state and advances in time.\nEach subclass must implement the `update()` method and optionally the `invoke()` method.\n\nProcesses are stateful and typically used for simulations of continuous or discrete dynamics."
+        },
+        {
+          "name": "GlobalClock",
+          "description": "Track global time for Steps that do not rely on vivarium-core's built-in\ntime stepping (see :ref:`timesteps`)."
+        },
+        {
+          "name": "GrowDivide",
+          "description": "Process base class.\n\nA `Process` is a temporal unit of computation that operates on state and advances in time.\nEach subclass must implement the `update()` method and optionally the `invoke()` method.\n\nProcesses are stateful and typically used for simulations of continuous or discrete dynamics."
+        },
+        {
+          "name": "IBColony",
+          "description": "Top-level growth + division + inclusion-body process.\n\nUnits\n-----\ninclusion_body : cell pole aggregate diameter, **nanometers**\nib_max_nm      : plateau aggregate size, typically 100\u20131000 nm\n                 (e.g. asparaginase \u2248 150 nm; hGH \u2248 800 nm at 4 h)\nformation_rate : **nm/s** nucleation seed (active while IB << IB_max)\ngrowth_rate    : **1/s** exponential expansion on existing IB\n\nIB dynamics (logistic with nucleation seed):\n    dIB/dt = (formation_rate + growth_rate \u00b7 IB) \u00b7 (1 \u2212 IB / IB_max)\n\nGrowth inhibition: IB formation imposes a metabolic + proteostatic\nburden, so effective cell growth rate drops as IB burden rises:\n\n    \u03bc_eff = \u03bc_baseline \u00b7 max(\u03bc_floor, 1 \u2212 burden_coef \u00b7 IB / IB_max)\n\nAt division, the entire IB is transferred to daughter 0 (old-pole\nlineage); daughter 1 is rejuvenated. Because growth is inhibited by\nIB, the old-pole lineage measurably out-lags the IB-free new-pole\ndaughter \u2014 reproducing the asymmetric single-cell effect reported\nin the literature."
+        },
+        {
+          "name": "InclusionBody",
+          "description": "Per-cell IB accumulator (formation + exponential growth)."
+        },
+        {
+          "name": "LQRController",
+          "description": "Scalar LQR controller. See module docstring for scope + honest gaps.\n\nTopology (composite-side):\n  inputs:\n    central_metabolites_millard: [\"shared\", \"central_metabolites\"]\n  outputs:\n    lqr_control: [\"shared\", \"lqr_control\"]            (scalar u, latest)\n    lqr_diagnostics: [\"shared\", \"lqr_diagnostics\"]    (per-tick log)"
+        },
+        {
+          "name": "LQRControllerMultiState",
+          "description": "Multi-state continuous-time LQR controller for Millard.\n\nTopology:\n  inputs:\n    central_metabolites_millard: [\"shared\", \"central_metabolites\"]\n  outputs:\n    lqr_control: [\"shared\", \"lqr_control\"]\n    lqr_diagnostics: [\"shared\", \"lqr_diagnostics\"]"
+        },
+        {
+          "name": "LineageProcess",
+          "description": "Process base class.\n\nA `Process` is a temporal unit of computation that operates on state and advances in time.\nEach subclass must implement the `update()` method and optionally the `invoke()` method.\n\nProcesses are stateful and typically used for simulations of continuous or discrete dynamics."
+        },
+        {
+          "name": "MillardPDMPMetabolism",
+          "description": "Millard 2017 ODE + LQR control + bulk delta emission, in one Process."
+        },
+        {
+          "name": "MillardPDMPMetabolismJAX",
+          "description": "Millard ODE via JAX/Diffrax + bulk delta emission."
+        },
+        {
+          "name": "MillardWithLQR",
+          "description": "Millard 2017 ODE wrapped with per-tick parameter mutation from LQR control.\n\nTopology (composite-side):\n  inputs:\n    lqr_control: [\"shared\", \"lqr_control\"]      # {u: scalar, ...} from LQR\n  outputs:\n    species_concentrations: [\"shared\", \"central_metabolites\"]\n    fluxes: [\"shared\", \"central_fluxes\"]\n    time: [\"shared\", \"time\"]\n    control_applied: [\"shared\", \"control_applied\"]  # {tick_kF, baseline_kF, u_clipped}"
+        },
+        {
+          "name": "MonodCellProcess",
+          "description": "Monod-growth cell engine \u2014 the biomass/consumption term factored out.\n\nConforms (in simplified flat form) to the cell-side interface contract:\nit OWNS biomass and exposes the three contract outputs \u2014\n``cell_mass`` (g/L), ``external_exchange_fluxes`` (per-species specific\nrates in **mmol/(gDW\u00b7h)**, the contract's standard unit shared with dFBA /\nv2ecoli / OxidizeME), and ``growth_rate`` (1/h). It reads dissolved O2 from\nthe reactor and emits its O2/CO2 exchange and its biomass growth as additive\ndeltas so it composes with BiRDTransportProcess at the shared stores.\n\nBiomass ``X`` (g/L) is interpreted as **gDW/L**, so the published molar\nfluxes are apples-to-apples with a gDW-based engine substituted under the\ncontract. The Monod ``q_o2`` is mass-specific (g_O2/(gDW\u00b7h)) internally; the\ncontract field converts it to molar via the species molecular weight.\n\nTrivial by design: it is the conforming fixture that makes the contract\nconcrete and the substitution target for dFBA / whole-cell engines.\n\nNOTE: in this composite the molar ``external_exchange_fluxes`` is the contract\nSURFACE (what a conforming engine publishes); the actual O2/CO2 coupling here\nis the simplified mg/L delta path written directly to the shared dissolved\nstores. The molar-flux \u2192 mg/L dC/dt coupler is the reactor-side coupler that\nlives with the consuming engine (e.g. v2ecoli mbp-03), not in this fixture.\n\nThe full contract publishes fluxes under ``agents.*.metabolism...``; this\nflat fixture exposes them directly and would adapt at a coupler boundary\nfor an agent-structured engine (see cell_side_interface_contract.md)."
+        },
+        {
+          "name": "NeuralProcess",
+          "description": "Approximates a target subsystem's per-step dynamics.\n\nReads feature ports (targets + drivers), predicts next absolute target\nvalues, and writes them with ``overwrite`` semantics."
+        },
+        {
+          "name": "PartitionedProcess",
+          "description": "Partitioned Process Base Class\n\nThis is the base class for all processes whose updates can be partitioned.\n\nSubclasses must implement:\n  - ``ports_schema()``: v1 bidirectional port schema\n  - ``calculate_request(timestep, states)``: compute resource requests\n  - ``evolve_state(timestep, states)``: compute state updates\n\nSubclasses may define ``_output_ports`` as a set of port names that\nappear in the delta returned by ``evolve_state()``.  All other ports\nare treated as input-only for the dependency graph.\n\nFor v2, subclasses should override ``inputs()`` and ``outputs()`` to\ndeclare typed ports. The default implementations derive from\n``ports_schema()`` using ``_typed_ports()``."
+        },
+        {
+          "name": "PymunkProcess",
+          "description": "2D rigid-body physics for colonies \u2014 a pymunk space that integrates\nrod-shaped cells, soft multi-segment cells, and circular particles under\ncollisions, damping, jitter, optional gravity/adhesion, and chamber walls."
+        },
+        {
+          "name": "QuorumSensing",
+          "description": "Process base class.\n\nA `Process` is a temporal unit of computation that operates on state and advances in time.\nEach subclass must implement the `update()` method and optionally the `invoke()` method.\n\nProcesses are stateful and typically used for simulations of continuous or discrete dynamics."
+        },
+        {
+          "name": "RnaDegradation",
+          "description": "RNA Degradation \u2014 endo cleavage (competitive Michaelis\u2013Menten) then exo digestion.\n\n    f\u1d62 = ([r\u1d62]/Km\u1d62) / (1 + \u2211\u2c7c [r\u2c7c]/Km\u2c7c);   \u03bd\u1d62 = kcat_endo \u00b7 [EndoRNase] \u00b7 f\u1d62\n    per class c: n_deg_c = Draw(\u2211_{i\u2208c} \u03bd\u1d62 \u00b7 dt \u00b7 V \u00b7 N_A), multinomial\u221df\u1d62, \u2264 supply\n    \u0394fragments = S_endo \u00b7 n_deg;   exo: C_exo = \u2211n_exo \u00b7 kcat_exo \u00b7 dt\n    FragmentBase + H2O \u2192 NMP + H\u207a   (full digest if C_exo \u2265 \u03a3bases, else multinomial)\n  [r\u1d62]: RNA conc (mol/L); Km\u1d62: MM constant; \u03bd\u1d62: endo flux; S_endo: cleavage stoich (NMP+PPi)."
+        },
+        {
+          "name": "SecreteEPS",
+          "description": "Process base class.\n\nA `Process` is a temporal unit of computation that operates on state and advances in time.\nEach subclass must implement the `update()` method and optionally the `invoke()` method.\n\nProcesses are stateful and typically used for simulations of continuous or discrete dynamics."
+        },
+        {
+          "name": "SteadyStatePolypeptideElongation",
+          "description": "Steady-State Polypeptide Elongation \u2014 elongation rate emerges from tRNA charging.\n\n    f_charged_a = [charged_tRNA_a] / ([charged_tRNA_a] + [uncharged_tRNA_a])\n    \u03bd_eff \u221d min_a f_charged_a   (Michaelis\u2013Menten competitive inhibition)\n  Charging (aminoacyl-tRNA synthetase): aa + ATP + tRNA \u2192 charged_tRNA + AMP + PPi.\n  Composes tRNA charging + ppGpp (RelA/SpoT) + amino-acid supply (synth/import/export).\n  \u03bd_eff = effective elongation rate (aa/s); a indexes amino-acid species."
+        },
+        {
+          "name": "TranscriptElongation",
+          "description": "Transcript Elongation \u2014 RNAPs extend transcripts by NTP polymerization.\n\n    seqs = buildSequences(rnaSeqs, RNAP_pos, \u03bd\u00b7dt);  \u0394len = polymerize(seqs, NTP, limit)\n    NTP \u2192 NMP_incorporated + PPi;   \u0394mass = \u2211\u1d62 \u0394nt\u1d62\u00b7w\u1d62  [fg]\n  Termination: transcript len = TU_len \u2192 full transcript; RNAP recycled.\n  tRNA attenuation (optional): p_stop = f([charged_tRNA]),\n    early-terminated RNAPs recycled and partial transcripts discarded.\n  \u03bd = elongation rate (nt/s); dt = timestep; w\u1d62 = nucleotide weights."
+        },
+        {
+          "name": "TranslationSupplyPolypeptideElongation",
+          "description": "Polypeptide Elongation \u2014 ribosomes extend polypeptides by amino-acid polymerization.\n\n    seqs = buildSequences(protSeqs, ribo_pos, \u03bd\u00b7dt);  \u0394len = polymerize(seqs, aa, limit)\n    GTP_consumed = n_elongations \u00b7 gtpPerElongation  (\u22484.2 GTP/aa, EF-Tu/EF-G)\n  ppGpp regulation (optional): \u03bd = f_ppgpp([ppGpp]) [aa/s], with\n    d[ppGpp]/dt = RelA synth([uncharged_tRNA]) \u2212 SpoT deg([ppGpp]) + SpoT basal synth.\n  \u03bd = elongation rate (aa/s); dt = timestep."
+        },
+        {
+          "name": "VivariumEcoliProcess",
+          "description": "Genuine upstream vEcoli as a SINGLE process-bigraph node, with vivarium-core's\nown Engine running inside.\n\nThis PRESERVES the process-bigraph design: v2ecoli and vEcoli compare on the SAME\npbg runtime (one pbg node each at ``agents/0``), so the comparison stays a true\npbg-vs-pbg test \u2014 but vivarium handles partition / update-reconciliation / division\n*inside* this node, so none of the Engine-reimplementation bugs (the bulk-reconcile\nmass explosion; the ``_add`` division crash) can arise.\n\n``update(state, interval)`` advances the inner vivarium Engine by ``interval`` via\n``Engine.run_for`` and writes the cell's mass observables back to the pbg store\n(``listeners.mass.*``), so the standard ``XArrayEmitter`` view reads them exactly as\nit does for v2ecoli. REST-ready: the in-process Engine can later be swapped for an\nout-of-process vivarium service behind this same port interface."
+        },
+        {
+          "name": "viva_munk.processes.diffusion_advection.DiffusionAdvection",
+          "description": "Explicit finite-difference diffusion\u2013advection in 2D using a 1-cell ghost layer.\n\nGrid / array convention:\n  - fields are numpy arrays with shape (ny, nx) == (rows, cols)\n  - x corresponds to columns (axis=1)\n  - y corresponds to rows    (axis=0)\n  - config n_bins is (nx, ny) for consistency with other processes in this codebase\n\nBoundary conditions:\n  Boundary conditions are implemented via 1-cell ghost layers so that both diffusion and\n  advection use BC-consistent neighbor values.\n\n  Supported per-side BC types (left/right/bottom/top):\n    - \"periodic\": wrap to opposite side (must be paired on both sides of an axis)\n    - \"neumann\":  zero normal gradient (diffusive no-flux wall) via ghost = boundary cell\n    - \"outflow\":  currently treated like neumann for ghost filling (advection-aware outflow\n                  can be added if desired)\n    - \"dirichlet\": clamp the boundary cell(s) in the domain to `value` every substep\n                   (infinite reservoir / fixed boundary concentration)\n    - \"dirichlet_ghost\": only clamp the ghost layer using `value` while allowing the\n                         boundary cell(s) to evolve (fixed exterior value at boundary face)\n\n  Notes:\n    - Dirichlet(-ghost) uses ghost = 2*value - boundary_cell.\n    - \"dirichlet\" pins boundary cells after each substep; \"dirichlet_ghost\" does not.\n    - For \"periodic\" you must set both sides periodic for that axis."
+        }
+      ],
+      "steps": [
+        {
+          "name": "AdjustPromotersStep",
+          "description": "Step 7 \u2014 adjust_promoters.  Back-solve ligand levels + RNAP\nrecruitment columns from the fitted binding probabilities.\n\nInvert the equilibrium Hill equation for each ligand-bound TF given\nits target binding probability P from Step 6:\n    [L] = K_d \u00b7 (P / (1 \u2212 P))^(1/n)\nand balance the equilibrium reverse-rate where forward \u2260 target.\nPre-compute the recruitment columns the online model adds each tick:\n    basal_prob[j]    = pPromoterBound \u00b7 r_vector   (at basal)\n    delta_prob[j,c]  = (pPromoterBound[c] \u2212 pPromoterBound[basal]) \u00b7 r\nWrites basal_prob / delta_prob, ligand set-amounts, balanced rates."
+        },
+        {
+          "name": "Allocator",
+          "description": "Allocator Step\n\nprocess-bigraph interface: reads request/bulk/allocator_rng,\nwrites allocate/request/listeners."
+        },
+        {
+          "name": "Analysis",
+          "description": "Visualization-like analysis: reads sim output via a DuckDB connection +\nthe ParCa ``sim_data``, and emits a rendered ``view`` (HTML) plus optional\n``data`` (map). Faithful native ports of vEcoli's ``plot()`` analyses build\non this base (cf. the record-based ``AnalysisStep`` for emitted-observable\nanalyses). Subclasses set ``scale`` + ``name`` and implement ``analyze``.\n\nLive, non-serializable handles (``conn``, ``sim_data``) are injected by the\nrunner into the state dict passed to ``update``; ``inputs()`` declares them\nfor discoverability with a permissive (\"any\") type."
+        },
+        {
+          "name": "AnalysisStep",
+          "description": "Base for result-consuming analysis Steps.\n\nSubclasses set ``scale`` (one of ANALYSIS_SCALES) and implement\n``analyze(rows) -> dict``. ``rows`` is a list of emitted result records\n(dicts shaped like the partitioned parquet rows / in-state snapshots) for\nthe slice this scale covers. The Step's update() reads ``results`` from\nstate and writes the analysis output to ``analysis``."
+        },
+        {
+          "name": "AverageMonomerCounts",
+          "description": "Visualization-like analysis: reads sim output via a DuckDB connection +\nthe ParCa ``sim_data``, and emits a rendered ``view`` (HTML) plus optional\n``data`` (map). Faithful native ports of vEcoli's ``plot()`` analyses build\non this base (cf. the record-based ``AnalysisStep`` for emitted-observable\nanalyses). Subclasses set ``scale`` + ``name`` and implement ``analyze``.\n\nLive, non-serializable handles (``conn``, ``sim_data``) are injected by the\nrunner into the state dict passed to ``update``; ``inputs()`` declares them\nfor discoverability with a permissive (\"any\") type."
+        },
+        {
+          "name": "BasalSpecsStep",
+          "description": "Step 3 \u2014 basal_specs.  Fit the minimal-medium (basal) condition.\n\nexpressionConverge (fixed-point): iterate rna_synth_prob until the\nimplied steady-state mRNA / tRNA / rRNA levels reproduce the measured\nrna_expression within tolerance. Then calibrate derived constants:\n  \u2022 setPpGppExpression \u2014 ppGpp-regulated expression tables\n  \u2022 fitRnaDecayKm      \u2014 endoRNase K_M so mRNA half-lives match data\n  \u2022 fitMaintenanceCosts\u2014 regress ATP vs dry mass \u2192 GAM coefficient\nEverything downstream assumes these basal fits hold; writes\ncell_specs['basal'] (bulk_average, bulk_distribution, n_avg_copies)."
+        },
+        {
+          "name": "BatchBaselineRunner",
+          "description": "One-shot Step that dispatches the seeds \u00d7 generations batch (see module)."
+        },
+        {
+          "name": "CellMass",
+          "description": "Per-variant dry-mass-over-time plots (multivariant)."
+        },
+        {
+          "name": "CentralCarbonMetabolismScatter",
+          "description": "Central carbon metabolism flux scatter: model vs. Toya 2010 (multiseed).\n\nFaithfully ported from vEcoli\n``ecoli/analysis/multiseed/centralCarbonMetabolismScatter.py``.\nReturns ``{\"view\": <html with inline SVG>}``.\n\nWhen ``validation_data`` is ``None``, falls back to a bar chart of the\ntop-30 base reactions by absolute mean simulated flux."
+        },
+        {
+          "name": "ChromosomeReplication",
+          "description": "Chromosome Replication \u2014 initiate, elongate, and terminate replication forks.\n\n1. Initiation: fire when  M_cell / n_oriC \u2265 M_critical(\u03c4);  +2 replisomes\u00b7oriC, +2 domains.\n2. Elongation: seqs = buildSequences(template, pos, \u03bd\u00b7dt); polymerize(seqs, dNTPs, limit);\n   \u0394m_DNA = \u2211\u1d62 (elongated_nt\u1d62 \u00b7 weight\u1d62);  PPi released = dNTP polymerized.\n3. Termination: fork ends when |coordinate| = L_replichore; domain splits, subunits recycled.\n  M_cell: cell mass (fg); n_oriC: oriC count; M_critical(\u03c4): mass/oriC threshold at doubling time \u03c4;\n  \u03bd: stochastic elongation rate (nt/s); dt: timestep; L_replichore: replichore length (nt)."
+        },
+        {
+          "name": "ChromosomeStructure",
+          "description": "Chromosome Structure \u2014 resolve fork collisions, replicate promoters, repartition segments.\n\n1. Collision: fork passing a bound molecule either removes it (fork wins) or stalls (molecule wins).\n2. Promoter replication: duplicate promoter when  pos_prev < c \u2264 pos_new  (TF state + mass preserved).\n3. Segment supercoiling: linking number  Lk = Tw + Wr;  on split, Lk partitioned \u221d new segment lengths.\n4. Recycling: collided RNAPs/ribosomes removed; RNA transcripts + subunits returned to bulk (mass conserved).\n  c: promoter coordinate; pos_prev/pos_new: fork position before/after step; Tw: twist; Wr: writhe."
+        },
+        {
+          "name": "Complexation",
+          "description": "Complexation \u2014 spontaneous monomer\u2192complex assembly (Gillespie SSA).\n\nContinuous-time Markov chain over reactions (stoichiometry S, rows=reactions, rates k):\n    x(t+dt) = StochasticSystem.evolve(dt, x(t), k)\n    propensity a_j = k_j \u00b7 \u220f_i C(x_i, |S_ji|);   \u0394x = outcome \u2212 x(t) = S\u1d40\u00b7occurrences.\nReactants are complex-specific (no shared-resource competition)."
+        },
+        {
+          "name": "CopasiSteadyStateStep",
+          "description": "Step base class.\n\nA `Step` is a stateless, non-temporal computational unit within a composite process.\nIt is triggered when its data dependencies are satisfied, functioning like a reaction\nor transformation rule.\n\nOverride the `.update()` method to define custom behavior.\n\nOverride `.triggers()` to control which input ports trigger the step.\nBy default all inputs trigger \u2014 the step runs whenever any input changes.\nTo make some inputs \"silent\" (received but not triggering), return only\nthe triggering subset from `triggers()`.\n\nClass attributes for memoization:\n    ``_cache`` \u2014 ``'none'`` (default) or ``'by_hash'``. When\n        ``'by_hash'``, ``invoke()`` hashes the Step's config and the\n        incoming state, keys a class-level cache by\n        ``(schema_version, hash)``, and reuses prior outputs on a\n        hit. Requires ``_schema_version``.\n    ``_schema_version`` \u2014 opaque string identifying the Step's\n        output-relevant implementation version. Bumping invalidates\n        all prior cache entries under the old version. Required when\n        ``_cache == 'by_hash'``."
+        },
+        {
+          "name": "CopasiUTCStep",
+          "description": "Step base class.\n\nA `Step` is a stateless, non-temporal computational unit within a composite process.\nIt is triggered when its data dependencies are satisfied, functioning like a reaction\nor transformation rule.\n\nOverride the `.update()` method to define custom behavior.\n\nOverride `.triggers()` to control which input ports trigger the step.\nBy default all inputs trigger \u2014 the step runs whenever any input changes.\nTo make some inputs \"silent\" (received but not triggering), return only\nthe triggering subset from `triggers()`.\n\nClass attributes for memoization:\n    ``_cache`` \u2014 ``'none'`` (default) or ``'by_hash'``. When\n        ``'by_hash'``, ``invoke()`` hashes the Step's config and the\n        incoming state, keys a class-level cache by\n        ``(schema_version, hash)``, and reuses prior outputs on a\n        hit. Requires ``_schema_version``.\n    ``_schema_version`` \u2014 opaque string identifying the Step's\n        output-relevant implementation version. Bumping invalidates\n        all prior cache entries under the old version. Required when\n        ``_cache == 'by_hash'``."
+        },
+        {
+          "name": "CountsDeriver",
+          "description": "Tallies molecule counts for downstream readouts: mRNA/rRNA transcription-unit and cistron counts (partial + full transcripts), protein monomer counts (including monomers sequestered in complexes and in active ribosomes/RNAPs/replisomes), and per-type active unique-molecule totals. Consolidates the former RNACounts, MonomerCounts, and UniqueMoleculeCounts listeners into one step."
+        },
+        {
+          "name": "Dars",
+          "description": "DARS1/DARS2 \u2014 locus-copy-number-coupled DnaA reactivation. flux = (k1*copy(DARS1) + k2*copy(DARS2))*dt, applied as DnaA-ADP + ATP -> DnaA-ATP + ADP, capped by free DnaA-ADP."
+        },
+        {
+          "name": "DaughterMassSymmetry",
+          "description": "Multidaughter: birth-mass asymmetry |m1-m0|/(m1+m0) of sister cells.\n\nDormant for single-lineage sweeps (only one daughter is carried); produces\na value once binary-tree lineages (single_daughters=false) land."
+        },
+        {
+          "name": "Ddah",
+          "description": "DDAH \u2014 datA-locus-coupled DnaA-ATP hydrolysis. flux = k_ddah * copy_number(datA) * dt, applied as DnaA-ATP + WATER -> DnaA-ADP + Pi + PROTON, capped by free DnaA-ATP."
+        },
+        {
+          "name": "Division",
+          "description": "Detect division and produce daughter cells via _add/_remove.\n\nWhen the division condition is met (dry mass >= threshold with 2+\nchromosomes), this step:\n1. Divides the mother cell's state (bulk binomial, unique by domain)\n2. Builds complete daughter cell states with fresh process instances\n3. Returns structural update to remove mother and add daughters"
+        },
+        {
+          "name": "DnaABoxBinding",
+          "description": "DnaA-box equilibrium binding \u2014 closed-form Langmuir / competitive-Langmuir solve per pool.\n    p_atp = (A/Kd_A) / (1 + A/Kd_A + D/Kd_D)   competitive\n    p_adp = (D/Kd_D) / (1 + A/Kd_A + D/Kd_D)   competitive\n    p_atp = (A/Kd_A) / (1 + A/Kd_A)            ATP-only\nFree DnaA-ATP / DnaA-ADP solved iteratively (Newton) from conservation; bound-form counts rounded stochastically."
+        },
+        {
+          "name": "DnaSupercoiling",
+          "description": "Listener for DNA supercoiling data."
+        },
+        {
+          "name": "DnaaBoxBinding",
+          "description": "Read-only DnaA-box occupancy listener (provided fast-equilibrium model)."
+        },
+        {
+          "name": "DoublingTimeDistribution",
+          "description": "Multiseed: division-time mean/std over divided cells across seeds, plus\nmean final dry mass over all cells."
+        },
+        {
+          "name": "DoublingTimeGrouped",
+          "description": "Grouped doubling-time distribution per variant (cap-immune ln2/mu)."
+        },
+        {
+          "name": "DoublingTimeHist",
+          "description": "Distribution of cap-immune instantaneous doubling times (multivariant)."
+        },
+        {
+          "name": "DoublingTimeLine",
+          "description": "Doubling time vs time/generation per lineage seed (multivariant).\n\nRenders a cap-immune instantaneous doubling-time trace (many samples) plus\nper-generation division-span markers with the truncated final generation\nexcluded."
+        },
+        {
+          "name": "Dummy",
+          "description": "Column-drift canary over the sweep history schema (multivariant)."
+        },
+        {
+          "name": "EcoliPackStep",
+          "description": "Pack a parsimony 3D structural snapshot of the live cell the first\ntime each declared simulation time (or ``\"division_time\"``) arrives.\n\n``config[\"snapshots\"]`` maps a snapshot name to either a fixed sim-time\n(float, seconds) or the string ``\"division_time\"``, which resolves against\nthe ``full_chromosome`` port's reported division time (the earliest\npositive, i.e. scheduled, ``division_time`` across chromosome rows \u2014 set\nonce the cell commits to division; see ``v2ecoli/steps/division.py``\n``MarkDPeriod``). Each name fires at most once, within\n``config[\"epsilon_s\"]`` of its target time."
+        },
+        {
+          "name": "EcoliStep",
+          "description": "Adapter: accepts vEcoli's ``parameters`` kwarg, delegates to PBG Step.\n\nvEcoli processes have complex config_schema with unum/method types that\ndon't round-trip through PBG's realize. We skip PBG config processing\nand just store parameters directly \u2014 the instances are created in\ngenerate.py and used by Composite via their interface() method."
+        },
+        {
+          "name": "EnvironmentDriver",
+          "description": "Drive ``environment.external_concentrations`` from an external source.\n\nSee module docstring; spec in\n``studies/mbp-01-time-varying-environment/study.yaml`` req-1-env-driver."
+        },
+        {
+          "name": "EnvironmentMirror",
+          "description": "Propagate top-level environment.external_concentrations to each agent's boundary.external."
+        },
+        {
+          "name": "Equilibrium",
+          "description": "Equilibrium \u2014 ligand\u2013TF binding driven to steady state.\n\n1. ODE solve for integer reaction fluxes \u03bd:  x_ss, \u03bd = fluxesAndMoleculesToSS(x, V, N_A).\n2. Greedy correction under allocation: while any(S\u00b7\u03bd + x_alloc < 0),\n   decrement offending forward/reverse fluxes (clamp \u2265 0).\n\u0394x = S\u00b7\u03bd;  S = stoichiometry matrix (molecules \u00d7 reactions)."
+        },
+        {
+          "name": "Evolver",
+          "description": "Evolver Step\n\nAccepts a PartitionedProcess as an input, and runs in coordination with an\nRequester that uses the same PartitionedProcess.\n\nprocess-bigraph interface: Evolvers read from all ports but only\nwrite to everything except allocate, global_time, and timestep."
+        },
+        {
+          "name": "ExchangeData",
+          "description": "Update metabolism exchange constraints according to environment concs."
+        },
+        {
+          "name": "FbaFluxOverlay",
+          "description": "Per-variant Toya r + central-carbon flux delta-vs-baseline."
+        },
+        {
+          "name": "FinalAdjustmentsStep",
+          "description": "Step 9 \u2014 final_adjustments.  Fit the last kinetic constants the\nonline model needs, then a final expression-consistency pass.\n\n  \u2022 set_mechanistic_supply_constants \u2014 solve aa kcat + synthase conc\n    so each amino acid's net flux matches translation demand per\n    condition\n  \u2022 set_mechanistic_uptake/export_constants \u2014 transporter / exporter\n    kcats by the same balance\n  \u2022 set_ppgpp_kinetics_parameters \u2014 fit RelA/SpoT synthase + hydrolase\n    rates so steady-state [ppGpp] tracks the growth-rate-dependent pool\n  \u2022 adjust_final_expression \u2014 cross-condition consistency check\nEach mechanistic fit is wrapped in try/except (a CYS[c] kcat corner\ncase can fail in debug) so the sim_data pickle still lands."
+        },
+        {
+          "name": "FitConditionStep",
+          "description": "Step 5 \u2014 fit_condition.  Bulk-molecule distributions + translation\nsupply. The pipeline's heavy step (~60\u201370 min at cpus=2).\n\nPer condition, sample N_SEEDS synthetic cells and propagate each to\nsteady state through the complexation / equilibrium / two-component\nsolvers, then aggregate across seeds:\n    counts ~ Multinomial(mass | fitted expression)\n    StochasticSystem integrates complexation \u2192 equilibrium\n    record mean_counts, std_counts, n_avg_copies\ncalculateTranslationSupply: from mean counts + kcats, solve the\nper-amino-acid supply rate that hits the condition's target dry-mass\ngrowth \u2192 translation_supply_rate[condition] over 21 amino acids."
+        },
+        {
+          "name": "GrowthOverlay",
+          "description": "Cell mass + instantaneous growth rate vs time, one line per variant."
+        },
+        {
+          "name": "InitializeStep",
+          "description": "Step 1 \u2014 initialize (scatter).\n\nBootstraps the pipeline from the KnowledgeBaseEcoli flat-file tables:\n    sim_data = SimulationDataEcoli(); sim_data.initialize(raw_data)\nthen scatters the nested object into its 9 subsystem dataclasses\n(transcription, translation, metabolism, rna_decay, complexation,\nequilibrium, two_component_system, transcription_regulation,\nreplication) and ~20 top-level data dicts on their own store paths.\nNo monolithic sim_data blob travels downstream \u2014 every later step\nwires only the ports it reads/writes."
+        },
+        {
+          "name": "InputAdjustmentsStep",
+          "description": "Step 2 \u2014 input_adjustments.\n\nApplies literature-curated per-gene overrides before any fitting,\nfrom the adjustments table {gene_id: multiplier}:\n    rna_expression  *= f_expr,   then renormalize \u03a3 = 1\n    translation_eff *= f_te,     then renormalize mean = 1\n    rna_deg_rates   *= f_deg;    protein_deg_rates *= f_pdeg\nMutates the transcription and translation subsystems in place.\nIn debug mode also prunes tf_to_active_inactive_conditions to one\nTF so Step 4 fits a single condition."
+        },
+        {
+          "name": "KetchupDynamicEstimator",
+          "description": "Fit enzyme kinetics to **time-course** (NADH-vs-time) data with KETCHUP.\n\nImplements the dynamic / time-series KETCHUP extension (Hu, Jilani, Olson &\nMaranas, *PLOS Comput Biol* 2025): a custom-mechanism rate law is fit to a\nmeasured species trajectory (NADH) across several initial conditions using\nthe 'strainer' time-course data format.  Bundled cell-free models: ``FDH``\n(formate dehydrogenase) and ``BDH`` (2,3-butanediol dehydrogenase).\n\nLike the steady-state estimator this is a one-shot solve, so it is a\n:class:`process_bigraph.Step` with a drivable ``seed`` input.  Its outputs\ncarry both the fitted parameters and the per-experiment NADH(t) trajectories\n(fitted curve + measured points) so downstream consumers \u2014 or a report \u2014 can\nreproduce the paper's Fig 2 panels.\n\nOutputs\n-------\nkinetic_parameters : map[string, float]\n    Fitted custom-mechanism parameters, keyed ``<group>.<name>``\n    (e.g. ``kcat.FDH+f``).\nnadh_time, nadh_fit : map[string, list[float]]\n    Per-experiment fitted trajectory: collocation times and predicted NADH.\ndata_time, data_nadh : map[string, list[float]]\n    Per-experiment measured time-points and NADH values.\nsse : float\n    Total sum-of-squared residuals across experiments (objective).\nstatus : string\n    IPOPT termination condition.\nsolve_time : float\n    Wall-clock seconds for generate + solve.\nn_parameters : integer\n    Number of fitted kinetic parameters.\nn_experiments : integer\n    Number of initial-condition datasets fit jointly."
+        },
+        {
+          "name": "KetchupEstimator",
+          "description": "Estimate kinetic parameters for a K-FIT metabolic model with KETCHUP.\n\nInputs\n------\nseed : integer\n    Random seed for parameter initialisation.  Different seeds give\n    different IPOPT starting points (and possibly different local optima),\n    so an upstream sweep/controller process can drive multistart estimation\n    by writing successive seeds to this port.\n\nOutputs\n-------\nkf, kr : map[string, float]\n    Estimated forward / reverse elementary-step rate constants.\nconcentrations, enzymes, fluxes : map[string, float]\n    Fitted metabolite concentrations, enzyme levels, and reaction rates for\n    the first experiment block.\nsse : float\n    Total sum-of-squared residuals between fitted and measured data\n    (the optimizer's objective; lower = better fit).\nstatus : string\n    IPOPT termination condition (e.g. ``optimal``).\nsolve_time : float\n    Wall-clock seconds spent generating + solving the model.\nn_parameters : integer\n    Number of estimated rate constants (len(kf) + len(kr)).\nstability : string\n    ``stable`` / ``unstable`` / ``not_evaluated`` \u2014 steady-state Jacobian\n    eigenvalue check (only run when ``compute_stability`` is set)."
+        },
+        {
+          "name": "LikelihoodCollector",
+          "description": "Adapter: accepts vEcoli's ``parameters`` kwarg, delegates to PBG Step.\n\nvEcoli processes have complex config_schema with unum/method types that\ndon't round-trip through PBG's realize. We skip PBG config processing\nand just store parameters directly \u2014 the instances are created in\ngenerate.py and used by Composite via their interface() method."
+        },
+        {
+          "name": "MarkDPeriod",
+          "description": "Set division flag after D period has elapsed."
+        },
+        {
+          "name": "MassConservationDeriver",
+          "description": "Emit the per-tick mass-conservation residual; warn (never raise) on drift."
+        },
+        {
+          "name": "MassDeriver",
+          "description": "Aggregates total cell mass and submasses (protein, RNA by class, DNA, small molecules, water) from bulk and unique molecule counts. Derives cell volume, plus growth rate and mass fold-changes over the cell cycle."
+        },
+        {
+          "name": "MassFractionGrouped",
+          "description": "Time-averaged mass fractions, grouped bars per variant."
+        },
+        {
+          "name": "MassFractionSummary",
+          "description": "Single-scale example: mean mass fractions across a cell's timeseries."
+        },
+        {
+          "name": "MassFractionSummaryView",
+          "description": "Biomass-component fold-change line plot over a single cell's timeseries."
+        },
+        {
+          "name": "MassFractionVoronoi",
+          "description": "Voronoi biomass-fraction plot: initial vs. final cell (single scale).\n\nFaithfully ported from vEcoli ``ecoli/analysis/single/mass_fraction_voronoi.py``.\nReturns ``{\"view\": <html with inline SVG>}``."
+        },
+        {
+          "name": "MassGrowthAcrossGenerations",
+          "description": "Multigeneration: per-generation newborn/final mass, cycle time, fold change\nacross one lineage."
+        },
+        {
+          "name": "MediaUpdate",
+          "description": "Update environment concentrations according to current media ID."
+        },
+        {
+          "name": "Metabolism",
+          "description": "Metabolism \u2014 flux-balance analysis (FBA).\n\nEach timestep solve for the reaction flux vector v:\n    max c\u1d40v   s.t.  S\u00b7v = 0,   v_lb \u2264 v \u2264 v_ub\n  S: stoichiometry (metabolites\u00d7reactions); c: biomass objective;\n  bounds from nutrient uptake, enzyme kcat capacity, NGAM maintenance.\nThe FBA returns per-metabolite concentration changes \u0394c (mmol/L, the\noutput_molecule_changes). Flux\u2192counts uses counts_to_molar = 1/(N_A\u00b7V_cell)\n(the mM-per-count factor); its inverse maps \u0394c back to a count change:\n    \u0394n = stochasticRound(n\u2080 + \u0394c/counts_to_molar) \u2212 n\u2080   (zero-floored),\n  i.e. \u0394c\u00b7N_A\u00b7V_cell counts added to the initial count n\u2080. Exchange\n  fluxes are reported on a gDCW basis via \u03ba = m_dry/m_cell\u00b7density\u00b7dt.\nOptional ppGpp growth coupling and kinetic (kcat) flux constraints."
+        },
+        {
+          "name": "MetricAcrossVariants",
+          "description": "Multivariant: mean division time + final dry mass per variant."
+        },
+        {
+          "name": "MillardBulkIndexer",
+          "description": "Translate Millard central_metabolites (mM) \u2192 bulk count deltas."
+        },
+        {
+          "name": "NewGeneCounts",
+          "description": "Visualization-like analysis: reads sim output via a DuckDB connection +\nthe ParCa ``sim_data``, and emits a rendered ``view`` (HTML) plus optional\n``data`` (map). Faithful native ports of vEcoli's ``plot()`` analyses build\non this base (cf. the record-based ``AnalysisStep`` for emitted-observable\nanalyses). Subclasses set ``scale`` + ``name`` and implement ``analyze``.\n\nLive, non-serializable handles (``conn``, ``sim_data``) are injected by the\nrunner into the state dict passed to ``update``; ``inputs()`` declares them\nfor discoverability with a permissive (\"any\") type."
+        },
+        {
+          "name": "ParsimonyPackStep",
+          "description": "Pack a 3D cell from molecular counts + a structural spec."
+        },
+        {
+          "name": "PolypeptideInitiation",
+          "description": "Polypeptide Initiation \u2014 assembles 30S+50S \u2192 70S ribosomes on mRNAs.\n\n    n_inactive = min(n_30S, n_50S)                     (assemblable-ribosome pool)\n    p_act = calculate_activation_prob(f, \u03bd, lengths, p, dt)  (elongation/termination-rate balance targeting f)\n    n_activate = int(p_act \u00b7 n_inactive)               (ribosomes activated this tick)\n    p_k = \u03b7\u2096\u00b7n_copies\u2096 / \u2211\u2c7c \u03b7\u2c7c\u00b7n_copies\u2c7c                (per-monomer initiation prob)\n    max_p = \u03bd\u00b7dt / (footprint \u00b7 n_activate);   overcrowded \u27fa p_k > max_p\u00b7n_copies\u2096 \u2192 capped/rescaled\n    n_new ~ Multinomial(n_activate, p);  each consumes one 30S + one 50S.\n  f = media-dependent active fraction; \u03b7\u2096 = translation efficiency; \u03bd = ribosome elongation rate (aa/s)."
+        },
+        {
+          "name": "PopulationAggregator",
+          "description": "Aggregate per-cell mass + agent count into reactor-scale observables.\n\nSee module docstring; spec in\n``studies/mbp-02-population-aggregation/study.yaml`` req-1-population-aggregator."
+        },
+        {
+          "name": "PopulationPhenotypeBasalCard",
+          "description": "Multiseed: the v1 *meta-tier report card* measurement.\n\nGrades the two universally-applicable basal-condition axes over an\nensemble of cells (seeds x generations of one variant), reporting each\nas a cell-to-cell mean / std / CV:\n\n  - **Growth**: doubling time over confirmed divisions.\n  - **Composition**: protein / RNA / DNA mass fractions of dry weight.\n\nThis is the *measurement* half of the report card. The *grade* (pass/fail\nvs. a pinned reference within tolerance) lives in\n``tests/test_population_phenotype_basal.py`` so the reference and tolerances are\nreviewable artifacts, not buried analysis constants.\n\nDesign notes:\n  - ``generation_lower_bound`` drops early generations as burn-in, so the\n    ensemble reflects steady balanced growth rather than the inoculation\n    transient. The canonical convention is to discard the first few\n    generations of a multi-gen lineage.\n  - The per-cell records this consumes already carry time-averaged\n    ``protein_fraction_mean`` / ``rna_fraction_mean`` / ``dna_fraction_mean``\n    (see ``analysis_runner.build_cell_records``), so composition is an\n    ensemble reduction over those, not a re-derivation from timeseries.\n  - **RNA = total RNA** (``rna_mass`` = rRna+tRna+mRna), per cell.\n  - Each axis carries the raw per-cell ``values`` (one per cell) so the\n    report can draw violin/strip plots and grade with a Welch t-test."
+        },
+        {
+          "name": "PostDivisionMassDeriver",
+          "description": "Aggregates total cell mass and submasses (protein, RNA by class, DNA, small molecules, water) from bulk and unique molecule counts. Derives cell volume, plus growth rate and mass fold-changes over the cell cycle."
+        },
+        {
+          "name": "PpgppInitiation",
+          "description": "Compute ppGpp-dependent basal_prob and fracActiveRnap.\n\nReads ppGpp concentration from bulk, computes synthesis probabilities\nusing the synth_prob callable, and writes results to ppgpp_state store\nfor TranscriptInitiation to consume."
+        },
+        {
+          "name": "Pressure",
+          "description": "Step base class.\n\nA `Step` is a stateless, non-temporal computational unit within a composite process.\nIt is triggered when its data dependencies are satisfied, functioning like a reaction\nor transformation rule.\n\nOverride the `.update()` method to define custom behavior.\n\nOverride `.triggers()` to control which input ports trigger the step.\nBy default all inputs trigger \u2014 the step runs whenever any input changes.\nTo make some inputs \"silent\" (received but not triggering), return only\nthe triggering subset from `triggers()`.\n\nClass attributes for memoization:\n    ``_cache`` \u2014 ``'none'`` (default) or ``'by_hash'``. When\n        ``'by_hash'``, ``invoke()`` hashes the Step's config and the\n        incoming state, keys a class-level cache by\n        ``(schema_version, hash)``, and reuses prior outputs on a\n        hit. Requires ``_schema_version``.\n    ``_schema_version`` \u2014 opaque string identifying the Step's\n        output-relevant implementation version. Bumping invalidates\n        all prior cache entries under the old version. Required when\n        ``_cache == 'by_hash'``."
+        },
+        {
+          "name": "PromoterBindingStep",
+          "description": "Step 6 \u2014 promoter_binding.  Fit TF binding + recruitment strengths.\n\nConvex least-squares (CVXPY/ECOS) per condition. Model each RNA j:\n    synth_prob[j,c] = basal[j] + \u03a3_tf  r[j,tf] \u00b7 P[tf,c]\n  P[tf,c] = probability TF is promoter-bound under condition c\n            (from the equilibrium solver with its ligand)\n  r[j,tf] = recruitment strength (fit \u2265 0, L1-regularized \u2192 sparse)\nFit r and adjust P so the predicted synth_prob matches the Step-4\nsynth_prob. This is what turns 'TF active' into 'transcription \u00d7X' in\nthe online model. Writes pPromoterBound[tf,condition] + r_vector."
+        },
+        {
+          "name": "ProteinCountsValidation",
+          "description": "Compare average simulated monomer counts to Schmidt 2015 + Wisniewski 2014."
+        },
+        {
+          "name": "ProteinDegradation",
+          "description": "Protein Degradation \u2014 first-order Poisson hydrolysis of protein monomers.\n\n    n\u1d62_deg ~ min(Poisson(k\u1d62 \u00b7 dt \u00b7 n\u1d62), n\u1d62)\n    \u0394metabolites = S \u00b7 n_deg\n    Protein\u1d62 + (L\u1d62\u22121) H2O \u2192 \u2211\u2c7c a\u1d62\u2c7c \u00b7 AA\u2c7c\n  k\u1d62: first-order degradation rate (1/s); n\u1d62: copies of protein i;\n  a\u1d62\u2c7c: count of AA j per protein i; L\u1d62 = \u2211\u2c7c a\u1d62\u2c7c (residues);\n  S: stoichiometry (metabolites \u00d7 proteins), +AA release, \u2212(L\u1d62\u22121) H2O."
+        },
+        {
+          "name": "ProteomeDelta",
+          "description": "Per-variant monomer-count ratio-vs-baseline + validation Pearson r."
+        },
+        {
+          "name": "PtoolsCellOverview",
+          "description": "Bundle the ptools datasets for the EcoCyc Cellular Overview Omics Viewer.\n\nReuses the ``ptools_rna``/``ptools_rxns``/``ptools_proteins`` analyses, so it\nruns standalone. Emits a combined upload file (``data[\"tsv\"]``) and a\nlauncher ``view`` with per-type, ready-to-upload downloads."
+        },
+        {
+          "name": "PtoolsProteins",
+          "description": "Protein-monomer \u00d7 timepoint proteomics table (PathwayTools-compatible TSV)."
+        },
+        {
+          "name": "PtoolsProteinsMultigeneration",
+          "description": "Rewrite history to an absolute time axis, then run the single analyze."
+        },
+        {
+          "name": "PtoolsProteinsMultiseed",
+          "description": "Override _do_read_outputs to collapse multiple seeds element-wise.\n\nMultiple seeds share the same absolute ``time`` value, so the per-seed\nrows must be aggregated before the single-scale ``analyze`` body runs.\n:func:`collapse_cross_seed` handles this correctly:\n\n* ``bulk__id`` (and any other ``id_cols``) \u2014 first-preserved (same across\n  seeds; length-mismatch raises ``ValueError``).\n* list/array columns (``bulk__count``, FBA flux arrays, per-transcript\n  lists) \u2014 element-wise numpy sum (shape-mismatch raises ``ValueError``).\n* scalar columns (``active_ribosome``, ``oriC``, ``active_RNAP``) \u2014 plain\n  scalar sum.\n\nThe cross-seed aggregated DataFrame is then passed verbatim to the\ninherited single-scale ``analyze`` body."
+        },
+        {
+          "name": "PtoolsRna",
+          "description": "Gene \u00d7 timepoint RNA-count table (PathwayTools-compatible TSV)."
+        },
+        {
+          "name": "PtoolsRnaMultigeneration",
+          "description": "Rewrite history to an absolute time axis, then run the single analyze."
+        },
+        {
+          "name": "PtoolsRnaMultiseed",
+          "description": "Override _do_read_outputs to collapse multiple seeds element-wise.\n\nMultiple seeds share the same absolute ``time`` value, so the per-seed\nrows must be aggregated before the single-scale ``analyze`` body runs.\n:func:`collapse_cross_seed` handles this correctly:\n\n* ``bulk__id`` (and any other ``id_cols``) \u2014 first-preserved (same across\n  seeds; length-mismatch raises ``ValueError``).\n* list/array columns (``bulk__count``, FBA flux arrays, per-transcript\n  lists) \u2014 element-wise numpy sum (shape-mismatch raises ``ValueError``).\n* scalar columns (``active_ribosome``, ``oriC``, ``active_RNAP``) \u2014 plain\n  scalar sum.\n\nThe cross-seed aggregated DataFrame is then passed verbatim to the\ninherited single-scale ``analyze`` body."
+        },
+        {
+          "name": "PtoolsRxns",
+          "description": "Reaction \u00d7 timepoint flux table (PathwayTools-compatible TSV)."
+        },
+        {
+          "name": "PtoolsRxnsMultigeneration",
+          "description": "Rewrite history to an absolute time axis, then run the single analyze."
+        },
+        {
+          "name": "PtoolsRxnsMultiseed",
+          "description": "Override _do_read_outputs to collapse multiple seeds element-wise.\n\nMultiple seeds share the same absolute ``time`` value, so the per-seed\nrows must be aggregated before the single-scale ``analyze`` body runs.\n:func:`collapse_cross_seed` handles this correctly:\n\n* ``bulk__id`` (and any other ``id_cols``) \u2014 first-preserved (same across\n  seeds; length-mismatch raises ``ValueError``).\n* list/array columns (``bulk__count``, FBA flux arrays, per-transcript\n  lists) \u2014 element-wise numpy sum (shape-mismatch raises ``ValueError``).\n* scalar columns (``active_ribosome``, ``oriC``, ``active_RNAP``) \u2014 plain\n  scalar sum.\n\nThe cross-seed aggregated DataFrame is then passed verbatim to the\ninherited single-scale ``analyze`` body."
+        },
+        {
+          "name": "ReactorCellCoupler",
+          "description": "Translate between v2ecoli's cell population and the BiRD reactor stores.\n\nSee module docstring; spec in\n``studies/mbp-03-*/study.yaml`` req-2 (reactor<->cell coupler)."
+        },
+        {
+          "name": "ReactorMillardEnvBridge",
+          "description": "Mirror top-level environment.external_concentrations into each agent's."
+        },
+        {
+          "name": "RefGrowthDriver",
+          "description": "Drive precursor bulk counts toward Phase-0 mass via either\nproportional-scaling or kFBA-measured constant injection."
+        },
+        {
+          "name": "RegulationOverlay",
+          "description": "ppGpp + tRNA-charged fraction vs time, one line per variant."
+        },
+        {
+          "name": "RemoveCrossing",
+          "description": "Step base class.\n\nA `Step` is a stateless, non-temporal computational unit within a composite process.\nIt is triggered when its data dependencies are satisfied, functioning like a reaction\nor transformation rule.\n\nOverride the `.update()` method to define custom behavior.\n\nOverride `.triggers()` to control which input ports trigger the step.\nBy default all inputs trigger \u2014 the step runs whenever any input changes.\nTo make some inputs \"silent\" (received but not triggering), return only\nthe triggering subset from `triggers()`.\n\nClass attributes for memoization:\n    ``_cache`` \u2014 ``'none'`` (default) or ``'by_hash'``. When\n        ``'by_hash'``, ``invoke()`` hashes the Step's config and the\n        incoming state, keys a class-level cache by\n        ``(schema_version, hash)``, and reuses prior outputs on a\n        hit. Requires ``_schema_version``.\n    ``_schema_version`` \u2014 opaque string identifying the Step's\n        output-relevant implementation version. Bumping invalidates\n        all prior cache entries under the old version. Required when\n        ``_cache == 'by_hash'``."
+        },
+        {
+          "name": "Replication",
+          "description": "Replication panels over a lineage (multigeneration)."
+        },
+        {
+          "name": "ReplicationData",
+          "description": "Listener for replication data."
+        },
+        {
+          "name": "ReplicationOverlay",
+          "description": "Number of oriC (+ critical mass/oriC) vs time, one line per variant."
+        },
+        {
+          "name": "Requester",
+          "description": "Requester Step\n\nAccepts a PartitionedProcess as an input, and runs in coordination with an\nEvolver that uses the same PartitionedProcess.\n\nprocess-bigraph interface: Requesters read from all ports but only\nwrite to request, process, next_update_time, and optionally listeners."
+        },
+        {
+          "name": "RibosomeComponents",
+          "description": "Visualization-like analysis: reads sim output via a DuckDB connection +\nthe ParCa ``sim_data``, and emits a rendered ``view`` (HTML) plus optional\n``data`` (map). Faithful native ports of vEcoli's ``plot()`` analyses build\non this base (cf. the record-based ``AnalysisStep`` for emitted-observable\nanalyses). Subclasses set ``scale`` + ``name`` and implement ``analyze``.\n\nLive, non-serializable handles (``conn``, ``sim_data``) are injected by the\nrunner into the state dict passed to ``update``; ``inputs()`` declares them\nfor discoverability with a permissive (\"any\") type."
+        },
+        {
+          "name": "RibosomeProduction",
+          "description": "Visualization-like analysis: reads sim output via a DuckDB connection +\nthe ParCa ``sim_data``, and emits a rendered ``view`` (HTML) plus optional\n``data`` (map). Faithful native ports of vEcoli's ``plot()`` analyses build\non this base (cf. the record-based ``AnalysisStep`` for emitted-observable\nanalyses). Subclasses set ``scale`` + ``name`` and implement ``analyze``.\n\nLive, non-serializable handles (``conn``, ``sim_data``) are injected by the\nrunner into the state dict passed to ``update``; ``inputs()`` declares them\nfor discoverability with a permissive (\"any\") type."
+        },
+        {
+          "name": "RibosomeUsage",
+          "description": "Visualization-like analysis: reads sim output via a DuckDB connection +\nthe ParCa ``sim_data``, and emits a rendered ``view`` (HTML) plus optional\n``data`` (map). Faithful native ports of vEcoli's ``plot()`` analyses build\non this base (cf. the record-based ``AnalysisStep`` for emitted-observable\nanalyses). Subclasses set ``scale`` + ``name`` and implement ``analyze``.\n\nLive, non-serializable handles (``conn``, ``sim_data``) are injected by the\nrunner into the state dict passed to ``update``; ``inputs()`` declares them\nfor discoverability with a permissive (\"any\") type."
+        },
+        {
+          "name": "Rida",
+          "description": "RIDA \u2014 replisome-coupled DnaA-ATP inactivation. flux = k_rida * n_active_replisomes * dt, applied as DnaA-ATP + WATER -> DnaA-ADP + Pi + PROTON, capped by free DnaA-ATP."
+        },
+        {
+          "name": "RnaMaturation",
+          "description": "RNA Maturation \u2014 stoichiometric processing of unprocessed tRNA/rRNA into mature forms.\n\n    reaction_off = (E \u00b7 enzyme_present) < n_required;   n_unproc[off] = 0\n    n_mature = S \u00b7 n_unproc;   ppi = ppi_per_rxn \u00b7 n_unproc  (PPi consumed, added to 5' ends)\n    rRNA variant consolidation: \u0394nts = \u0394nt_counts\u1d40 \u00b7 n_variant;  NMP +\u0394, H2O \u2212\u03a3, H\u207a +\u03a3\n  S: stoich (mature \u00d7 unprocessed, CSR); E: enzyme-requirement (rxns \u00d7 enzymes);\n  \u0394nt_counts: NMP difference variant vs canonical 16S/23S/5S."
+        },
+        {
+          "name": "RnaSynthProb",
+          "description": "Listener for additional RNA synthesis data."
+        },
+        {
+          "name": "RnapData",
+          "description": "Listener for RNAP data."
+        },
+        {
+          "name": "Scorecard",
+          "description": "Per-variant summary heatmap with \u0394-vs-baseline coloring."
+        },
+        {
+          "name": "SetConditionsStep",
+          "description": "Step 8 \u2014 set_conditions.  Flatten per-condition cell_specs into the\nlookup tables the online model reads each timestep.\n\n  \u2022 avgCellDryMassInit[c] \u2014 rescaled so expected growth over \u03c4\n    reproduces observed dry mass\n  \u2022 fitAvgSolublePoolMass = avgCellDryMassInit \u2212 macromolecule mass\n  \u2022 bulkContainer[c]      \u2014 canonical t=0 bulk counts per condition\n  \u2022 expected_dry_mass_increase[nutrient]\n        = avgCellDryMass \u00b7 (2^(t/\u03c4) \u2212 1) / t   over one cycle\n  \u2022 per-nutrient transcription / tRNA-supply emphasis tables"
+        },
+        {
+          "name": "ShapeStep",
+          "description": "Compute capsule cell shape from mass (fixed width, density, periplasm frac)."
+        },
+        {
+          "name": "StructureRelaxStep",
+          "description": "Opt-in upstream Step: rewrite each ingredient's fetched structure to\nits cached water-relaxed structure before packing."
+        },
+        {
+          "name": "SubgenerationalExpressionTable",
+          "description": "Visualization-like analysis: reads sim output via a DuckDB connection +\nthe ParCa ``sim_data``, and emits a rendered ``view`` (HTML) plus optional\n``data`` (map). Faithful native ports of vEcoli's ``plot()`` analyses build\non this base (cf. the record-based ``AnalysisStep`` for emitted-observable\nanalyses). Subclasses set ``scale`` + ``name`` and implement ``analyze``.\n\nLive, non-serializable handles (``conn``, ``sim_data``) are injected by the\nrunner into the state dict passed to ``update``; ``inputs()`` declares them\nfor discoverability with a permissive (\"any\") type."
+        },
+        {
+          "name": "TfBinding",
+          "description": "TfBinding \u2014 stochastic occupancy of promoter sites by transcription factors.\n\n    p_bound_j = p_promoter_bound_tf(n_active_j, n_inactive_j)   (1.0 for 0CS TFs)\n    n_to_bind_j = min(\u2211 StochasticRound(p_bound_j, N_j), n_available_TF_j)\n  then n_to_bind_j promoter sites are chosen uniformly at random and bound.\n    \u0394mass_i = \u2211_j \u0394TF[i,j] \u00b7 m_j     (mass moved bulk \u2192 promoter submass)\n  N_j: available promoter sites for TF j;  m_j: mass (fg) of active TF j.\n  MarA (PD00365): n_active = 34 \u00b7 [marR-tet]/([marR]+[marR-tet])."
+        },
+        {
+          "name": "TfConditionSpecsStep",
+          "description": "Step 4 \u2014 tf_condition_specs.  Re-fit per TF state + growth condition.\n\nFor each (TF, active/inactive) state and each combined medium\n(with_aa, acetate, succinate, no_oxygen), apply the literature\nfold-changes to the TF's target RNAs then rerun the Step-3 converge:\n    rna_expression[targets] *= 2^(log2_fc)\n    rna_synth_prob = expressionConverge(rna_expression)\nProduces condition-specific synthesis probabilities and bulk\ndistributions \u2014 transcription tables and cell_specs now carry one\nentry per fitted condition, not just 'basal'. Runs conditions in a\nmultiprocessing pool of size cpus."
+        },
+        {
+          "name": "TfUnbinding",
+          "description": "TfUnbinding \u2014 deterministic release of all DNA-bound TFs to the free active pool.\n\n    n_released_j = \u2211_i bound_TF[i,j]     (sum over promoters i)\n    bound_TF \u2190 0     (reset promoter occupancy matrix)\n    \u0394mass_i = -\u2211_j bound_TF[i,j] \u00b7 m_j   (mass moved promoter submass \u2192 bulk)\n  bound_TF: promoters \u00d7 TF species;  m_j: mass (fg) of active TF j."
+        },
+        {
+          "name": "TranscriptInitiation",
+          "description": "TranscriptInitiation \u2014 distributes activated RNAPs across TUs by weighted multinomial sampling.\n\n    n_to_activate = round(f_active \u00b7 n_total_RNAP) - n_active\n    p_i = max(0, basal_prob_i + \u2211_j delta_prob[i,j] \u00b7 bound_TF_j)\n    initiations ~ Multinomial(n_to_activate, p_i / \u2211_i p_i)\n  with p_i \u2190 0 for TUs that are footprint-crowded (~24 nt) or lack a chromosomal promoter.\n  f_active: media-dependent active RNAP fraction;  delta_prob: sparse (COO\u2192CSR) TF effect matrix.\n  ppGpp (optional) modulates basal_prob and f_active via fitted functions."
+        },
+        {
+          "name": "TranslationDeriver",
+          "description": "Derives per-tick translation readouts from the active-ribosome pool: effective elongation rate, actual elongations and termination events, rRNA initiation by class, and ribosomes-per-transcript / polysome occupancy."
+        },
+        {
+          "name": "TrnaAttenuationConfig",
+          "description": "Write tRNA attenuation parameters to shared store.\n\nThis is a one-shot step that populates the attenuation_config store\non first update. TranscriptElongation reads the config each timestep\nto compute stop probabilities from current charged tRNA levels."
+        },
+        {
+          "name": "TwoComponentSystem",
+          "description": "TwoComponentSystem \u2014 phosphotransfer signaling kinetics (ODE integration).\n\nSolve molecule-count ODEs over the timestep:\n    dx/dt = f(x);   integrate t: 0\u2192dt (scipy solve_ivp, BDF);   \u0394x = x(dt) \u2212 x(0).\nUnder-allocation: re-solve to long-horizon steady state (10000 s), extract\nthis timestep's \u0394x to stay physically consistent with reduced counts.\nx: counts of histidine kinases, response regulators, and their phospho-forms."
+        },
+        {
+          "name": "UniqueUpdate",
+          "description": "Placed after all Steps of each execution layer (see :ref:`partitioning`)\nto ensure that unique molecules are completely up-to-date"
+        },
+        {
+          "name": "V2Step",
+          "description": "Step base class for v2ecoli.\n\nSubclasses override inputs()/outputs() with explicit bigraph-schema\ntypes.  Wraps update() in error handling so missing data doesn't\ncrash the Composite's step cascade."
+        },
+        {
+          "name": "v2ecoli.workflow.post_sim.Visualization",
+          "description": "A post-sim visualization Step: emits a rendered ``view`` (HTML) + ``data``\n(map), like ``Analysis`` but tagged ``kind=\"visualization\"`` so the flush can\nroute it distinctly. Subclasses set ``name`` and implement\n``render(study) -> (html, data) | None``. Inputs default to a StudyContext;\noverride ``inputs()`` to consume the run extraction instead."
+        }
+      ],
+      "composites": [
+        {
+          "name": "millard2017_metabolism",
+          "description": "Standalone Millard et al. 2017 kinetic ODE of E. coli central carbon and energy\nmetabolism (BioModels MODEL1505110000), wrapped as a process-bigraph composite\nvia pbg-copasi's CopasiUTCProcess. The model has 77 species, 68 reactions, 3\ncompartments. Baseline composite for the v2ecoli-pdmp Phase 1 study\n(pdmp-01-metabolism-ode); first investigation-side use of pbg-copasi.\n\nCalibrated reference state (per Millard 2017 Fig 2): K-12 MG1655 on M9\nminimal medium + glucose, dilution rate 0.1 h^-1, pH 7.0, 37C, pO2 > 20%.\nSteady-state should match the published reference fluxes within solver\ntolerance.\n"
+        },
+        {
+          "name": "parsimony-demo",
+          "description": "Pack a small example cell (a few real PDB structures + a lipid membrane in a capsule) into a 3D molecular scene with the parsimony engine. The result is a *.pack.json explorable in the bundled interactive viewer (see `python -m pbg_parsimony.demo`)."
+        },
+        {
+          "name": "utc-process",
+          "description": "COPASI incremental UTC process: advances simulation state one interval at a time via CopasiUTCProcess, emitting species concentrations and reaction fluxes each step."
+        },
+        {
+          "name": "steady-state",
+          "description": "COPASI steady-state solver: computes equilibrium species concentrations and reaction fluxes via CopasiSteadyStateStep. Emits the full results dict to the RAM emitter."
+        },
+        {
+          "name": "utc-step",
+          "description": "COPASI UTC trajectory: runs a full time-course simulation via CopasiUTCStep and emits the numeric result (time points + species matrix) to the RAM emitter."
+        },
+        {
+          "name": "ketchup_baseline",
+          "description": "Fit kinetic parameters of a K-FIT metabolic model (k-ecoli74 / k-ecoli307) with the real KETCHUP IPOPT solver."
+        },
+        {
+          "name": "ketchup_multistart",
+          "description": "Multistart KETCHUP estimation: re-fit the same model from a different random seed to probe local-optimum sensitivity."
+        },
+        {
+          "name": "ketchup_dynamic",
+          "description": "Fit enzyme kinetics to time-course NADH data with KETCHUP's dynamic extension (cell-free FDH or BDH)."
+        },
+        {
+          "name": "ecoli_baseline",
+          "description": "55-process partitioned whole-cell E. coli model \u2014 upstream-parity architecture"
+        },
+        {
+          "name": "ecoli_millard",
+          "description": "Whole-cell E. coli composite with v2ecoli's tFBA Metabolism replaced by the Millard 2017 kinetic ODE (MillardPDMPMetabolism). The `lqr` flag selects the metabolism wiring: lqr=False (default) drops the LQR setpoint controller and wires the Millard step's external_concentrations input to ('environment', 'external_concentrations') so a bioreactor environment can drive central-carbon kinetics (basico only); lqr=True adds the multi-state LQR controller layer and the setpoint control wiring (lqr_control input, control_applied output) \u2014 the former former millard-pdmp LQR composite. Standalone (no live reactor) => external concentrations default to empty and the ODE runs on internal glucose."
+        },
+        {
+          "name": "ecoli_structural",
+          "description": "baseline whole-cell E. coli model plus a parsimony 3D structural packing step (EcoliPackStep) that writes snapshot packs at declared simulation times."
+        },
+        {
+          "name": "ecoli_population",
+          "description": "v2ecoli baseline + PopulationAggregator Step. Adds top-level population.* store with total_biomass_gDW, cell_count, biomass_concentration_gL, and OD600. Default cells_per_agent=1.0 preserves literal-sum aggregation so regression tests against the unaggregated baseline remain byte-identical."
+        },
+        {
+          "name": "ecoli_time_varying_env",
+          "description": "v2ecoli baseline + EnvironmentDriver/Mirror hooks so external physics can drive environment.external_concentrations each tick. Default env_driver_mode=static preserves baseline parity."
+        },
+        {
+          "name": "attachment",
+          "description": "Cells settling/attaching on a surface."
+        },
+        {
+          "name": "bending_pressure",
+          "description": "Bending-pressure rod-like cells."
+        },
+        {
+          "name": "biofilm",
+          "description": "Growing biofilm with EPS secretion + pressure dynamics."
+        },
+        {
+          "name": "chemotaxis",
+          "description": "Run/tumble chemotaxis up a static 2D ligand gradient."
+        },
+        {
+          "name": "daughter_machine",
+          "description": "Daughter-machine geometry: tracking daughter cells."
+        },
+        {
+          "name": "glucose_growth",
+          "description": "Glucose-driven growth and division."
+        },
+        {
+          "name": "inclusion_bodies",
+          "description": "Inclusion-body accumulation across a growing colony."
+        },
+        {
+          "name": "mother_machine",
+          "description": "Mother-machine geometry: single-channel cell trapping."
+        },
+        {
+          "name": "quorum_sensing",
+          "description": "Quorum-sensing autoinducer feedback in a growing colony."
+        },
+        {
+          "name": "ecoli_colony",
+          "description": "Multi-cell colony \u2014 whole-cell E. coli agents embedded in a pymunk 2D physics environment via the EcoliWCM bridge."
+        },
+        {
+          "name": "millard_fba_bridge_harness",
+          "description": "Whole-cell E. coli baseline (real tFBA ecoli-metabolism) with the Millard 2017 central-carbon ODE wired in as a flux SOURCE: the Millard fluxes are mapped+converted by fba-flux-coupler into pinned_flux_targets that ecoli-metabolism hard-pins before its LP solve. Integration climax of the FBA-bridge flux-pin feature."
+        },
+        {
+          "name": "parca",
+          "description": "ParCa parameter-calculation pipeline \u2014 the 9-step fit (initialize \u2192 input_adjustments \u2192 \u2026 \u2192 final_adjustments) that produces sim_data. Structural document; run via the v2ecoli-parca CLI / build_parca_composite (which load the KnowledgeBase raw_data)."
+        },
+        {
+          "name": "reactor_bird_coupled",
+          "description": "v2ecoli baseline_population coupled to the BiRD bioreactor (BiRDTransportProcess) via ReactorCellCoupler. The cell population's metabolic O2/CO2 exchange and the reactor's gas-liquid transport net additively at shared reactor.dissolved_o2/dissolved_co2 stores; the EnvironmentDriver runs in external_store mode (the coupler is the env source) and EnvironmentMirror propagates the reactor-derived boundary concentrations to every agent."
+        },
+        {
+          "name": "reactor_bird_coupled_millard",
+          "description": "v2ecoli Millard kinetic-metabolism cell (baseline_millard) + PopulationAggregator coupled to the BiRD bioreactor (BiRDTransportHours) via ReactorCellCoupler. The Millard arm of reactor_bird_coupled: identical population + reactor coupling layered on the Millard 2017 ODE cell instead of the WCM FBA-metabolism cell. The Millard cell's respiration (CYTBO O2 uptake, emitted as environment.exchange counts) nets additively against the reactor's gas-liquid transport at shared reactor.dissolved_o2/dissolved_co2 stores, so the kinetic cell consumes reactor O2 end-to-end."
+        }
+      ],
+      "studies": [
+        {
+          "name": "acetate",
+          "description": ""
+        },
+        {
+          "name": "basal",
+          "description": ""
+        },
+        {
+          "name": "colonies-01-hpc-readiness",
+          "description": "Build phase fixed daughter-process hydration so structural _add instantiates\ndaughter EcoliWCMs through the engine. Decide-phase N-sweep (N \u2208 {1,2,4,8}) on\none machine measured per-tick wall, per-cell cost, peak RSS, and pymunk step,\nextrapolated to a cells-per-HPC-node budget, and identified the GIL as the\ndominant bottleneck. Output: 384 cells/node at 450 MB/cell (commit 2f950d9);\nthe 2026-07-27 hardening re-measurement on current main (bounded phenotype\nrecorder) gives ~291 MB/cell \u2192 ~700 cells/node (F-03).\n"
+        },
+        {
+          "name": "colonies-02-parallel-multigen-perf",
+          "description": "Rerun the colony from one whole-cell agent, dividing naturally (no forced\nsame-tick division), keeping both daughters, as it doubles 1 \u2192 2 \u2192 4 \u2192 8.\nTrack the per-cell compute hit (wall, RSS) generation-by-generation to resolve\ncolonies-01's open F-06 anomaly (RSS climbing ~5 MB/sim-s in long runs) and its\nPASS-narrow caveat (only forced division was validated). Run the same growing\ncolony under the process-bigraph Ray protocol (sharded RayProtocol / actor\npool) to test whether process-level parallelism lifts the single-process\n~13-cells GIL ceiling. Produce a compute-requirements profile seeding\ncolonies-03-hpc-deployment.\n"
+        },
+        {
+          "name": "colonies-03-wcm-rss-leak",
+          "description": "Part A enabling-infrastructure study. colonies-02 recorded a single EcoliWCM\ngrowing RSS ~7.7 MB/sim-s on the macOS mini, reaching ~19 GB before first\ndivision and OOM-killing the sequential colony at 27.5 GB (~34 GB at 2 Ray\ncells) \u2014 which read as an unbounded native leak blocking HPC deployment.\n\nThe 2026-07-26 leak hunt corrected that framing: the per-tick growth is\nLOCALIZED (per-process RSS attribution on the mini) to the inner WCM's\npolypeptide-elongation step (~82%) + mass-listener (~17%). It is not\nunbounded. The truly-retained part is small (~0.2 MB/tick, tracemalloc-visible:\nscipy LSODA integrator work arrays held per solve); the scary ~1.4 MB/tick is\nmacOS allocator arena retention of elongation's per-tick numpy working arrays,\na macOS measurement artifact. A faithful Linux (glibc) reproduction grows only\n0.017 MB/tick WITHOUT any fix and 0.000 MB/tick WITH periodic malloc_trim(0),\nversus ~1.6 MB/tick on the macOS mini \u2014 so on the Linux HPC target the colony's\nmemory is BOUNDED. The leak is now a characterised, Linux-bounded, mitigated\nfootnote, not an HPC blocker.\n"
+        },
+        {
+          "name": "colonies-04-device-phenotype-harness",
+          "description": "Part B (phenotype tier) \\u2014 build the shared colony-phenotyping harness and\nestablish the cheapest rung of the cost/fidelity tier ladder (simple viva-munk\nagent -> growth surrogate -> full WCM). Stands up the cell-tier factory, the\ngeometry builders (mother machine, daughter machine, free colony), and the\ntier-agnostic phenotype extractor, then validates the measurement pipeline with\ncheap simple agents before spending WCM compute.\n\nThe extractor recovers the common single-cell phenotype panel \\u2014 growth rate,\nsize-at-division, added length, inter-division time, and the adder\nsize-homeostasis relation \\u2014 streamed per cell to zarr by the\nColonyPhenotypeRecorder (a process that takes a cheap view of the cells map,\nnot a deep-copying emitter), so the panel is a bounded per-cell stream. The\ndistributions are held for later comparison across the higher-fidelity tiers\nand against experimental microfluidic-device data.\n"
+        },
+        {
+          "name": "colonies-05-mother-machine",
+          "description": "Part B (phenotype tier) \\u2014 run the canonical viva-munk MOTHER MACHINE (narrow\ndead-end channels with a flow channel that washes out cells crossing the top),\npopulated by viva-munk's simple grow/divide agents: the cheapest rung of the\ncost/fidelity tier ladder (simple agent -> growth surrogate -> full WCM). The\nsimulation runs now and produces (a) an animated GIF of the device running and\n(b) distribution figures for the core emergent single-cell phenotypes \\u2014 size\nat division, inter-division time (birth to division), added length before\ndivision, and the adder size-homeostasis relation \\u2014 extracted uniformly by\ncolony_bench.phenotypes.\n\nThis tier establishes the measurement + visualization pipeline against cheap\nagents; the phenotype distributions are held for comparison against the WCM\ntier (colonies-09) and experimental mother-machine microfluidic data. No\nbiological conclusion is drawn at the simple-agent tier.\n"
+        },
+        {
+          "name": "colonies-06-daughter-machine",
+          "description": "Part B (phenotype tier) \\u2014 run the canonical viva-munk DAUGHTER MACHINE (a\nsingle cell in a chamber with an absorbing right wall, so the lineage grows\nleftward as daughters are pushed out), populated by viva-munk's simple\ngrow/divide agents: the cheapest rung of the cost/fidelity tier ladder (simple\nagent -> growth surrogate -> full WCM). The simulation runs now and produces\n(a) an animated GIF of the device running and (b) distribution figures for the\ncore emergent single-cell phenotypes \\u2014 size at division, inter-division time\n(birth to division), added length before division, and the adder\nsize-homeostasis relation \\u2014 extracted uniformly by colony_bench.phenotypes.\n\nThis tier establishes the measurement + visualization pipeline against cheap\nagents; the phenotype distributions are held for comparison against the WCM\ntier (colonies-08) and experimental daughter-machine microfluidic data. No\nbiological conclusion is drawn at the simple-agent tier.\n"
+        },
+        {
+          "name": "colonies-08-wcm-daughter-machine",
+          "description": "Run the REAL v2ecoli whole-cell BASELINE \\u2014 the full 55-process EcoliWCM \\u2014 as a\nsingle cell inside the daughter-machine device geometry (chamber + absorbing\nwall), letting it grow and divide naturally. This is the highest-fidelity rung\nof the phenotype ladder (simple viva-munk agent -> growth surrogate -> full\nWCM): it asks whether the emergent single-cell phenotypes \\u2014 adder\nsize-homeostasis, size at division, added length before division,\ninter-division time, and growth rate \\u2014 survive whole-cell colony embedding and\ndivision inside the device. Renders the running animation and the same\nphenotype figures as the cheap-agent device studies, so the whole-cell tier can\nbe compared, in the same geometry and on the identical measurement pipeline,\nagainst the simple viva-munk agents (colonies-06) and against experimental\nmicrofluidic-device data.\n\nA bounded per-cell phenotype panel (size, added length, division/birth times,\ngrowth rate) is streamed to zarr by the ColonyPhenotypeRecorder \\u2014 a process,\nnot an emitter, so recording stays cheap. Memory is characterised and\nLinux-bounded, not a blocker: the inner WCM's per-tick RSS growth is localized\nto the polypeptide-elongation step + mass-listener and is dominated on the dev\nmini by a macOS allocator artifact (~1.6 MB/tick), but is only ~0.017 MB/tick\non glibc and ~0.000 with periodic malloc_trim. WCM-tier runs are therefore\nlength-capped on the dev mini yet effectively unbounded on the Linux HPC\ntarget. On the mini this run spans only a few generations, so phenotype\ndistributions are PRELIMINARY (small n); full distributions await the Linux HPC\nrun and experimental data (colonies-09). The value here is the genuine\nwhole-cell baseline running inside the device.\n"
+        },
+        {
+          "name": "colonies-09-wcm-mother-machine",
+          "description": "Run the REAL v2ecoli whole-cell BASELINE \\u2014 the full 55-process EcoliWCM \\u2014 as\none whole cell per channel inside the mother-machine device geometry (narrow\ndead-end channels + a flow channel that washes out cells crossing the top),\nletting them grow and divide naturally. This is the highest-fidelity rung of\nthe phenotype ladder (simple viva-munk agent -> growth surrogate -> full WCM)\nin the confined-channel device: it asks whether the emergent single-cell\nphenotypes \\u2014 adder size-homeostasis, size at division, added length before\ndivision, inter-division time, and growth rate \\u2014 survive whole-cell colony\nembedding and division under channel confinement. Renders the running animation\nand the same phenotype figures as the cheap-agent device studies, so the\nwhole-cell tier can be compared, in the same confined-channel device and on the\nidentical measurement pipeline, against the simple viva-munk agents\n(colonies-05) and against experimental microfluidic-device data.\n\nHeavier than the daughter-machine whole-cell run (colonies-08): N whole cells\nrun simultaneously (one per channel), kept small (2 channels). A bounded\nper-cell phenotype panel (size, added length, division/birth times, growth\nrate) is streamed to zarr by the ColonyPhenotypeRecorder \\u2014 a process, not an\nemitter, so recording stays cheap. Memory is characterised and Linux-bounded,\nnot a blocker: the inner WCM's per-tick RSS growth is localized to the\npolypeptide-elongation step + mass-listener and is dominated on the dev mini by\na macOS allocator artifact (~1.6 MB/tick), but is only ~0.017 MB/tick on glibc\nand ~0.000 with periodic malloc_trim. WCM-tier runs are therefore length-capped\non the dev mini yet effectively unbounded on the Linux HPC target. On the mini\nthis run spans only a few generations, so phenotype distributions are\nPRELIMINARY (small n); full distributions await the Linux HPC run and\nexperimental data (colonies-10). The value is the whole-cell baseline running\ninside the confined-channel device.\n"
+        },
+        {
+          "name": "ketchup-exchange-comparison",
+          "description": ""
+        },
+        {
+          "name": "ko-and-media",
+          "description": ""
+        },
+        {
+          "name": "mbp-01-time-varying-environment",
+          "description": ""
+        },
+        {
+          "name": "mbp-02-population-aggregation",
+          "description": ""
+        },
+        {
+          "name": "mbp-03-bird-reactor-coupling",
+          "description": ""
+        },
+        {
+          "name": "mbp-04-multigeneration-runs",
+          "description": ""
+        },
+        {
+          "name": "mbp-05-palsson-benchmark",
+          "description": ""
+        },
+        {
+          "name": "mbp-06-gap-analysis",
+          "description": ""
+        },
+        {
+          "name": "mbp-07-millard-kinetic-metabolism",
+          "description": ""
+        },
+        {
+          "name": "metabolism_redux_acetate",
+          "description": ""
+        },
+        {
+          "name": "metabolism_redux_basal",
+          "description": ""
+        },
+        {
+          "name": "metabolism_redux_no_oxygen",
+          "description": ""
+        },
+        {
+          "name": "metabolism_redux_succinate",
+          "description": ""
+        },
+        {
+          "name": "metabolism_redux_with_aa",
+          "description": ""
+        },
+        {
+          "name": "no_oxygen",
+          "description": ""
+        },
+        {
+          "name": "param-uq-00-screen",
+          "description": ""
+        },
+        {
+          "name": "param-uq-01-elongation",
+          "description": ""
+        },
+        {
+          "name": "param-uq-02-observables",
+          "description": ""
+        },
+        {
+          "name": "param-uq-03-growth-stratified",
+          "description": ""
+        },
+        {
+          "name": "param-uq-04-deep-params",
+          "description": ""
+        },
+        {
+          "name": "parca",
+          "description": ""
+        },
+        {
+          "name": "pdmp-00-characterization",
+          "description": "Phase 0 of the v2ecoli \u2192 PDMP roadmap; its deliverables become the validation standard for every later\nphase (a replacement subprocess is accepted when its interface statistics match the Phase 0 reference\nXarray dataset within tolerance). No biology is changed \u2014 v2ecoli runs as-is; the artefacts are the typed\ninterface schema library, the reference Xarray datasets across the \u22653 conditions, and the per-step\nprofiling report.\n\nConditions (tentative, spanning the metabolic regime the DUF report Sec. 4.1.1 notes has \"approximately a\ndozen\"): aerobic M9 + glucose (canonical reference), M9 + acetate (slower growth, gluconeogenic flux), and\nM9 + glucose + amino-acid mix (faster growth, partial relief on translation).\n\nThe reference datasets are ensembles, not single trajectories: N=64 independent stochastic replicates per\n(condition, seed) put the standard error of the mean at \u03c3/\u221aN \u2248 \u03c3/8 = 12.5% of \u03c3, enough to set a\nWasserstein-2 tolerance band without overfitting to MC noise; N is revisited after pilot N=8 batches and\nraised per-observable if MCSE exceeds 10% of the inter-condition effect size. Per-step compute is profiled\nas mean \u00b1 std over \u22651000 step samples (bootstrap 95% CI) into five buckets: FBA LP solve\n(`wholecell.utils.modular_fba`, glpk-linear), RNG draws, store\u2194process marshalling, topology traversal, and\nemitter I/O. Each categorized variable carries a numerical-sensitivity tier \u2014 Jacobian spectral-radius\ncontribution (ODE-amenable), per-step CV (stochastic-discrete), or coupling-strength L\u221e norm\n(coupling-artifact).\n\nAll runs use XArrayEmitter (workspace default; wired in the dashboard via PR #70); the reference dataset is\na zarr store per (condition, replicate, generation) opened downstream via xarray.open_zarr() with time-axis\nchunking, and max_generations in workspace.yaml is set to 8 to cover the multi-generation lineage\nstatistics Phase 2 will consume.\n"
+        },
+        {
+          "name": "pdmp-01-metabolism-ode",
+          "description": "Phase 1 of the v2ecoli \u2192 PDMP roadmap: substitute v2ecoli's metabolism with the Millard 2017 kinetic ODE.\n\nWhat v2ecoli's metabolism is: `v2ecoli/processes/metabolism.py` (`Metabolism` -> `FluxBalanceAnalysisModel`\n-> `wholecell.utils.modular_fba.FluxBalanceAnalysis`, glpk-linear) solves one multi-objective FBA LP per\ntimestep combining (1) biomass production `max c^T v`; (2) homeostatic concentration targets toward\n`conc_dict[media + doubling_time]` (optional ppGpp coupling when `include_ppgpp=True`); (3) kinetic-constraint\ntargets toward Vmax\u00d7[E] when `USE_KINETICS=True`. Constraints: `S v = 0`, enzyme-catalysis bounds, NGAM ATP\ndemand, media exchange bounds. Fluxes -> counts via `stochasticRound(flux \u00d7 dry_mass \u00d7 dt / (MW \u00d7 conv))`;\nthe process runs LAST (deriver-style, post-partition). This differs structurally from textbook \"tFBA\"\n(Birch, Udell & Covert 2014), a sequence of target-tracking LPs.\n\nWhat blocks likelihood-based inference: the stochasticRound LP->counts map is non-smooth and RNG-dependent;\nenzyme-bound changes make consecutive LP solutions jump between polytope vertices; GLPK returns an arbitrary\nvertex of a degenerate optimum facet; doubling-time is both input (homeostatic targets) and output (biomass\nrate) without a separated equation; and the kinetic-constraint terms re-read enzyme abundances each step, so\nthe LP is non-autonomous in a way tied to the discrete-time loop.\n\nSubstitution target: Millard et al. 2017 ([[millard2017]]), a curated kinetic ODE of E. coli central carbon\n+ energy metabolism (glycolysis/EMP, gluconeogenesis, PPP, Entner-Doudoroff, anaplerotic, TCA, glyoxylate\nshunt, acetate, nucleotide interconversion, oxidative phosphorylation), calibrated for K-12 MG1655 on\nM9 + glucose at dilution rate 0.1 h\u207b\u00b9, pH 7.0, 37 \u00b0C, pO\u2082 > 20%; calibration to acetate / glucose+aa is part\nof this study. Rather than re-derive the rate laws, we wrap the published SBML (BioModels MODEL1505110000)\nwith pbg-copasi (https://github.com/vivarium-collective/pbg-copasi) as a `CopasiUTCProcess` /\n`CopasiSteadyStateStep` over the COPASI/basico backend, keeping the SBML as source of truth.\n\nFBA-bridge composite: because Phase 1 cannot rip out the multi-objective FBA at once (the rest of v2ecoli\nreads its flux outputs, and its homeostatic + kinetic-constraint terms couple to translation/transcription\nwe are not touching), the ODE and FBA run side by side \u2014 the ODE drives central-carbon flux (the Millard\nnetwork) while the FBA covers the rest (non-central homeostatic targets, out-of-scope enzyme-catalysed\nreactions, NGAM). The bridge schema is the contract; once it holds interface fidelity across all Phase 0\nconditions the seam moves outward in later studies. The LQR layer replaces the FBA biomass-production\nobjective with a parameterised growth-rate controller (risk: the reference trajectory reintroducing a\nteleonomic parameter in disguise).\n\nNumerical: COPASI/basico defaults to LSODA (adaptive stiff/non-stiff, for the stiffness between sub-second\npool equilibration and >10\u00b2 s growth dynamics) at rtol=1e-6, atol=1e-9 (one order tighter than defaults) so\nsolution error stays below the Phase 0 MC noise floor ([[uq-bootstrap-cis-on-interface-stats]]); a Richardson\nstep-doubling check confirms solver order before LQR tuning. Acceptance uses W\u2082(p_ODE, p_ref) per interface\nvariable within the Phase 0 bootstrap CI of the self-MC W\u2082 spread. Before Phase 3, causal parameters pass FIM\nconditioning (\u03ba(FIM) < 10\u2078) + profile-likelihood width; LQR weights pass Sobol (first-order + total), and\nweights the system is insensitive to are removed. All runs use XArrayEmitter conforming to the Phase 0\nschema, compared via xarray.open_zarr(..., chunks={'time': -1, 'replicate': 1}).\n"
+        },
+        {
+          "name": "pdmp-02-jump-processes",
+          "description": "Phase 2 of the v2ecoli \u2192 PDMP roadmap. The discrete-time layer is the most numerically suspect part of\nv2ecoli: stochastic-draw parametrization depends on the ratio of the fixed timestep to the teleonomic\n\"doubling time\" (DUF Sec. 4.1.1), and the global reallocation step exists to paper over\nmass-conservation violations from composing independent processes (DUF Sec. 2.1). A PDMP formulation\nhas neither: events occur at random times from explicit propensity functions, division is a\nfirst-passage time of a continuous observable, and resource competition is state-dependent jump\nkernels. The contract to verify is that between any two jumps the state evolves deterministically under\nthe coupled ODE, with jumps at times set by \u222b \u03bb(s) ds = E for E ~ Exp(1).\n\n# Numerical considerations\nStochastic integration. Gillespie SSA is exact but slow at single-cell mRNA/protein propensity scales\n(10\u00b2\u201310\u2074 events / s). The per-process choice (exact SSA vs. \u03c4-leaping vs. hybrid) trades variance\nagainst compute: ribosome-elongation uses \u03c4-leaping with \u03c4 set so the leap condition (\u0394\u03bb/\u03bb < 0.03)\nholds; rare promoter firing uses exact next-reaction.\n\nExponential-clock validation. The core correctness test is that the cumulative hazard \u222b \u03bb(s) ds at\nsuccessive events is Exp(1)-distributed \u2014 an Anderson-Darling test over \u226510\u2074 inter-event intervals per\njump process (\u03b1 = 0.05). A failed test indicates a propensity bug.\n\nFirst-passage validation. Division is a first-passage time for volume crossing a threshold. Before the\nfull WCM we validate the integrator on an Ornstein-Uhlenbeck process with exact Bessel-function FPT:\nthe empirical FPT must match the analytical CDF to KS distance < 0.02 over N=10\u2074 trajectories.\n\nDistribution-match resolution. Trajectory ensembles vs. baseline are compared with W\u2082 on summary\nstatistics (growth rate, mean per-gene mRNA/protein, division-time CV). N=200 PDMP trajectories per\ncondition gives W\u2082 MCSE \u2248 \u03c3_W\u2082/\u221a200 \u2248 0.07 \u03c3_W\u2082 \u2014 enough to detect deviations of \u22650.2 \u03c3; sample size\nis revisited if MCSE > 10% of the inter-baseline effect size.\n\nPDMP integrator validity. The Markov property is tested by re-simulating segments with the same\n(state, RNG seed) and confirming bit-identical determinism between jumps.\n\n# Emitter\nXArrayEmitter records each jump event as a row in a separate zarr group ('jumps') alongside the\ncontinuous trajectory group ('continuous'). max_generations=8 in workspace.yaml accommodates the\nmulti-generation division-time CV / mother-daughter inheritance distributions compared to baseline.\n"
+        },
+        {
+          "name": "pdmp-03-inference",
+          "description": "Phase 3 of the v2ecoli \u2192 PDMP roadmap. With the PDMP in place, every trajectory is a sample from a\nwell-defined process measure with a constructible likelihood; this phase makes that likelihood\ncomputable and tractable for Bayesian workflows. ChiRho (BasisResearch, 2024) is the reference for the\nalgebraic-effect interpretation of observe / intervene, and the DUF report Sec. 4.2.2 notes Vivarium\ncan be read as a domain-specific algebraic effect system for discrete-event simulation. ABC-SMC is the\nbaseline engine because it is robust to nonlinear, partially observed dynamics; the structured-\npopulation layer handles the fact that omics data are bulk-culture expectations over the single-cell\nPDMP measure.\n\n# Numerical considerations\nLikelihood library. Each modality's likelihood is fit with its dispersion/noise scale and reported with\na 95% CI: RNA-seq NegBin(\u03bc, \u03c6), \u03c6 MLE'd on held-out calibration (expect \u03c6 \u2208 [0.1, 1.0] for E. coli);\nproteomics LogNormal(\u03bc, \u03c3\u00b2), \u03c3 from technical-replicate spread (\u03c3_log \u2248 0.2 for SILAC/iBAQ); growth\nNormal(log \u03bc, \u03c3_\u03bc\u00b2) on log-scale; metabolomics Normal/LogNormal per-metabolite by dynamic range.\n\nAccumulator numerics. Log-likelihood contributions are summed in log space to avoid underflow (typical\nfull-run log-likelihood \u226a -10\u00b3); mixtures use log-sum-exp with the shift trick; cross-cell population\nreductions use pairwise/Kahan summation so the result is order-independent and reproducible.\n\nABC-SMC schedule. \u03b5-decay is adaptive at quantile q=0.5 of the previous population's distance, minimum\npopulation N=1000, terminating on ESS < 0.5\u00b7N or a wall-clock cap. Distance (PLANNED, NOT YET\nIMPLEMENTED \u2014 the current pilot uses an unweighted SSE/Euclidean distance with no covariance and no\ncondition-number/kappa guard): Mahalanobis on a hand-picked summary vector (growth rate, mean log-mRNA\nand log-protein per high-coverage gene, key metabolite log-conc). Posterior ESS and acceptance rate are\nreported every SMC step.\n\nPosterior calibration. Simulation-Based Calibration (Talts et al. 2018): for K=1000 draws of (\u03b8*, y*),\nrun ABC-SMC and record the rank of \u03b8*; the rank histogram must pass a \u03c7\u00b2 uniformity test (p > 0.05) and\n90% credible intervals must reach \u226585% empirical coverage. K=1000 gives rank-resolution 1/(K+1) \u2248 10\u207b\u00b3.\n\nIdentifiability. Re-run the Phase 1 Fisher-information check for any new parameters (likelihood\ndispersions, population-layer parameters) and flag non-identifiable combinations.\n\n# Emitter\nABC-SMC iterates ~10\u2076 PDMP runs, so XArrayEmitter runs in \"summary-only\" mode writing only the\npredeclared summary-statistic vector per trajectory (zarr group 'summary'), skipping full time-series.\nPosterior particles, per-SMC-step \u03b5, ESS, and acceptance go to zarr ('posterior'/'diagnostics'); SBC\nruns (K=1000) produce a separate zarr keyed by SBC iteration for rank-histogram analysis.\n"
+        },
+        {
+          "name": "pdmp-04-compilation",
+          "description": "Phase 4 of the v2ecoli \u2192 PDMP roadmap. The DUF report Sec. 4.2.1 notes that \"submodel definitions and\nsimulation modules are currently inseparable\" in v2ecoli and that the runtime \"exhibits orders of\nmagnitude of overhead, relative to competitive numerical solvers\" \u2014 the dominant cause being\nmarshalling overhead from the row-centric nested-dictionary state. Catalyst.jl + ModelingToolkit +\nJumpProcesses.jl is the reference target: an established Julia stack for compiled reaction-network\nsimulation with symbolic Jacobians and GPU-friendly state. The PB \u2192 Catalyst.jl bridge \u2014 codifying the\nPB process interface as a Catalyst-compatible reaction-network spec \u2014 is the primary new deliverable;\nthe column-centric refactor of Vivarium can proceed in parallel with Phases 1\u20132.\n\n# Numerical considerations\nNumerical equivalence. The hardest test is whether the compiled runner produces the same trajectory\nensemble as the Phase 2 runner: W\u2082(p_compiled, p_phase2) \u2264 5\u00b7\u03c3_MC, where \u03c3_MC is the standard error of\nthe Phase 2 self-W\u2082 at the same N (5\u03c3 is conservative \u2014 it covers genuine FP-order differences without\nfiring on stochastic noise). Tested on N=10\u2074 trajectories across all Phase 0 conditions.\n\nPrecision. FP32 on GPU promises 2\u00d7 throughput but corrupts long-run ABC posteriors via catastrophic\ncancellation in propensity sums. Default FP64; FP32 only where (a) bit-equivalence vs FP64 passes and\n(b) downstream ABC posteriors are invariant under the switch.\n\nFP summation order. Parallel reductions over per-trajectory log-likelihoods must use deterministic\n(pairwise or Kahan) summation so results are independent of GPU thread scheduling; non-deterministic\natomic-add reductions are banned (they break SBC reproducibility across hardware).\n\nConvergence orders. ODE: order-5 embedded Runge-Kutta (default) or BDF for stiff segments, verified on\nVan der Pol + Brusselator before deployment. SSA jumps: exact. \u03c4-leaping: weak order 1, strong order\n0.5, tested on the analytical M/M/1 queue.\n\nThroughput vs variance. The relevant metric is posterior-estimate-variance per wall-clock second, not\nraw trajectories/second; we report both trajectories/sec at fixed precision and ABC posterior variance\n\u00d7 wall-clock time. Doubling trajectories should roughly halve posterior variance (1/\u221aN); if not, the\nparallelism has hidden correlations to investigate.\n\n# Emitter\nCompiled-runner output goes through a Julia \u2192 XArrayEmitter bridge that batches per-trajectory results\ninto chunked zarr writes (chunks: {trajectory: 64, time: -1}) at the python boundary, avoiding\nper-trajectory I/O at 10\u00b3+ parallelism. The bridge preserves bit-equivalence with the Phase 2 emitter\nso the W\u2082 equivalence test [[uq-compiled-vs-reference-w2-5sigma]] can compare paired zarr stores.\n"
+        },
+        {
+          "name": "pdmp-05-causal-discovery",
+          "description": "Phase 5 of the v2ecoli \u2192 PDMP roadmap and the final phase, pursuing the DUF ARC goal of\nsimulation-based causal discovery in WCMs. It depends on every preceding phase: the PDMP for process\nlikelihoods (Phase 2), the observation-likelihood library and accumulator (Phase 3), and the compiled\nhigh-throughput runtime that makes marginal-likelihood estimation feasible (Phase 4). Each candidate\ngene-function annotation defines a different WCM; we marginalize over parameters and compare via\nmarginal likelihoods, with Russian Roulette estimators (Lyne et al. 2015) giving unbiased estimates of\nthe otherwise intractable marginals. Active causal inference (Toth et al. 2022) runs the experiment-\ndesign loop, proposing interventions whose outcomes most sharply distinguish competing annotations. The\nbenchmark set holds \u226520 E. coli genes with literature-established functions across diverse mechanism\nclasses (kinases, transcription factors, transporters, structural proteins).\n\n# Numerical considerations\nMarginal likelihood numerics. Russian Roulette (Lyne et al. 2015) gives unbiased estimators of\nintractable normalizing constants Z = \u222b p(D|\u03b8) p(\u03b8) d\u03b8 via a truncated geometric series with importance\nweights. The estimator can have unbounded variance, so we monitor empirical variance over batches and\nrequire an ESS-equivalent N_eff \u2265 100 per Z estimate; below that the result is flagged and we use a\ntighter proposal or fall back to thermodynamic integration / nested sampling with documented bias.\n\nBayes factor confidence intervals. Report log Bayes factors with a 95% bootstrap CI from the RR\nvariance bound, not point estimates. Conclusions fire only if the CI sits entirely above the\nJeffreys-scale threshold (|log BF| > 1, \"substantial evidence\").\n\nSBC at the model-comparison level. Extend SBC to model comparison: for K=500 synthetic datasets each\ngenerated under a known true annotation, the recovered posterior model probability should be uniform\nconditional on the true model index (Talts et al. 2018, Cook et al. 2006). A non-uniform rank histogram\nsignals miscalibration before we trust it on novel annotations.\n\nActive inference numerics. Expected information gain (EIG) is estimated via nested Monte Carlo (outer\nover experiments, inner over (\u03b8, y) pairs). Standard NMC has bias O(1/N_inner), so we use\nDonsker-Varadhan or DAD-MINE variational lower bounds where feasible, else NMC with explicit bias\nbounds. Every intervention proposal carries its EIG \u00b1 MCSE; the loop never selects an intervention whose\nEIG CI overlaps zero.\n\nFalse discovery control. Benchmark recoveries report per-annotation posterior probability and a\nBenjamini-Hochberg FDR at the gene-set level; a q-value \u2264 0.1 is required before declaring a benchmark\nrecovery successful.\n\nConvergence rate of credible-interval widths. Report the shrinkage rate: sub-\u221an is the standard MCMC\nrate (posterior-mean variance \u221d 1/n_eff_samples); slower than n^{-1/2} indicates poor mixing or\nnon-identifiability and triggers diagnosis.\n\n# Emitter\nEach candidate-annotation run writes a zarr store with (a) the RR marginal-likelihood estimator\ntrajectory, (b) the per-annotation posterior, and (c) the intervention-selection record + EIG\nestimates. The benchmark gene-set sweep aggregates per-gene zarr stores into one zarr group per\nbenchmark, readable via xarray.open_mfdataset() for the gene-set-level BH-FDR summary.\n"
+        },
+        {
+          "name": "population_phenotype_basal",
+          "description": ""
+        },
+        {
+          "name": "s01-birth-and-division",
+          "description": ""
+        },
+        {
+          "name": "showcase-1-parca",
+          "description": ""
+        },
+        {
+          "name": "showcase-2-baseline-figures",
+          "description": ""
+        },
+        {
+          "name": "showcase-3-variant-decide",
+          "description": ""
+        },
+        {
+          "name": "showcase-4-variant-comparison",
+          "description": ""
+        },
+        {
+          "name": "showcase-5-next-direction-decide",
+          "description": ""
+        },
+        {
+          "name": "showcase-6-equivalence-large",
+          "description": ""
+        },
+        {
+          "name": "sm-00-data-collection",
+          "description": ""
+        },
+        {
+          "name": "sm-01-nn-surrogate",
+          "description": ""
+        },
+        {
+          "name": "sm-02-utility-and-limits",
+          "description": ""
+        },
+        {
+          "name": "sm-03-improving-the-surrogate",
+          "description": ""
+        },
+        {
+          "name": "sm-04-through-division",
+          "description": ""
+        },
+        {
+          "name": "statistical",
+          "description": ""
+        },
+        {
+          "name": "succinate",
+          "description": ""
+        },
+        {
+          "name": "with_aa",
+          "description": ""
+        }
+      ],
+      "investigations": [
+        {
+          "name": "colonies",
+          "description": "Colony & Microfluidic Phenotype Quantification"
+        },
+        {
+          "name": "ketchup-baseline-comparison",
+          "description": "Does v2ecoli's baseline central-carbon exchange phenotype match KETCHUP kinetic models?"
+        },
+        {
+          "name": "multiscale-bioprocess",
+          "description": "v2ecoli \u2014 Bioprocess Migration & Reactor Coupling"
+        },
+        {
+          "name": "parameter-uq",
+          "description": "Parameter UQ \u2014 global sensitivity of v2ecoli"
+        },
+        {
+          "name": "perturbation-demo",
+          "description": "Perturbation demo \u2014 gene knockouts and media shifts on the baseline whole cell"
+        },
+        {
+          "name": "structural-ecoli",
+          "description": "Structural E. coli"
+        },
+        {
+          "name": "surrogate-modeling",
+          "description": "Surrogate Modeling \u2014 can a neural net emulate the v2ecoli baseline?"
+        },
+        {
+          "name": "v2ecoli-baseline-showcase",
+          "description": "v2ecoli Baseline Showcase: from ecoli-sources to a calibrated whole cell"
+        },
+        {
+          "name": "v2ecoli-pdmp",
+          "description": "v2ecoli \u2192 PDMP Whole-Cell Model Reformulation"
+        },
+        {
+          "name": "v2ecoli-vecoli-comparison",
+          "description": "v2ecoli \u2194 vEcoli comparison"
+        }
+      ],
+      "counts": {
+        "processes": 38,
+        "steps": 108,
+        "composites": 27,
+        "studies": 53,
+        "investigations": 10
+      }
+    }
+  ]
+}

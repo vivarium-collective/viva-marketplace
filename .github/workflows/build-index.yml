@@ -1,0 +1,58 @@
+name: Build ecosystem index
+
+# Rebuilds ecosystem-index.json by harvesting every repo's published workbench
+# dashboard, commits it back to main, and publishes modules.json + the index to
+# gh-pages so any published workbench can fetch them same-origin.
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 6 * * *"   # daily
+  push:
+    branches: [main]
+    paths:
+      - "viva_marketplace/modules.json"
+      - "scripts/build_ecosystem_index.py"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: build-index
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Harvest each repo's published dashboard → ecosystem-index.json
+        run: python scripts/build_ecosystem_index.py
+
+      - name: Commit the refreshed index (if changed)
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          if ! git diff --quiet -- viva_marketplace/ecosystem-index.json; then
+            git add viva_marketplace/ecosystem-index.json
+            git commit -m "chore: rebuild ecosystem-index.json [skip ci]"
+            git push
+          else
+            echo "index unchanged"
+          fi
+
+      - name: Assemble the public ledger (modules + index)
+        run: |
+          mkdir -p public
+          cp viva_marketplace/modules.json public/modules.json
+          cp viva_marketplace/ecosystem-index.json public/ecosystem-index.json
+
+      - name: Publish ledger to gh-pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public
+          keep_files: false
