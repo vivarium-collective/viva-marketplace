@@ -15,6 +15,10 @@ installed locally — and offer **Install to use**:
 Previously the registry lived in `viva_superpowers/catalog/modules.json` (the
 Claude-Code plugin). It moved here so the ledger is owned by a dedicated repo.
 
+**Adding or updating a repo?** See [CONTRIBUTING.md](CONTRIBUTING.md) — you open a
+PR editing `modules.json`; the artifact index rebuilds itself from your repo's
+source.
+
 ## How the index is built
 
 `scripts/build_ecosystem_index.py` reads `modules.json` and, for each repo,
