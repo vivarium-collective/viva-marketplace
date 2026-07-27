@@ -17,19 +17,26 @@ Claude-Code plugin). It moved here so the ledger is owned by a dedicated repo.
 
 ## How the index is built
 
-`scripts/build_ecosystem_index.py` reads `modules.json` and, for each repo, tries
-its **already-published** read-only workbench dashboard —
-`https://<org>.github.io/<repo>/dashboard/api/{registry,composites,investigation-summaries,investigations}.json`
-— harvesting artifact names + descriptions from there. **No new per-repo format
-is required**: it reuses the JSON the workbench's `publish.py` already emits.
+`scripts/build_ecosystem_index.py` reads `modules.json` and, for each repo,
+**shallow-clones it and scans the source** — no published dashboard required:
 
-Repos that don't publish a dashboard are still listed (empty artifact lists,
-`published: false`) so the ledger is complete and the coverage gap is visible. As
-each repo starts publishing a workbench dashboard, the nightly CI picks it up.
+- **composites** — `@composite_generator(name=…, description=…)` decorators (AST)
+  + any `*.composite.yaml` files
+- **processes / steps** — top-level classes whose base ends in `Process` / `Step`
+  (AST), described by a `description` class attribute or the class docstring
+- **studies** — `**/studies/*/study.yaml` (name + objective/title)
+- **investigations** — `**/investigations/*/investigation.yaml` (name + title)
+
+This gives complete coverage across the ecosystem whether or not a repo publishes
+a workbench dashboard. Repos that can't be cloned are still listed (empty
+artifacts, `cloned: false`).
 
 ```bash
 python scripts/build_ecosystem_index.py            # rebuild the index locally
+python scripts/build_ecosystem_index.py --only Viva-munk,pbg-copasi   # subset
 ```
+
+Needs `git` + `PyYAML`.
 
 ## Consuming the ledger
 

@@ -29,7 +29,10 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: Harvest each repo's published dashboard → ecosystem-index.json
+      - name: Install PyYAML (for study/investigation/composite YAML scanning)
+        run: python -m pip install --quiet pyyaml
+
+      - name: Clone + scan every repo → ecosystem-index.json
         run: python scripts/build_ecosystem_index.py
 
       - name: Commit the refreshed index (if changed)
