@@ -1,0 +1,67 @@
+name: Verify publish
+
+# Post-publish smoke test: build-index.yml commits the rebuilt files and
+# pushes them to gh-pages, but a successful workflow run doesn't guarantee
+# the live gh-pages artifact is actually fresh/valid — GitHub Pages
+# publishing can lag or fail silently downstream of the job that triggered
+# it. This fetches the LIVE gh-pages URLs (not the local build output) and
+# schema-validates them, the same way sms-api's ptools-verification.yml
+# checks a live endpoint rather than trusting the deploy job's exit code.
+on:
+  workflow_dispatch:
+  workflow_run:
+    workflows: ["Build ecosystem index"]
+    types: [completed]
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    if: ${{ github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'success' }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install jsonschema
+        run: python -m pip install --quiet jsonschema
+      - name: Fetch + schema-validate the live gh-pages ledger
+        run: |
+          python - <<'PY'
+          import json
+          import sys
+          import urllib.request
+          from jsonschema import Draft202012Validator
+
+          BASE = "https://vivarium-collective.github.io/viva-marketplace"
+          CHECKS = [
+              ("modules.json", "viva_marketplace/schemas/modules.schema.json"),
+              ("ecosystem-index.json", "viva_marketplace/schemas/ecosystem-index.schema.json"),
+              ("composability-graph.json", "viva_marketplace/schemas/composability-graph.schema.json"),
+          ]
+
+          failures = []
+          for data_name, schema_path in CHECKS:
+              url = f"{BASE}/{data_name}"
+              try:
+                  with urllib.request.urlopen(url, timeout=30) as resp:
+                      data = json.load(resp)
+              except Exception as e:  # noqa: BLE001
+                  failures.append(f"{url}: fetch/parse failed — {e}")
+                  continue
+              schema = json.load(open(schema_path))
+              try:
+                  Draft202012Validator(schema).validate(data)
+              except Exception as e:  # noqa: BLE001
+                  failures.append(f"{url}: schema validation failed — {e}")
+                  continue
+              print(f"OK: {url}")
+
+          if failures:
+              print("FAILURES:")
+              for f in failures:
+                  print(f"  - {f}")
+              sys.exit(1)
+          PY
