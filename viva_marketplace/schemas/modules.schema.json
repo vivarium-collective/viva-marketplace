@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://vivarium-collective.github.io/viva-marketplace/schemas/modules.schema.json",
+  "title": "viva-marketplace modules registry",
+  "description": "The hand-edited registry of ecosystem repos (viva_marketplace/modules.json). Every PR touching it is validated against this schema by scripts/validate_modules.py. Name uniqueness is enforced separately (JSON Schema can't express cross-item uniqueness by a single key).",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": ["name", "source"],
+    "properties": {
+      "name": {
+        "type": "string",
+        "minLength": 1,
+        "description": "Unique registry key, e.g. 'pbg-amici'."
+      },
+      "display_name": { "type": "string" },
+      "description": { "type": "string" },
+      "source": {
+        "type": "string",
+        "pattern": "^(https://github\\.com/|git@github\\.com:)[\\w.-]+/[\\w.-]+",
+        "description": "A GitHub repo URL."
+      },
+      "ref": {
+        "type": "string",
+        "description": "Branch/tag to clone, or a full 40-hex commit SHA for a reproducibility-attested pin (see CONTRIBUTING.md)."
+      },
+      "package": { "type": "string" },
+      "homepage": { "type": "string" },
+      "tags": {
+        "type": "array",
+        "items": { "type": "string" }
+      }
+    },
+    "additionalProperties": true
+  }
+}
