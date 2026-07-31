@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-30T08:06:27+00:00",
+  "generated_at": "2026-07-31T08:32:52+00:00",
   "n_repos": 28,
   "n_cloned": 28,
   "repos": [
@@ -1901,6 +1901,10 @@
           "description": ""
         },
         {
+          "name": "AcetateOverflowCard",
+          "description": ""
+        },
+        {
           "name": "DnaSupercoiling",
           "description": "Listener for DNA supercoiling data."
         },
@@ -1991,6 +1995,10 @@
         {
           "name": "metabolism_redux_basal",
           "description": "v2ecoli reproduces vEcoli with MetabolismRedux (basal)"
+        },
+        {
+          "name": "metabolism-biomass-yield-s1-diagnostic",
+          "description": "Re-measure biomass yield on a recorded commit, and discriminate one defect from two"
         },
         {
           "name": "showcase-6-equivalence-large",
@@ -2085,6 +2093,10 @@
           "description": "Can v2ecoli's `media_update` / `exchange_data` Layer-1 Steps consume an\nexternally-driven, time-varying nutrient pool \u2014 instead of the static\nmedia configuration baked into ParCa \u2014 such that metabolic exchange\nfluxes and growth rate respond correctly to declining glucose, declining\nDO, and other dynamic external concentrations?\n"
         },
         {
+          "name": "overflow-acetate-vs-growth",
+          "description": "Does v2ecoli reproduce the aerobic acetate-overflow curve (acetate-carbon yield vs growth rate) \u2014 Vemuri 2006 / Basan 2015?"
+        },
+        {
           "name": "param-uq-00-screen",
           "description": "Parameter screen \u2014 which config-reachable knobs actually drive the observables?"
         },
@@ -2119,6 +2131,10 @@
         {
           "name": "mbp-04-multigeneration-runs",
           "description": "Does the mbp-03 coupled composite (v2ecoli \u2194 pbg-bioreactordesign) stay\nmass-conserving, computationally tractable, and physically coherent\nover multiple v2ecoli generations (3+ doublings) under sustained\nreactor dynamics \u2014 capturing the regime transition from glucose-replete\nexponential growth into glucose-limited or DO-limited slowdown as the\npopulation grows and consumes the batch?\n"
+        },
+        {
+          "name": "metabolism-biomass-yield-s1b-anaerobic-contrast",
+          "description": "Does the model's own aerobic-to-anaerobic yield drop match biology?"
         },
         {
           "name": "succinate",
@@ -2227,6 +2243,10 @@
           "description": "Structural E. coli"
         },
         {
+          "name": "metabolism-overflow",
+          "description": "Does v2ecoli reproduce aerobic acetate overflow \u2014 the acetate-carbon yield vs growth rate curve?"
+        },
+        {
           "name": "parameter-uq",
           "description": "Parameter UQ \u2014 global sensitivity of v2ecoli"
         },
@@ -2241,14 +2261,18 @@
         {
           "name": "v2ecoli-baseline-showcase",
           "description": "v2ecoli Baseline Showcase: from ecoli-sources to a calibrated whole cell"
+        },
+        {
+          "name": "metabolism-biomass-yield",
+          "description": "Is v2ecoli's central carbon metabolism physically correct?"
         }
       ],
       "counts": {
         "processes": 21,
-        "steps": 70,
+        "steps": 71,
         "composites": 11,
-        "studies": 53,
-        "investigations": 10
+        "studies": 56,
+        "investigations": 12
       }
     }
   ]
