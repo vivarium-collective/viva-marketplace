@@ -27,9 +27,10 @@ import ast
 import re
 import subprocess
 import tempfile
+from collections.abc import Callable
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
-from typing import Any, Callable
+from typing import Any
 
 try:
     import yaml
@@ -108,7 +109,7 @@ def _literal_type_repr(node: ast.AST) -> str | None:
     if isinstance(node, ast.Constant) and isinstance(node.value, str):
         return node.value
     if isinstance(node, ast.Dict):
-        for k, v in zip(node.keys, node.values):
+        for k, v in zip(node.keys, node.values, strict=True):
             if (isinstance(k, ast.Constant) and k.value == "_type"
                     and isinstance(v, ast.Constant) and isinstance(v.value, str)):
                 return v.value
@@ -130,7 +131,7 @@ def _extract_ports_method(node: ast.FunctionDef | ast.AsyncFunctionDef) -> dict[
         return None
     d = body[0].value
     ports: dict[str, str] = {}
-    for k, v in zip(d.keys, d.values):
+    for k, v in zip(d.keys, d.values, strict=True):
         if not (isinstance(k, ast.Constant) and isinstance(k.value, str)):
             return None
         t = _literal_type_repr(v)
