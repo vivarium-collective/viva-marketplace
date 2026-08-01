@@ -58,7 +58,14 @@ simulation execution, no manual form:
 
 - **pinned_ref** (weight 0.25) — the registry `ref` is a full 40-hex commit
   SHA, not a floating branch/tag. A floating ref means "what gets built"
-  silently changes over time.
+  silently changes over time. `scanner.clone()` fetches a pinned SHA by exact
+  commit (`fetch --depth 1 origin <sha>` + `checkout FETCH_HEAD`) rather than
+  `git clone --branch`, which can't resolve an arbitrary commit at all — so a
+  pin is actually honored by the builder, not just scored. **As of this
+  build, 0/28 registry entries pin a ref** (`modules.json` currently tracks
+  `main` everywhere) — an accurate reflection of ecosystem-wide reproducibility
+  hygiene today, not a validator gap. This is the natural next lever for any
+  maintainer who wants their repo's score to move.
 - **has_lockfile** (0.15) / **has_license** (0.15) / **has_citation** (0.10)
 - **schema_version_present** (0.10) — a `workspace.yaml` declares its schema
   version, so tooling changes don't silently reinterpret it.
@@ -87,6 +94,22 @@ inventoried by hand. It is **not** a verified wiring guarantee — matching
 ignores unit/shape semantics, and coverage is inherently partial (most real
 ports are computed dynamically and are simply invisible to a static scan).
 Always confirm by actually composing.
+
+**Generic-type matches are labeled, not filtered out.** Two ports typed just
+`float` or `string` — process-bigraph's own bare core/primitive type names —
+"match" this way regardless of what they actually mean, so that signal is far
+weaker than a match on a domain-specific type like `pymunk_agent` or
+`bulk_array`. Every edge carries a `generic_type` flag against a documented
+type list (`composability._GENERIC_TYPES`), and the summary separates the
+trustworthy count from the total:
+
+```
+n_edges: 872              n_cross_repo_edges: 561
+n_generic_type_edges: 485  n_cross_repo_specific_type_edges: 159
+```
+
+Read the last number, not the raw cross-repo count, as "how many genuinely
+novel wiring hints this scan actually found."
 
 ## `selfcheck` — drift check before you open a registry PR
 

@@ -10,21 +10,36 @@ def _repo(name: str, processes=None, steps=None):
 def test_build_graph_matches_cross_repo_ports() -> None:
     repos = [
         _repo("producer-repo", processes=[
-            {"name": "Producer", "description": "", "ports": {"outputs": {"flux": "float"}}},
+            {"name": "Producer", "description": "", "ports": {"outputs": {"flux": "bulk_array"}}},
         ]),
         _repo("consumer-repo", processes=[
-            {"name": "Consumer", "description": "", "ports": {"inputs": {"in_flux": "float"}}},
+            {"name": "Consumer", "description": "", "ports": {"inputs": {"in_flux": "bulk_array"}}},
         ]),
     ]
     graph = composability.build_graph(repos)
     assert graph["experimental"] is True
     assert graph["n_edges"] == 1
     assert graph["n_cross_repo_edges"] == 1
+    assert graph["n_cross_repo_specific_type_edges"] == 1
     edge = graph["edges"][0]
-    assert edge["type"] == "float"
+    assert edge["type"] == "bulk_array"
     assert edge["from"] == {"repo": "producer-repo", "process": "Producer", "port": "flux"}
     assert edge["to"] == {"repo": "consumer-repo", "process": "Consumer", "port": "in_flux"}
     assert edge["cross_repo"] is True
+    assert edge["generic_type"] is False
+
+
+def test_build_graph_flags_generic_type_matches_and_excludes_from_specific_count() -> None:
+    repos = [
+        _repo("a", processes=[{"name": "A", "description": "", "ports": {"outputs": {"x": "float"}}}]),
+        _repo("b", processes=[{"name": "B", "description": "", "ports": {"inputs": {"y": "float"}}}]),
+    ]
+    graph = composability.build_graph(repos)
+    assert graph["n_edges"] == 1
+    assert graph["n_cross_repo_edges"] == 1
+    assert graph["n_generic_type_edges"] == 1
+    assert graph["n_cross_repo_specific_type_edges"] == 0
+    assert graph["edges"][0]["generic_type"] is True
 
 
 def test_build_graph_type_mismatch_produces_no_edge() -> None:
