@@ -1,8 +1,35 @@
 from __future__ import annotations
 
+import subprocess
 from pathlib import Path
 
 from viva_marketplace import scanner
+
+
+def _make_remote(tmp_path: Path) -> tuple[Path, str, str]:
+    """A local bare repo with two commits, usable as a `clone()` remote via a
+    file:// URL — no network access needed. Returns (bare repo path, first
+    commit sha, second/HEAD commit sha)."""
+    work = tmp_path / "work"
+    work.mkdir()
+    subprocess.run(["git", "init", "--quiet", "-b", "main", str(work)], check=True)
+    subprocess.run(["git", "-C", str(work), "config", "user.email", "t@example.com"], check=True)
+    subprocess.run(["git", "-C", str(work), "config", "user.name", "t"], check=True)
+    (work / "f.txt").write_text("v1", encoding="utf-8")
+    subprocess.run(["git", "-C", str(work), "add", "f.txt"], check=True)
+    subprocess.run(["git", "-C", str(work), "commit", "--quiet", "-m", "c1"], check=True)
+    sha1 = subprocess.run(
+        ["git", "-C", str(work), "rev-parse", "HEAD"], check=True, capture_output=True, text=True
+    ).stdout.strip()
+    (work / "f.txt").write_text("v2", encoding="utf-8")
+    subprocess.run(["git", "-C", str(work), "commit", "--quiet", "-am", "c2"], check=True)
+    sha2 = subprocess.run(
+        ["git", "-C", str(work), "rev-parse", "HEAD"], check=True, capture_output=True, text=True
+    ).stdout.strip()
+    bare = tmp_path / "bare.git"
+    subprocess.run(["git", "clone", "--quiet", "--bare", str(work), str(bare)], check=True)
+    subprocess.run(["git", "-C", str(bare), "config", "uploadpack.allowReachableSHA1InWant", "true"], check=True)
+    return bare, sha1, sha2
 
 
 def test_scan_python_detects_process_and_step(tmp_path: Path) -> None:
@@ -95,6 +122,39 @@ def test_scan_specs_reads_study_yaml(tmp_path: Path) -> None:
     )
     out = scanner.scan_specs(tmp_path, "studies", "study.yaml", ("objective", "purpose", "title"))
     assert out == [{"name": "my-study", "description": "check growth rate"}]
+
+
+def test_clone_pinned_sha_checks_out_that_exact_commit(tmp_path: Path) -> None:
+    bare, sha1, sha2 = _make_remote(tmp_path)
+    dest = tmp_path / "dest"
+    assert scanner.clone(f"file://{bare}", sha1, dest, timeout=30)
+    assert (dest / "f.txt").read_text(encoding="utf-8") == "v1"
+    head = subprocess.run(
+        ["git", "-C", str(dest), "rev-parse", "HEAD"], check=True, capture_output=True, text=True
+    ).stdout.strip()
+    assert head == sha1 != sha2  # pinned to the OLDER commit, not whatever HEAD/main points to
+
+
+def test_clone_branch_name_uses_default_branch(tmp_path: Path) -> None:
+    bare, _sha1, sha2 = _make_remote(tmp_path)
+    dest = tmp_path / "dest"
+    assert scanner.clone(f"file://{bare}", "main", dest, timeout=30)
+    assert (dest / "f.txt").read_text(encoding="utf-8") == "v2"
+    head = subprocess.run(
+        ["git", "-C", str(dest), "rev-parse", "HEAD"], check=True, capture_output=True, text=True
+    ).stdout.strip()
+    assert head == sha2
+
+
+def test_clone_unreachable_sha_falls_back_to_default_branch(tmp_path: Path) -> None:
+    bare, _sha1, sha2 = _make_remote(tmp_path)
+    dest = tmp_path / "dest"
+    bogus_sha = "f" * 40
+    assert scanner.clone(f"file://{bare}", bogus_sha, dest, timeout=30)
+    head = subprocess.run(
+        ["git", "-C", str(dest), "rev-parse", "HEAD"], check=True, capture_output=True, text=True
+    ).stdout.strip()
+    assert head == sha2
 
 
 def test_attest_pinned_ref_and_lockfile(tmp_path: Path) -> None:

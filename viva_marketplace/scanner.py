@@ -25,6 +25,7 @@ from __future__ import annotations
 
 import ast
 import re
+import shutil
 import subprocess
 import tempfile
 from collections.abc import Callable
@@ -67,19 +68,44 @@ def org_repo(source: str) -> tuple[str, str]:
     return (m.group(1), m.group(2)) if m else ("vivarium-collective", s.rsplit("/", 1)[-1])
 
 
+def _run(args: list[str], timeout: float) -> bool:
+    try:
+        subprocess.run(args, check=True, capture_output=True, text=True, timeout=timeout)
+        return True
+    except (subprocess.CalledProcessError, subprocess.TimeoutExpired):
+        return False
+
+
 def clone(url: str, ref: str, dest: Path, timeout: float) -> bool:
     """Shallow-clone url@ref into dest. Falls back to the default branch if the
-    ref doesn't exist. Returns True on success."""
+    ref doesn't resolve. Returns True on success.
+
+    A 40-hex-char ref is fetched by exact commit: ``git clone --branch`` only
+    resolves branch/tag *names* against the remote's ref advertisement, so
+    ``git clone --branch <full-sha>`` fails outright even when the commit
+    exists — verified against a real GitHub repo. Pinned refs are instead
+    fetched directly (``fetch --depth 1 origin <sha>`` + ``checkout
+    FETCH_HEAD``), which GitHub supports for reachable commits. Without this,
+    a maintainer who pins ``ref`` to a commit SHA would silently get the
+    default branch instead — while ``attest()``'s pinned_ref axis (the
+    heaviest-weighted one) would still score them as pinned.
+    """
+    ref = (ref or "").strip()
+    if _SHA_RE.match(ref):
+        if (_run(["git", "init", "--quiet", str(dest)], timeout)
+                and _run(["git", "-C", str(dest), "remote", "add", "origin", url], timeout)
+                and _run(["git", "-C", str(dest), "fetch", "--quiet", "--depth", "1", "origin", ref], timeout)
+                and _run(["git", "-C", str(dest), "checkout", "--quiet", "FETCH_HEAD"], timeout)):
+            return True
+        shutil.rmtree(dest, ignore_errors=True)
+
     base = ["git", "clone", "--depth", "1", "--quiet"]
-    for args in ([*base, "--branch", ref, url, str(dest)] if ref else None,
+    for args in ([*base, "--branch", ref, url, str(dest)] if ref and not _SHA_RE.match(ref) else None,
                  [*base, url, str(dest)]):
         if args is None:
             continue
-        try:
-            subprocess.run(args, check=True, capture_output=True, text=True, timeout=timeout)
+        if _run(args, timeout):
             return True
-        except (subprocess.CalledProcessError, subprocess.TimeoutExpired):
-            continue
     return False
 
 
