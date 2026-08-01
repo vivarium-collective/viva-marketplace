@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-07-30T20:20:28+00:00",
+  "generated_at": "2026-08-01T15:57:00+00:00",
   "n_repos": 28,
   "n_cloned": 28,
   "repos": [
@@ -3154,6 +3154,43 @@
           "description": "Multiseed: the v1 *meta-tier report card* measurement."
         },
         {
+          "name": "ResultsVisualization",
+          "description": "Adapt a ``results`` handle to an existing v2ecoli visualization.",
+          "ports": {
+            "inputs": {
+              "results": "node"
+            },
+            "outputs": {
+              "html": "string"
+            }
+          }
+        },
+        {
+          "name": "GrowthCard",
+          "description": "Grade whether the cell actually grew over the run.",
+          "ports": {
+            "inputs": {
+              "results": "node"
+            },
+            "outputs": {
+              "view": "string",
+              "data": "quote"
+            }
+          }
+        },
+        {
+          "name": "ResultsAnalysis",
+          "description": "Aggregate this run's trajectory into an analysis **data artifact**.",
+          "ports": {
+            "inputs": {
+              "results": "node"
+            },
+            "outputs": {
+              "artifact": "quote"
+            }
+          }
+        },
+        {
           "name": "Visualization",
           "description": "A post-sim visualization Step: emits a rendered ``view`` (HTML) + ``data``",
           "ports": {
@@ -3277,6 +3314,10 @@
           "description": "Listener for DNA supercoiling data."
         },
         {
+          "name": "AcetateOverflowCard",
+          "description": ""
+        },
+        {
           "name": "VsLiteratureCard",
           "description": ""
         },
@@ -3389,6 +3430,10 @@
           "description": "Whole-cell baseline (v2ecoli) in a mother machine \u2014 device run"
         },
         {
+          "name": "metabolism-biomass-yield-s1-diagnostic",
+          "description": "Re-measure biomass yield on a recorded commit, and discriminate one defect from two"
+        },
+        {
           "name": "mbp-03-bird-reactor-coupling",
           "description": "Can v2ecoli (with the mbp-01 time-varying-env hook and mbp-02 population\naggregator) be coupled to `pbg-bioreactordesign`'s BiRDReactorProcess \u2014\nvia a thin adapter that resolves the biomass-ownership conflict between\nthe two \u2014 such that BiRD supplies dissolved O2, kLa, gas-phase physics,\nand v2ecoli supplies population biomass and exchange-flux demand,\nproducing a physically consistent coupled trajectory in a 0D\nwell-mixed bench-scale reactor?\n"
         },
@@ -3399,6 +3444,10 @@
         {
           "name": "colonies-05-mother-machine",
           "description": "Do the core emergent single-cell phenotypes \u2014 size-at-division,\ninter-division time, added length, the adder size-homeostasis relation, and\ngrowth rate \u2014 stay measurable when simple viva-munk agents run in the\ncanonical mother-machine device geometry?\n"
+        },
+        {
+          "name": "overflow-acetate-vs-growth",
+          "description": "Does v2ecoli reproduce the aerobic acetate-overflow curve (acetate-carbon yield vs growth rate) \u2014 Vemuri 2006 / Basan 2015?"
         },
         {
           "name": "ketchup-exchange-comparison",
@@ -3483,6 +3532,10 @@
         {
           "name": "population_phenotype_basal",
           "description": "Basal-condition physiology \u2014 v2ecoli baseline vs experimental literature"
+        },
+        {
+          "name": "metabolism-biomass-yield-s1b-anaerobic-contrast",
+          "description": "Does the model's own aerobic-to-anaerobic yield drop match biology?"
         },
         {
           "name": "param-uq-04-deep-params",
@@ -3583,20 +3636,28 @@
           "description": "v2ecoli \u2192 PDMP Whole-Cell Model Reformulation"
         },
         {
+          "name": "metabolism-overflow",
+          "description": "Does v2ecoli reproduce aerobic acetate overflow \u2014 the acetate-carbon yield vs growth rate curve?"
+        },
+        {
           "name": "structural-ecoli",
           "description": "Structural E. coli"
         },
         {
           "name": "perturbation-demo",
           "description": "Perturbation demo \u2014 gene knockouts and media shifts on the baseline whole cell"
+        },
+        {
+          "name": "metabolism-biomass-yield",
+          "description": "Is v2ecoli's central carbon metabolism physically correct?"
         }
       ],
       "counts": {
         "processes": 21,
-        "steps": 70,
+        "steps": 74,
         "composites": 11,
-        "studies": 53,
-        "investigations": 10
+        "studies": 56,
+        "investigations": 12
       },
       "attestation": {
         "pinned_ref": false,
@@ -3604,10 +3665,10 @@
         "has_license": true,
         "has_citation": false,
         "schema_version_present": true,
-        "studies_total": 53,
+        "studies_total": 56,
         "studies_with_acceptance_criteria": 5,
         "studies_with_baseline": 1,
-        "score": 0.416
+        "score": 0.415
       }
     }
   ]

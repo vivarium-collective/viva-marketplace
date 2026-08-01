@@ -2,9 +2,9 @@
   "schema_version": 1,
   "experimental": true,
   "note": "Best-effort static extraction of literal inputs()/outputs() port declarations, matched by exact type-name string equality. Absence of an edge does NOT mean incompatibility \u2014 most ports are computed dynamically and aren't visible to this scan. Not a verified wiring guarantee; confirm by actually composing.",
-  "n_processes_with_ports": 106,
-  "n_edges": 838,
-  "n_cross_repo_edges": 537,
+  "n_processes_with_ports": 109,
+  "n_edges": 872,
+  "n_cross_repo_edges": 561,
   "truncated": false,
   "edges": [
     {
@@ -10884,6 +10884,482 @@
         "port": "fields"
       },
       "cross_repo": true
+    },
+    {
+      "type": "string",
+      "from": {
+        "repo": "v2ecoli",
+        "process": "ResultsVisualization",
+        "port": "html"
+      },
+      "to": {
+        "repo": "Viva-munk",
+        "process": "GrowDivide",
+        "port": "agent_id"
+      },
+      "cross_repo": true
+    },
+    {
+      "type": "string",
+      "from": {
+        "repo": "v2ecoli",
+        "process": "ResultsVisualization",
+        "port": "html"
+      },
+      "to": {
+        "repo": "Viva-munk",
+        "process": "AdderGrowDivide",
+        "port": "agent_id"
+      },
+      "cross_repo": true
+    },
+    {
+      "type": "string",
+      "from": {
+        "repo": "v2ecoli",
+        "process": "ResultsVisualization",
+        "port": "html"
+      },
+      "to": {
+        "repo": "Viva-munk",
+        "process": "QuorumSensing",
+        "port": "agent_id"
+      },
+      "cross_repo": true
+    },
+    {
+      "type": "string",
+      "from": {
+        "repo": "v2ecoli",
+        "process": "ResultsVisualization",
+        "port": "html"
+      },
+      "to": {
+        "repo": "Viva-munk",
+        "process": "SecreteEPS",
+        "port": "agent_id"
+      },
+      "cross_repo": true
+    },
+    {
+      "type": "string",
+      "from": {
+        "repo": "v2ecoli",
+        "process": "ResultsVisualization",
+        "port": "html"
+      },
+      "to": {
+        "repo": "Viva-munk",
+        "process": "Chemotaxis",
+        "port": "agent_id"
+      },
+      "cross_repo": true
+    },
+    {
+      "type": "string",
+      "from": {
+        "repo": "v2ecoli",
+        "process": "ResultsVisualization",
+        "port": "html"
+      },
+      "to": {
+        "repo": "Viva-munk",
+        "process": "InclusionBody",
+        "port": "agent_id"
+      },
+      "cross_repo": true
+    },
+    {
+      "type": "string",
+      "from": {
+        "repo": "v2ecoli",
+        "process": "ResultsVisualization",
+        "port": "html"
+      },
+      "to": {
+        "repo": "pbg-amici",
+        "process": "AmiciUTCStep",
+        "port": "model_source"
+      },
+      "cross_repo": true
+    },
+    {
+      "type": "string",
+      "from": {
+        "repo": "v2ecoli",
+        "process": "ResultsVisualization",
+        "port": "html"
+      },
+      "to": {
+        "repo": "pbg-amici",
+        "process": "AmiciSteadyStateStep",
+        "port": "model_source"
+      },
+      "cross_repo": true
+    },
+    {
+      "type": "string",
+      "from": {
+        "repo": "v2ecoli",
+        "process": "ResultsVisualization",
+        "port": "html"
+      },
+      "to": {
+        "repo": "pbg-biomodels",
+        "process": "LoadBiomodelStep",
+        "port": "biomodel_id"
+      },
+      "cross_repo": true
+    },
+    {
+      "type": "string",
+      "from": {
+        "repo": "v2ecoli",
+        "process": "ResultsVisualization",
+        "port": "html"
+      },
+      "to": {
+        "repo": "pbg-biomodels",
+        "process": "ReferenceDataStep",
+        "port": "csv_path"
+      },
+      "cross_repo": true
+    },
+    {
+      "type": "string",
+      "from": {
+        "repo": "v2ecoli",
+        "process": "ResultsVisualization",
+        "port": "html"
+      },
+      "to": {
+        "repo": "pbg-biomodels-bundle",
+        "process": "LoadBiomodelStep",
+        "port": "biomodel_id"
+      },
+      "cross_repo": true
+    },
+    {
+      "type": "string",
+      "from": {
+        "repo": "v2ecoli",
+        "process": "ResultsVisualization",
+        "port": "html"
+      },
+      "to": {
+        "repo": "pbg-martini",
+        "process": "MartinizeStep",
+        "port": "pdb_text"
+      },
+      "cross_repo": true
+    },
+    {
+      "type": "string",
+      "from": {
+        "repo": "v2ecoli",
+        "process": "ResultsVisualization",
+        "port": "html"
+      },
+      "to": {
+        "repo": "v2ecoli",
+        "process": "EcoliWCM",
+        "port": "agent_id"
+      },
+      "cross_repo": false
+    },
+    {
+      "type": "string",
+      "from": {
+        "repo": "v2ecoli",
+        "process": "ResultsVisualization",
+        "port": "html"
+      },
+      "to": {
+        "repo": "v2ecoli",
+        "process": "DnaABinder",
+        "port": "oriC_state"
+      },
+      "cross_repo": false
+    },
+    {
+      "type": "string",
+      "from": {
+        "repo": "v2ecoli",
+        "process": "ResultsVisualization",
+        "port": "html"
+      },
+      "to": {
+        "repo": "v2ecoli",
+        "process": "Analysis",
+        "port": "history_sql"
+      },
+      "cross_repo": false
+    },
+    {
+      "type": "string",
+      "from": {
+        "repo": "v2ecoli",
+        "process": "ResultsVisualization",
+        "port": "html"
+      },
+      "to": {
+        "repo": "v2ecoli",
+        "process": "Analysis",
+        "port": "config_sql"
+      },
+      "cross_repo": false
+    },
+    {
+      "type": "string",
+      "from": {
+        "repo": "v2ecoli",
+        "process": "ResultsVisualization",
+        "port": "html"
+      },
+      "to": {
+        "repo": "v2ecoli",
+        "process": "Analysis",
+        "port": "success_sql"
+      },
+      "cross_repo": false
+    },
+    {
+      "type": "string",
+      "from": {
+        "repo": "v2ecoli",
+        "process": "GrowthCard",
+        "port": "view"
+      },
+      "to": {
+        "repo": "Viva-munk",
+        "process": "GrowDivide",
+        "port": "agent_id"
+      },
+      "cross_repo": true
+    },
+    {
+      "type": "string",
+      "from": {
+        "repo": "v2ecoli",
+        "process": "GrowthCard",
+        "port": "view"
+      },
+      "to": {
+        "repo": "Viva-munk",
+        "process": "AdderGrowDivide",
+        "port": "agent_id"
+      },
+      "cross_repo": true
+    },
+    {
+      "type": "string",
+      "from": {
+        "repo": "v2ecoli",
+        "process": "GrowthCard",
+        "port": "view"
+      },
+      "to": {
+        "repo": "Viva-munk",
+        "process": "QuorumSensing",
+        "port": "agent_id"
+      },
+      "cross_repo": true
+    },
+    {
+      "type": "string",
+      "from": {
+        "repo": "v2ecoli",
+        "process": "GrowthCard",
+        "port": "view"
+      },
+      "to": {
+        "repo": "Viva-munk",
+        "process": "SecreteEPS",
+        "port": "agent_id"
+      },
+      "cross_repo": true
+    },
+    {
+      "type": "string",
+      "from": {
+        "repo": "v2ecoli",
+        "process": "GrowthCard",
+        "port": "view"
+      },
+      "to": {
+        "repo": "Viva-munk",
+        "process": "Chemotaxis",
+        "port": "agent_id"
+      },
+      "cross_repo": true
+    },
+    {
+      "type": "string",
+      "from": {
+        "repo": "v2ecoli",
+        "process": "GrowthCard",
+        "port": "view"
+      },
+      "to": {
+        "repo": "Viva-munk",
+        "process": "InclusionBody",
+        "port": "agent_id"
+      },
+      "cross_repo": true
+    },
+    {
+      "type": "string",
+      "from": {
+        "repo": "v2ecoli",
+        "process": "GrowthCard",
+        "port": "view"
+      },
+      "to": {
+        "repo": "pbg-amici",
+        "process": "AmiciUTCStep",
+        "port": "model_source"
+      },
+      "cross_repo": true
+    },
+    {
+      "type": "string",
+      "from": {
+        "repo": "v2ecoli",
+        "process": "GrowthCard",
+        "port": "view"
+      },
+      "to": {
+        "repo": "pbg-amici",
+        "process": "AmiciSteadyStateStep",
+        "port": "model_source"
+      },
+      "cross_repo": true
+    },
+    {
+      "type": "string",
+      "from": {
+        "repo": "v2ecoli",
+        "process": "GrowthCard",
+        "port": "view"
+      },
+      "to": {
+        "repo": "pbg-biomodels",
+        "process": "LoadBiomodelStep",
+        "port": "biomodel_id"
+      },
+      "cross_repo": true
+    },
+    {
+      "type": "string",
+      "from": {
+        "repo": "v2ecoli",
+        "process": "GrowthCard",
+        "port": "view"
+      },
+      "to": {
+        "repo": "pbg-biomodels",
+        "process": "ReferenceDataStep",
+        "port": "csv_path"
+      },
+      "cross_repo": true
+    },
+    {
+      "type": "string",
+      "from": {
+        "repo": "v2ecoli",
+        "process": "GrowthCard",
+        "port": "view"
+      },
+      "to": {
+        "repo": "pbg-biomodels-bundle",
+        "process": "LoadBiomodelStep",
+        "port": "biomodel_id"
+      },
+      "cross_repo": true
+    },
+    {
+      "type": "string",
+      "from": {
+        "repo": "v2ecoli",
+        "process": "GrowthCard",
+        "port": "view"
+      },
+      "to": {
+        "repo": "pbg-martini",
+        "process": "MartinizeStep",
+        "port": "pdb_text"
+      },
+      "cross_repo": true
+    },
+    {
+      "type": "string",
+      "from": {
+        "repo": "v2ecoli",
+        "process": "GrowthCard",
+        "port": "view"
+      },
+      "to": {
+        "repo": "v2ecoli",
+        "process": "EcoliWCM",
+        "port": "agent_id"
+      },
+      "cross_repo": false
+    },
+    {
+      "type": "string",
+      "from": {
+        "repo": "v2ecoli",
+        "process": "GrowthCard",
+        "port": "view"
+      },
+      "to": {
+        "repo": "v2ecoli",
+        "process": "DnaABinder",
+        "port": "oriC_state"
+      },
+      "cross_repo": false
+    },
+    {
+      "type": "string",
+      "from": {
+        "repo": "v2ecoli",
+        "process": "GrowthCard",
+        "port": "view"
+      },
+      "to": {
+        "repo": "v2ecoli",
+        "process": "Analysis",
+        "port": "history_sql"
+      },
+      "cross_repo": false
+    },
+    {
+      "type": "string",
+      "from": {
+        "repo": "v2ecoli",
+        "process": "GrowthCard",
+        "port": "view"
+      },
+      "to": {
+        "repo": "v2ecoli",
+        "process": "Analysis",
+        "port": "config_sql"
+      },
+      "cross_repo": false
+    },
+    {
+      "type": "string",
+      "from": {
+        "repo": "v2ecoli",
+        "process": "GrowthCard",
+        "port": "view"
+      },
+      "to": {
+        "repo": "v2ecoli",
+        "process": "Analysis",
+        "port": "success_sql"
+      },
+      "cross_repo": false
     },
     {
       "type": "string",
