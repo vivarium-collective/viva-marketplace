@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-31T08:32:52+00:00",
+  "generated_at": "2026-08-01T08:02:51+00:00",
   "n_repos": 28,
   "n_cloned": 28,
   "repos": [
@@ -1757,6 +1757,18 @@
           "description": "A report card as a visualization-like Step (sibling of ``Analysis`` and"
         },
         {
+          "name": "ResultsVisualization",
+          "description": "Adapt a ``results`` handle to an existing v2ecoli visualization."
+        },
+        {
+          "name": "GrowthCard",
+          "description": "Grade whether the cell actually grew over the run."
+        },
+        {
+          "name": "ResultsAnalysis",
+          "description": "Aggregate this run's trajectory into an analysis **data artifact**."
+        },
+        {
           "name": "EcoliPackStep",
           "description": "Pack a parsimony 3D structural snapshot of the live cell the first"
         },
@@ -2269,7 +2281,7 @@
       ],
       "counts": {
         "processes": 21,
-        "steps": 71,
+        "steps": 74,
         "composites": 11,
         "studies": 56,
         "investigations": 12
