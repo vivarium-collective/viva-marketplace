@@ -32,19 +32,23 @@ jobs:
       - name: Install PyYAML (for study/investigation/composite YAML scanning)
         run: python -m pip install --quiet pyyaml
 
-      - name: Clone + scan every repo → ecosystem-index.json
+      - name: Discover repos (viva-marketplace topic) + clone/scan → index
+        env:
+          # discovery queries the org for public repos with the viva-marketplace
+          # topic; the default workflow token authenticates the search API.
+          GITHUB_TOKEN: ${{ github.token }}
         run: python scripts/build_ecosystem_index.py
 
-      - name: Commit the refreshed index (if changed)
+      - name: Commit the refreshed registry + index (if changed)
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          if ! git diff --quiet -- viva_marketplace/ecosystem-index.json; then
-            git add viva_marketplace/ecosystem-index.json
-            git commit -m "chore: rebuild ecosystem-index.json [skip ci]"
+          git add viva_marketplace/modules.json viva_marketplace/ecosystem-index.json
+          if ! git diff --cached --quiet; then
+            git commit -m "chore: refresh registry (topic discovery) + ecosystem-index [skip ci]"
             git push
           else
-            echo "index unchanged"
+            echo "registry + index unchanged"
           fi
 
       - name: Assemble the public ledger (modules + index)

@@ -1,73 +1,65 @@
 # Contributing to viva-marketplace
 
 viva-marketplace is the **ecosystem ledger** for the vivarium / process-bigraph
-workbench. It has exactly one thing you edit by hand — the **registry of repos**,
-[`viva_marketplace/modules.json`](viva_marketplace/modules.json). Everything else
-(`ecosystem-index.json`) is machine-generated.
+workbench. Both files are now **machine-generated** — you don't hand-edit them:
 
-Changes go through **pull requests** — lightweight, but reviewed, so the ledger
-stays trustworthy. A PR touching `modules.json` is validated by CI
-([`validate.yml`](.github/workflows/validate.yml) → `scripts/validate_modules.py`)
-and then merged by a maintainer.
+- `viva_marketplace/modules.json` — the registry of repos, **discovered from
+  GitHub topics** (see below).
+- `viva_marketplace/ecosystem-index.json` — the aggregated artifact index,
+  built by cloning + scanning each discovered repo.
 
-## Add your repository
+## Publish your repository to the marketplace
 
-1. Open a PR that appends one object to the list in
-   `viva_marketplace/modules.json`:
+**Add the `viva-marketplace` GitHub topic to your repo.** That's the whole step:
 
-   ```json
-   {
-     "name": "pbg-yourthing",
-     "display_name": "viva-yourthing",
-     "description": "One line on what this repo provides (processes/composites).",
-     "source": "https://github.com/vivarium-collective/pbg-yourthing.git",
-     "ref": "main",
-     "package": "pbg_yourthing",
-     "homepage": "https://github.com/vivarium-collective/pbg-yourthing",
-     "tags": ["your", "tags"]
-   }
-   ```
+```bash
+gh repo edit vivarium-collective/<your-repo> --add-topic viva-marketplace
+```
 
-   Required: **`name`** (unique) and **`source`** (a GitHub URL). Everything else
-   is optional but recommended.
+(Or add it via the repo's GitHub page → About → ⚙ → Topics.) Your repo must be
+**public** and not archived.
 
-2. CI validates the file; a maintainer reviews and merges.
+The nightly builder (and any manual re-run) then discovers every public,
+non-archived `vivarium-collective` repo carrying the topic, refreshes
+`modules.json` from that set, and **clones your repo and scans its source** — your
+composites (`@composite_generator` / `*.composite.yaml`), `Process`/`Step`
+subclasses, `studies/<slug>/study.yaml`, and
+`investigations/<slug>/investigation.yaml` all appear in `ecosystem-index.json`
+automatically. You never hand-write your artifact list.
 
-3. On merge (and every night) the builder **clones your repo and scans its
-   source** — your composites (`@composite_generator` / `*.composite.yaml`),
-   processes/steps, studies, and investigations appear in `ecosystem-index.json`
-   automatically. You do **not** hand-write your artifact list.
-
-To make your artifacts discoverable, follow the usual conventions in your repo:
+To make your artifacts discoverable, follow the usual conventions:
 `@composite_generator(name=…, description=…)` for composites, `Process`/`Step`
-subclasses (with a `description` attribute or docstring) for processes, and
-`studies/<slug>/study.yaml` / `investigations/<slug>/investigation.yaml` for
-studies/investigations.
+subclasses (with a `description` attribute or docstring) for processes, and the
+`studies/`/`investigations/` YAML for those.
 
 ## Update your listing
 
-Open a PR editing your entry — e.g. change the `description`, `tags`, or pin a
-different `ref`. The **artifact index refreshes itself** from your repo's source
-on the nightly build, so you never edit `ecosystem-index.json`; just keep your
-repo's source current.
+Your `description` and `tags` come straight from your repo's **GitHub description
+and topics** — edit them on GitHub and the next build picks them up. The artifact
+index refreshes from your repo's source, so just keep your source current.
 
 ## Remove your repository
 
-Open a PR removing your entry from `modules.json`.
+Remove the `viva-marketplace` topic (or archive / make the repo private) — it
+drops out of the registry on the next build:
+
+```bash
+gh repo edit vivarium-collective/<your-repo> --remove-topic viva-marketplace
+```
 
 ## Ground rules
 
-- **`modules.json` only** is human-edited. `ecosystem-index.json` is generated —
-  don't hand-edit it (your change will be overwritten on the next build).
-- **One repo per entry; unique `name`.** The validator rejects duplicates,
-  missing `name`/`source`, and non-GitHub sources.
-- **PRs, not direct pushes.** Keep the ledger reviewable.
+- **Membership = the `viva-marketplace` topic on a public, non-archived repo.**
+  No hand-maintained list to drift.
+- Both `modules.json` and `ecosystem-index.json` are generated — don't hand-edit
+  them (changes are overwritten on the next build).
 
-## Rebuild the index locally
+## Rebuild locally
 
 ```bash
 pip install pyyaml
-python scripts/build_ecosystem_index.py                 # all repos
-python scripts/build_ecosystem_index.py --only pbg-yourthing   # just yours
-python scripts/validate_modules.py                      # run the PR gate locally
+export GITHUB_TOKEN=$(gh auth token)      # discovery authenticates the search API
+python scripts/build_ecosystem_index.py               # discover + clone/scan all
+python scripts/build_ecosystem_index.py --no-discover # use committed modules.json as-is
+python scripts/build_ecosystem_index.py --only viva-biofilm  # just one repo
 ```
