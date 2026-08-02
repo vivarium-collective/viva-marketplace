@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-01T19:51:45+00:00",
+  "generated_at": "2026-08-02T08:04:21+00:00",
   "n_repos": 36,
   "n_cloned": 36,
   "repos": [
@@ -1958,6 +1958,14 @@
       "processes": [],
       "steps": [
         {
+          "name": "AnnotationMatchStep",
+          "description": "Summarize the annotation-based (SBML MIRIAM + BTO crosswalk) organ-matching catalog: model/organ counts and the qualifier/ontology distribution behind each organ tag."
+        },
+        {
+          "name": "RecallGainStep",
+          "description": "Compare the annotation-based organ-matching catalog against the name-synonym catalog to quantify the recall gain (organs/models added) from parsing SBML MIRIAM/BTO annotations."
+        },
+        {
           "name": "HRAReferenceOrgansStep",
           "description": "Fetch HRA reference organs (Uberon-keyed, per-sex GLB 3D assets) from the CCF API's `/v1/reference-organs` endpoint."
         },
@@ -2052,6 +2060,14 @@
           "description": "Query BioModels for a text term (default 'glucose regulation'), then run every matching model under COPASI and Tellurium and score their agreement (all-pairs nRMSE)."
         },
         {
+          "name": "annotation-organ-matching",
+          "description": "Summarize the committed annotation-based (SBML MIRIAM + BTO crosswalk) organ-matching catalog: model/organ counts and the biological-qualifier/ontology distribution behind each organ tag."
+        },
+        {
+          "name": "annotation-recall-gain",
+          "description": "Compare the annotation-based organ-matching catalog against the name-synonym catalog to quantify the recall gain (organs/models added) from parsing SBML MIRIAM/BTO annotations."
+        },
+        {
           "name": "glucose-biomodel-do",
           "description": "Search BioModels for a text query, annotate hits with HRA Uberon organ terms (synonym-match), and build the inverse organ->models index."
         },
@@ -2070,6 +2086,10 @@
           "description": "HRA Cell-Type Term Occurrences"
         },
         {
+          "name": "annotation-recall-gain",
+          "description": "Annotation Recall Gain \u2014 Annotation-Matching vs Name-Only Organ Tagging"
+        },
+        {
           "name": "glucose-regulation",
           "description": "Glucose Regulation \u2014 COPASI vs Tellurium"
         },
@@ -2086,8 +2106,16 @@
           "description": "Glucose BioModel Digital Objects \u2014 Uberon Organ Annotation"
         },
         {
+          "name": "annotation-organ-matching",
+          "description": "Annotation-Based Organ Matching \u2014 SBML MIRIAM + BTO Crosswalk Provenance"
+        },
+        {
           "name": "spatial-linkage",
           "description": "Spatial Linkage \u2014 Model -> AS -> GLB Scene-Node Links"
+        },
+        {
+          "name": "hra-atlas-browser",
+          "description": "HRA Atlas Browser \u2014 organ selector + model-count gradient + BioModels links"
         },
         {
           "name": "ctpop-islet-parameterization",
@@ -2130,9 +2158,9 @@
       ],
       "counts": {
         "processes": 0,
-        "steps": 12,
-        "composites": 13,
-        "studies": 13,
+        "steps": 14,
+        "composites": 15,
+        "studies": 16,
         "investigations": 3
       }
     },
