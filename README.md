@@ -98,6 +98,15 @@ certification** — presence of these artifacts correlates with reproducibility,
 it doesn't guarantee it. See `viva_marketplace/scanner.attest()` for the exact
 implementation.
 
+**No consumer reads this yet.** `attestation` travels inside every
+`ecosystem-index.json` repo entry, but `vivarium-workbench`'s two
+`load_ecosystem_index()` call sites (`publish.py:887`, `api/app.py:1349`)
+pass the dict straight through to the frontend with no field-level use —
+grepping the workbench's Python and JS for `attestation` returns nothing.
+Same status as the composability graph below: a validated, tested signal
+waiting on its first UI/API integration (e.g. a score badge or sort control
+on the Registry tab), not an already-surfaced feature.
+
 ## Composability graph (experimental)
 
 Process-bigraph Processes/Steps declare typed `inputs()`/`outputs()` ports.
