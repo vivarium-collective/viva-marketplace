@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-08-03T12:42:09+00:00",
+  "generated_at": "2026-08-03T18:28:04+00:00",
   "n_repos": 36,
   "n_cloned": 36,
   "repos": [
@@ -324,6 +324,7 @@
       },
       "attestation": {
         "pinned_ref": false,
+        "pinning_reachable": false,
         "has_lockfile": true,
         "has_license": true,
         "has_citation": false,
@@ -331,7 +332,7 @@
         "studies_total": 19,
         "studies_with_acceptance_criteria": 0,
         "studies_with_baseline": 19,
-        "score": 0.5
+        "score": 0.667
       }
     },
     {
@@ -1296,6 +1297,7 @@
       },
       "attestation": {
         "pinned_ref": false,
+        "pinning_reachable": false,
         "has_lockfile": true,
         "has_license": true,
         "has_citation": false,
@@ -1303,7 +1305,7 @@
         "studies_total": 56,
         "studies_with_acceptance_criteria": 5,
         "studies_with_baseline": 1,
-        "score": 0.415
+        "score": 0.554
       }
     },
     {
@@ -1384,6 +1386,7 @@
       },
       "attestation": {
         "pinned_ref": false,
+        "pinning_reachable": false,
         "has_lockfile": false,
         "has_license": false,
         "has_citation": false,
@@ -1391,7 +1394,7 @@
         "studies_total": 0,
         "studies_with_acceptance_criteria": 0,
         "studies_with_baseline": 0,
-        "score": 0.133
+        "score": 0.2
       }
     },
     {
@@ -1480,6 +1483,7 @@
       },
       "attestation": {
         "pinned_ref": false,
+        "pinning_reachable": false,
         "has_lockfile": false,
         "has_license": false,
         "has_citation": false,
@@ -1487,7 +1491,7 @@
         "studies_total": 0,
         "studies_with_acceptance_criteria": 0,
         "studies_with_baseline": 0,
-        "score": 0.133
+        "score": 0.2
       }
     },
     {
@@ -1658,6 +1662,7 @@
       },
       "attestation": {
         "pinned_ref": false,
+        "pinning_reachable": false,
         "has_lockfile": false,
         "has_license": false,
         "has_citation": false,
@@ -1665,7 +1670,7 @@
         "studies_total": 5,
         "studies_with_acceptance_criteria": 0,
         "studies_with_baseline": 5,
-        "score": 0.2
+        "score": 0.267
       }
     },
     {
@@ -1785,6 +1790,7 @@
       },
       "attestation": {
         "pinned_ref": false,
+        "pinning_reachable": false,
         "has_lockfile": false,
         "has_license": false,
         "has_citation": false,
@@ -1792,7 +1798,7 @@
         "studies_total": 5,
         "studies_with_acceptance_criteria": 0,
         "studies_with_baseline": 0,
-        "score": 0.1
+        "score": 0.133
       }
     },
     {
@@ -1985,6 +1991,7 @@
       },
       "attestation": {
         "pinned_ref": false,
+        "pinning_reachable": false,
         "has_lockfile": false,
         "has_license": false,
         "has_citation": false,
@@ -1992,7 +1999,7 @@
         "studies_total": 0,
         "studies_with_acceptance_criteria": 0,
         "studies_with_baseline": 0,
-        "score": 0.133
+        "score": 0.2
       }
     },
     {
@@ -2127,6 +2134,7 @@
       },
       "attestation": {
         "pinned_ref": false,
+        "pinning_reachable": false,
         "has_lockfile": false,
         "has_license": false,
         "has_citation": false,
@@ -2134,7 +2142,7 @@
         "studies_total": 4,
         "studies_with_acceptance_criteria": 0,
         "studies_with_baseline": 4,
-        "score": 0.2
+        "score": 0.267
       }
     },
     {
@@ -2200,6 +2208,7 @@
       },
       "attestation": {
         "pinned_ref": false,
+        "pinning_reachable": false,
         "has_lockfile": false,
         "has_license": false,
         "has_citation": false,
@@ -2332,6 +2341,7 @@
       },
       "attestation": {
         "pinned_ref": false,
+        "pinning_reachable": false,
         "has_lockfile": false,
         "has_license": false,
         "has_citation": false,
@@ -2339,7 +2349,7 @@
         "studies_total": 4,
         "studies_with_acceptance_criteria": 0,
         "studies_with_baseline": 4,
-        "score": 0.2
+        "score": 0.267
       }
     },
     {
@@ -2416,6 +2426,7 @@
       },
       "attestation": {
         "pinned_ref": false,
+        "pinning_reachable": false,
         "has_lockfile": false,
         "has_license": false,
         "has_citation": false,
@@ -2465,6 +2476,7 @@
       },
       "attestation": {
         "pinned_ref": false,
+        "pinning_reachable": false,
         "has_lockfile": false,
         "has_license": false,
         "has_citation": false,
@@ -2523,6 +2535,7 @@
       },
       "attestation": {
         "pinned_ref": false,
+        "pinning_reachable": false,
         "has_lockfile": false,
         "has_license": false,
         "has_citation": false,
@@ -2611,6 +2624,7 @@
       },
       "attestation": {
         "pinned_ref": false,
+        "pinning_reachable": false,
         "has_lockfile": false,
         "has_license": false,
         "has_citation": false,
@@ -2735,6 +2749,7 @@
       },
       "attestation": {
         "pinned_ref": false,
+        "pinning_reachable": false,
         "has_lockfile": true,
         "has_license": true,
         "has_citation": false,
@@ -2742,7 +2757,7 @@
         "studies_total": 11,
         "studies_with_acceptance_criteria": 0,
         "studies_with_baseline": 11,
-        "score": 0.5
+        "score": 0.667
       }
     },
     {
@@ -2767,6 +2782,7 @@
       },
       "attestation": {
         "pinned_ref": false,
+        "pinning_reachable": false,
         "has_lockfile": true,
         "has_license": true,
         "has_citation": false,
@@ -2774,7 +2790,7 @@
         "studies_total": 0,
         "studies_with_acceptance_criteria": 0,
         "studies_with_baseline": 0,
-        "score": 0.4
+        "score": 0.6
       }
     },
     {
@@ -3064,6 +3080,7 @@
       },
       "attestation": {
         "pinned_ref": false,
+        "pinning_reachable": false,
         "has_lockfile": false,
         "has_license": false,
         "has_citation": false,
@@ -3071,7 +3088,7 @@
         "studies_total": 7,
         "studies_with_acceptance_criteria": 0,
         "studies_with_baseline": 7,
-        "score": 0.2
+        "score": 0.267
       }
     },
     {
@@ -3384,6 +3401,7 @@
       },
       "attestation": {
         "pinned_ref": false,
+        "pinning_reachable": false,
         "has_lockfile": false,
         "has_license": false,
         "has_citation": false,
@@ -3391,7 +3409,7 @@
         "studies_total": 16,
         "studies_with_acceptance_criteria": 0,
         "studies_with_baseline": 16,
-        "score": 0.2
+        "score": 0.267
       }
     },
     {
@@ -3485,6 +3503,7 @@
       },
       "attestation": {
         "pinned_ref": false,
+        "pinning_reachable": false,
         "has_lockfile": false,
         "has_license": false,
         "has_citation": false,
@@ -3597,6 +3616,7 @@
       },
       "attestation": {
         "pinned_ref": false,
+        "pinning_reachable": false,
         "has_lockfile": false,
         "has_license": false,
         "has_citation": false,
@@ -3685,6 +3705,7 @@
       },
       "attestation": {
         "pinned_ref": false,
+        "pinning_reachable": false,
         "has_lockfile": false,
         "has_license": false,
         "has_citation": false,
@@ -3760,6 +3781,7 @@
       },
       "attestation": {
         "pinned_ref": false,
+        "pinning_reachable": false,
         "has_lockfile": true,
         "has_license": false,
         "has_citation": false,
@@ -3767,7 +3789,7 @@
         "studies_total": 0,
         "studies_with_acceptance_criteria": 0,
         "studies_with_baseline": 0,
-        "score": 0.2
+        "score": 0.3
       }
     },
     {
@@ -3876,6 +3898,7 @@
       },
       "attestation": {
         "pinned_ref": false,
+        "pinning_reachable": false,
         "has_lockfile": true,
         "has_license": false,
         "has_citation": false,
@@ -3883,7 +3906,7 @@
         "studies_total": 12,
         "studies_with_acceptance_criteria": 0,
         "studies_with_baseline": 0,
-        "score": 0.25
+        "score": 0.333
       }
     },
     {
@@ -4157,6 +4180,7 @@
       },
       "attestation": {
         "pinned_ref": false,
+        "pinning_reachable": false,
         "has_lockfile": false,
         "has_license": true,
         "has_citation": false,
@@ -4164,7 +4188,7 @@
         "studies_total": 9,
         "studies_with_acceptance_criteria": 0,
         "studies_with_baseline": 9,
-        "score": 0.35
+        "score": 0.467
       }
     },
     {
@@ -4210,6 +4234,7 @@
       },
       "attestation": {
         "pinned_ref": false,
+        "pinning_reachable": false,
         "has_lockfile": false,
         "has_license": false,
         "has_citation": false,
@@ -4270,6 +4295,7 @@
       },
       "attestation": {
         "pinned_ref": false,
+        "pinning_reachable": false,
         "has_lockfile": false,
         "has_license": false,
         "has_citation": false,
@@ -4329,6 +4355,7 @@
       },
       "attestation": {
         "pinned_ref": false,
+        "pinning_reachable": false,
         "has_lockfile": true,
         "has_license": true,
         "has_citation": false,
@@ -4336,7 +4363,7 @@
         "studies_total": 0,
         "studies_with_acceptance_criteria": 0,
         "studies_with_baseline": 0,
-        "score": 0.533
+        "score": 0.8
       }
     },
     {
@@ -4391,6 +4418,7 @@
       },
       "attestation": {
         "pinned_ref": false,
+        "pinning_reachable": false,
         "has_lockfile": false,
         "has_license": true,
         "has_citation": false,
@@ -4398,7 +4426,7 @@
         "studies_total": 0,
         "studies_with_acceptance_criteria": 0,
         "studies_with_baseline": 0,
-        "score": 0.2
+        "score": 0.3
       }
     },
     {
@@ -4464,6 +4492,7 @@
       },
       "attestation": {
         "pinned_ref": false,
+        "pinning_reachable": false,
         "has_lockfile": false,
         "has_license": false,
         "has_citation": false,
@@ -4509,6 +4538,7 @@
       },
       "attestation": {
         "pinned_ref": false,
+        "pinning_reachable": false,
         "has_lockfile": false,
         "has_license": false,
         "has_citation": false,
@@ -4568,6 +4598,7 @@
       },
       "attestation": {
         "pinned_ref": false,
+        "pinning_reachable": false,
         "has_lockfile": false,
         "has_license": false,
         "has_citation": false,
@@ -4670,6 +4701,7 @@
       },
       "attestation": {
         "pinned_ref": false,
+        "pinning_reachable": false,
         "has_lockfile": true,
         "has_license": false,
         "has_citation": false,
@@ -4677,7 +4709,7 @@
         "studies_total": 0,
         "studies_with_acceptance_criteria": 0,
         "studies_with_baseline": 0,
-        "score": 0.333
+        "score": 0.5
       }
     },
     {
@@ -4723,6 +4755,7 @@
       },
       "attestation": {
         "pinned_ref": false,
+        "pinning_reachable": false,
         "has_lockfile": false,
         "has_license": false,
         "has_citation": false,
@@ -4812,6 +4845,7 @@
       },
       "attestation": {
         "pinned_ref": false,
+        "pinning_reachable": false,
         "has_lockfile": false,
         "has_license": false,
         "has_citation": false,
@@ -4869,6 +4903,7 @@
       },
       "attestation": {
         "pinned_ref": false,
+        "pinning_reachable": false,
         "has_lockfile": false,
         "has_license": false,
         "has_citation": false,
@@ -4929,6 +4964,7 @@
       },
       "attestation": {
         "pinned_ref": false,
+        "pinning_reachable": false,
         "has_lockfile": false,
         "has_license": false,
         "has_citation": false,
@@ -4936,7 +4972,7 @@
         "studies_total": 0,
         "studies_with_acceptance_criteria": 0,
         "studies_with_baseline": 0,
-        "score": 0.133
+        "score": 0.2
       }
     }
   ]

@@ -177,6 +177,46 @@ def test_attest_floating_ref_scores_lower_than_pinned(tmp_path: Path) -> None:
     assert floating["score"] < pinned["score"]
 
 
+def test_attest_pinning_reachable_false_excludes_pinned_axis(tmp_path: Path) -> None:
+    (tmp_path / "LICENSE").write_text("MIT", encoding="utf-8")
+    penalized = scanner.attest(tmp_path, "main", pinning_reachable=True)
+    excluded = scanner.attest(tmp_path, "main", pinning_reachable=False)
+    assert penalized["pinned_ref"] is False
+    assert excluded["pinned_ref"] is False
+    assert excluded["pinning_reachable"] is False
+    assert excluded["score"] > penalized["score"]
+
+
+def test_attest_pinning_reachable_true_still_scores_actually_pinned_repo(tmp_path: Path) -> None:
+    result = scanner.attest(tmp_path, "a" * 40, pinning_reachable=False)
+    assert result["pinned_ref"] is True
+    assert result["score"] > 0.0
+
+
+def test_harvest_all_pinning_reachable_is_batch_wide(tmp_path: Path) -> None:
+    bare, sha1, _sha2 = _make_remote(tmp_path)
+    url = f"file://{bare}"
+    modules = [
+        {"name": "pinned-repo", "source": url, "ref": sha1},
+        {"name": "floating-repo", "source": url, "ref": "main"},
+    ]
+    results = scanner.harvest_all(modules, timeout=30)
+    by_name = {r["name"]: r for r in results}
+    assert by_name["pinned-repo"]["attestation"]["pinned_ref"] is True
+    assert by_name["floating-repo"]["attestation"]["pinned_ref"] is False
+    # at least one repo in the batch is actually pinned, so it's demonstrably
+    # achievable this run — the floating repo is penalized, not excused.
+    assert by_name["floating-repo"]["attestation"]["pinning_reachable"] is True
+
+
+def test_harvest_all_excludes_pinned_ref_axis_when_nobody_in_the_batch_pins(tmp_path: Path) -> None:
+    bare, _sha1, _sha2 = _make_remote(tmp_path)
+    modules = [{"name": "floating-only", "source": f"file://{bare}", "ref": "main"}]
+    [result] = scanner.harvest_all(modules, timeout=30)
+    assert result["attestation"]["pinned_ref"] is False
+    assert result["attestation"]["pinning_reachable"] is False
+
+
 def test_attest_studies_without_criteria_lower_score(tmp_path: Path) -> None:
     study_dir = tmp_path / "studies" / "s1"
     study_dir.mkdir(parents=True)

@@ -51,6 +51,10 @@
       "description": "A static, mechanically-verifiable reproducibility/FAIR-style heuristic — see viva_marketplace.scanner.attest(). NOT a certification.",
       "properties": {
         "pinned_ref": { "type": "boolean" },
+        "pinning_reachable": {
+          "type": "boolean",
+          "description": "False when no repo in the batch this entry was built with is actually SHA-pinned (e.g. the whole registry came from GitHub-topic discovery, which always writes the default branch) — pinned_ref is then excluded from the weighted score instead of penalizing every repo for a gap none of them can close."
+        },
         "has_lockfile": { "type": "boolean" },
         "has_license": { "type": "boolean" },
         "has_citation": { "type": "boolean" },

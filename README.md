@@ -75,6 +75,16 @@ simulation execution, no manual form:
   SHA back to the default branch. Making `pinned_ref` reachable again needs a
   discovery-side opt-in (e.g. a release-tag convention or a second topic
   carrying a pinned SHA) — open for discussion, not yet implemented.
+
+  Because the axis is unreachable for the *entire* registry right now, not
+  just individual repos, `attest()` excludes it from the weighted average
+  (same treatment as the zero-studies case below) rather than scoring every
+  repo `0.0` on a check none of them can currently pass — see
+  `harvest_all()`'s `pinning_reachable` computation (`True` only if at least
+  one entry in the batch is genuinely SHA-pinned, proving it's achievable
+  that run). The per-repo `attestation.pinning_reachable` field records which
+  mode a given score was computed under, so a `0.8` today and a `0.8` after a
+  future pinning mechanism ships aren't silently comparing different scales.
 - **has_lockfile** (0.15) / **has_license** (0.15) / **has_citation** (0.10)
 - **schema_version_present** (0.10) — a `workspace.yaml` declares its schema
   version, so tooling changes don't silently reinterpret it.
@@ -103,6 +113,14 @@ inventoried by hand. It is **not** a verified wiring guarantee — matching
 ignores unit/shape semantics, and coverage is inherently partial (most real
 ports are computed dynamically and are simply invisible to a static scan).
 Always confirm by actually composing.
+
+**No consumer reads this yet.** `viva_marketplace.load_composability_graph()`
+is built, tested, schema-validated, and published to `gh-pages` every night,
+but as of this writing neither `vivarium-workbench` nor any other repo in the
+ecosystem calls it — unlike `load_ecosystem_index()`, which
+`vivarium-workbench` already reads from two call sites to power its
+Registry tab. Treat the graph as a validated building block waiting on its
+first UI/API integration, not as an already-surfaced feature.
 
 **Generic-type matches are labeled, not filtered out.** Two ports typed just
 `float` or `string` — process-bigraph's own bare core/primitive type names —

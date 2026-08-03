@@ -320,7 +320,7 @@ def _schema_version_present(root: Path) -> bool:
     return False
 
 
-def attest(root: Path, declared_ref: str) -> dict[str, Any]:
+def attest(root: Path, declared_ref: str, pinning_reachable: bool = True) -> dict[str, Any]:
     """Static, mechanically-verifiable reproducibility/FAIR-style attestation
     for a cloned repo — computed from artifacts already on disk during the
     same pass that scans processes/composites, no simulation execution
@@ -331,7 +331,8 @@ def attest(root: Path, declared_ref: str) -> dict[str, Any]:
     Axes:
       - pinned_ref (0.25): registry `ref` is a full 40-hex commit SHA, not a
         floating branch/tag — a floating ref means "what gets built" silently
-        changes over time.
+        changes over time. Excluded from the weighted average (not scored 0)
+        when ``pinning_reachable`` is False — see below.
       - has_lockfile (0.15) / has_license (0.15) / has_citation (0.10)
       - schema_version_present (0.10): a workspace.yaml declares its schema
         version, so tooling changes don't silently reinterpret it.
@@ -339,6 +340,17 @@ def attest(root: Path, declared_ref: str) -> dict[str, Any]:
         excluded from the weighted average (not just scored 0) when a repo
         has zero studies, so process-library repos aren't penalized for a
         study convention that doesn't apply to them.
+
+    ``pinning_reachable`` extends that same "exclude what can't apply" rule to
+    ``pinned_ref``: under GitHub-topic discovery, ``ref`` is always set to the
+    repo's default branch for every entry (see ``discover_modules()`` in
+    ``scripts/build_ecosystem_index.py``), so an unpinned repo isn't failing a
+    hygiene check it could pass — pinning is structurally unreachable for the
+    whole batch. ``harvest_all`` computes this once per build (True if *any*
+    entry in the batch is actually pinned, proving it's achievable this run)
+    and threads it down here; a caller scoring a single repo in isolation gets
+    the conservative default (``True`` — score normally) unless it says
+    otherwise.
     """
     pinned = bool(_SHA_RE.match((declared_ref or "").strip()))
     has_lockfile = _root_has_any(root, _LOCKFILE_NAMES) or any(root.glob("requirements*.txt"))
@@ -348,7 +360,7 @@ def attest(root: Path, declared_ref: str) -> dict[str, Any]:
     studies_total, studies_ac, studies_base = _study_flags(root)
 
     axes: list[tuple[float, float | None]] = [
-        (0.25, 1.0 if pinned else 0.0),
+        (0.25, (1.0 if pinned else 0.0) if (pinned or pinning_reachable) else None),
         (0.15, 1.0 if has_lockfile else 0.0),
         (0.15, 1.0 if has_license else 0.0),
         (0.10, 1.0 if has_citation else 0.0),
@@ -361,6 +373,7 @@ def attest(root: Path, declared_ref: str) -> dict[str, Any]:
 
     return {
         "pinned_ref": pinned,
+        "pinning_reachable": pinning_reachable,
         "has_lockfile": has_lockfile,
         "has_license": has_license,
         "has_citation": has_citation,
@@ -372,10 +385,15 @@ def attest(root: Path, declared_ref: str) -> dict[str, Any]:
     }
 
 
-def harvest_repo(module: dict, timeout: float) -> dict[str, Any]:
+def harvest_repo(module: dict, timeout: float, pinning_reachable: bool = True) -> dict[str, Any]:
     """Shallow-clone and scan a single registry entry. Never raises — a repo
     that fails to clone is still returned, with ``cloned: False`` and empty
-    artifact lists, so the index stays a complete enumeration of the registry."""
+    artifact lists, so the index stays a complete enumeration of the registry.
+
+    ``pinning_reachable`` is forwarded to ``attest()`` — see its docstring;
+    ``harvest_all`` computes the batch-wide value, a lone caller gets the
+    conservative default.
+    """
     name = module.get("name") or module.get("package") or ""
     source = module.get("source") or module.get("homepage") or ""
     ref = module.get("ref") or ""
@@ -393,7 +411,7 @@ def harvest_repo(module: dict, timeout: float) -> dict[str, Any]:
         if clone(url, ref, dest, timeout):
             entry["cloned"] = True
             entry.update(scan_local(dest))
-            entry["attestation"] = attest(dest, ref)
+            entry["attestation"] = attest(dest, ref, pinning_reachable)
     entry["counts"] = {k: len(entry[k]) for k in _ARTIFACT_KEYS}
     return entry
 
@@ -410,11 +428,22 @@ def harvest_all(
     Output order always matches ``modules`` input order regardless of which
     worker finishes first, so the written index stays deterministic (no
     reorder-only diffs from run to run).
+
+    Whether ``pinned_ref`` counts against a repo's attestation score depends
+    on whether pinning is reachable *at all* in this batch: computed once,
+    up front, from the declared refs already in ``modules`` (no clone
+    needed) — True if at least one entry is genuinely SHA-pinned, proving
+    it's achievable this run; False means every entry is on a floating ref
+    (e.g. the whole registry came from topic discovery, which always writes
+    the default branch), so the axis is excluded rather than penalizing
+    every repo for a structural gap none of them can close.
     """
+    pinning_reachable = any(_SHA_RE.match((m.get("ref") or "").strip()) for m in modules)
+
     if jobs <= 1:
         results = []
         for m in modules:
-            r = harvest_repo(m, timeout)
+            r = harvest_repo(m, timeout, pinning_reachable)
             if on_result:
                 on_result(r)
             results.append(r)
@@ -422,7 +451,7 @@ def harvest_all(
 
     slots: list[dict[str, Any] | None] = [None] * len(modules)
     with ThreadPoolExecutor(max_workers=jobs) as ex:
-        futures = {ex.submit(harvest_repo, m, timeout): i for i, m in enumerate(modules)}
+        futures = {ex.submit(harvest_repo, m, timeout, pinning_reachable): i for i, m in enumerate(modules)}
         for fut in as_completed(futures):
             i = futures[fut]
             r = fut.result()
