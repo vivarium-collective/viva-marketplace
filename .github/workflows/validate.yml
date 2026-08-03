@@ -1,8 +1,10 @@
 name: Validate registry
 
-# PR gate: any change to the repo registry (modules.json) or its schema is
-# validated before it can merge. Adding/updating a repo goes through a pull
-# request — see CONTRIBUTING.md.
+# Schema-validates modules.json whenever a PR touches it, its schema, or the
+# validator itself — a sanity check on the (now topic-discovered, not
+# hand-edited) registry, catching a bad manual fix or a schema regression
+# before merge. Publishing a repo to the marketplace doesn't touch this file
+# directly — see CONTRIBUTING.md.
 on:
   pull_request:
     paths:

@@ -1,9 +1,10 @@
 name: Build ecosystem index
 
-# Rebuilds ecosystem-index.json + composability-graph.json by cloning and
-# scanning every registered repo's source, commits them back to main, and
-# publishes modules.json + both generated files to gh-pages so any published
-# workbench can fetch them same-origin.
+# Discovers the registry from every public, non-archived vivarium-collective
+# repo carrying the viva-marketplace GitHub topic, refreshing modules.json;
+# then clones and scans each repo's source into ecosystem-index.json +
+# composability-graph.json. Commits all three back to main and publishes them
+# to gh-pages so any published workbench can fetch them same-origin.
 on:
   workflow_dispatch:
   schedule:
@@ -35,7 +36,11 @@ jobs:
       - name: Install dependencies (PyYAML for spec scanning, jsonschema to validate the build output)
         run: python -m pip install --quiet pyyaml jsonschema
 
-      - name: Clone + scan every repo → ecosystem-index.json + composability-graph.json
+      - name: Discover repos (viva-marketplace topic) + clone/scan → index + composability graph
+        env:
+          # discovery queries the org for public repos with the viva-marketplace
+          # topic; the default workflow token authenticates the search API.
+          GITHUB_TOKEN: ${{ github.token }}
         run: python scripts/build_ecosystem_index.py --jobs 8
 
       - name: Validate generated files against their schemas
@@ -54,16 +59,16 @@ jobs:
               print(f"OK: {data_file}")
           PY
 
-      - name: Commit the refreshed files (if changed)
+      - name: Commit the refreshed registry + index + graph (if changed)
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          if ! git diff --quiet -- viva_marketplace/ecosystem-index.json viva_marketplace/composability-graph.json; then
-            git add viva_marketplace/ecosystem-index.json viva_marketplace/composability-graph.json
-            git commit -m "chore: rebuild ecosystem-index.json + composability-graph.json [skip ci]"
+          git add viva_marketplace/modules.json viva_marketplace/ecosystem-index.json viva_marketplace/composability-graph.json
+          if ! git diff --cached --quiet; then
+            git commit -m "chore: refresh registry (topic discovery) + ecosystem-index + composability-graph [skip ci]"
             git push
           else
-            echo "index unchanged"
+            echo "registry + index + graph unchanged"
           fi
 
       - name: Assemble the public ledger (modules + index + graph)

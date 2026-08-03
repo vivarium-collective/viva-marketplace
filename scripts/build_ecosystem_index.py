@@ -31,6 +31,59 @@ from viva_marketplace import composability, scanner  # noqa: E402
 SCHEMA_VERSION = 1
 _STALE_AFTER_HOURS = 48
 
+# A repo "publishes to the marketplace" by adding this GitHub topic. Membership
+# is discovered from the org (no hand-maintained list) — see discover_modules.
+MARKETPLACE_TOPIC = "viva-marketplace"
+ORG = "vivarium-collective"
+
+
+def discover_modules(timeout: float = 60.0) -> list[dict]:
+    """Discover the marketplace registry from GitHub: every PUBLIC, non-archived
+    ``vivarium-collective`` repo carrying the ``viva-marketplace`` topic.
+
+    This replaces the hand-maintained ``modules.json`` membership list — a repo
+    joins the marketplace by adding the topic (``gh repo edit --add-topic
+    viva-marketplace``), and the daily index build picks it up automatically.
+    Returns registry entries in the same shape modules.json used
+    (name/source/ref/package/homepage/description/tags), sorted by name.
+    """
+    import urllib.parse
+    import urllib.request
+
+    token = os.environ.get("GITHUB_TOKEN") or os.environ.get("GH_TOKEN")
+    q = f"org:{ORG} topic:{MARKETPLACE_TOPIC} archived:false"
+    modules: list[dict] = []
+    page = 1
+    while True:
+        url = ("https://api.github.com/search/repositories?q="
+               + urllib.parse.quote(q)
+               + f"&per_page=100&page={page}&sort=full_name&order=asc")
+        headers = {"Accept": "application/vnd.github+json",
+                   "User-Agent": "viva-marketplace-index"}
+        if token:
+            headers["Authorization"] = f"Bearer {token}"
+        req = urllib.request.Request(url, headers=headers)
+        with urllib.request.urlopen(req, timeout=timeout) as resp:
+            data = json.loads(resp.read())
+        items = data.get("items", []) or []
+        for it in items:
+            modules.append({
+                "name": it["name"],
+                "source": it.get("clone_url") or f"{it['html_url']}.git",
+                "ref": it.get("default_branch") or "main",
+                "package": it["name"].replace("-", "_"),
+                "homepage": it.get("html_url"),
+                "description": it.get("description") or "",
+                "tags": sorted(t for t in (it.get("topics") or [])
+                               if t != MARKETPLACE_TOPIC),
+            })
+        total = int(data.get("total_count") or 0)
+        if len(items) < 100 or len(modules) >= total:
+            break
+        page += 1
+    modules.sort(key=lambda m: m["name"].lower())
+    return modules
+
 
 def _load_json(path: Path) -> dict | None:
     try:
@@ -96,7 +149,24 @@ def main(argv=None) -> int:
     ap.add_argument("--jobs", type=int, default=8, help="parallel clone+scan workers (default: 8)")
     ap.add_argument("--stamp", default=None)
     ap.add_argument("--only", default=None, help="comma-separated repo names to limit (debug)")
+    ap.add_argument("--no-discover", action="store_true",
+                    help="skip GitHub topic discovery; use the committed modules.json as-is "
+                         "(offline / no token)")
     args = ap.parse_args(argv)
+
+    # Discover the registry from the `viva-marketplace` GitHub topic and refresh
+    # the committed modules.json (the generated cache). Fall back to the committed
+    # list if discovery fails (offline / API error) so the build never breaks.
+    if not args.no_discover:
+        try:
+            discovered = discover_modules(args.timeout)
+            (PKG / "modules.json").write_text(
+                json.dumps(discovered, indent=2) + "\n", encoding="utf-8")
+            print(f"discovered {len(discovered)} repos via topic "
+                  f"'{MARKETPLACE_TOPIC}' -> refreshed modules.json", file=sys.stderr)
+        except Exception as e:
+            print(f"WARNING: topic discovery failed ({e}); using committed "
+                  f"modules.json", file=sys.stderr)
 
     modules = json.loads((PKG / "modules.json").read_text(encoding="utf-8"))
     if isinstance(modules, dict):
