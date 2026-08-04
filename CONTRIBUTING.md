@@ -1,12 +1,26 @@
 # Contributing to viva-marketplace
 
 viva-marketplace is the **ecosystem ledger** for the vivarium / process-bigraph
-workbench. Both files are now **machine-generated** — you don't hand-edit them:
+workbench. All three files are **machine-generated** — you don't hand-edit them:
 
 - `viva_marketplace/modules.json` — the registry of repos, **discovered from
   GitHub topics** (see below).
 - `viva_marketplace/ecosystem-index.json` — the aggregated artifact index,
   built by cloning + scanning each discovered repo.
+- `viva_marketplace/composability-graph.json` — the experimental cross-repo
+  port-compatibility graph, derived from the same scan.
+
+**Before publishing**, run `viva-marketplace-selfcheck <your-name> --path .`
+from your repo's checkout — it reuses the exact scanner the nightly build
+uses, so you see the same artifact counts the ledger will, plus a heads-up if
+your repo's GitHub description/topics leave `description`/`tags` empty. See
+[README.md](README.md#selfcheck--drift-check-before-you-publish).
+
+**Want your ref to count as reproducibility-attested?** See
+[README.md](README.md#reproducibility-attestation) — pinning currently
+requires a discovery-side change (topic discovery sets `ref` to each repo's
+default branch), tracked as an open item, not something you can do today by
+editing `modules.json` yourself.
 
 ## Publish your repository to the marketplace
 
@@ -51,15 +65,21 @@ gh repo edit vivarium-collective/<your-repo> --remove-topic viva-marketplace
 
 - **Membership = the `viva-marketplace` topic on a public, non-archived repo.**
   No hand-maintained list to drift.
-- Both `modules.json` and `ecosystem-index.json` are generated — don't hand-edit
-  them (changes are overwritten on the next build).
+- **All three generated files are off-limits to hand-editing** —
+  `modules.json`, `ecosystem-index.json`, `composability-graph.json` are all
+  overwritten on the next build. `modules.json` is still schema-validated
+  (`scripts/validate_modules.py` against
+  [`schemas/modules.schema.json`](viva_marketplace/schemas/modules.schema.json))
+  as a sanity check on the discovery output, not as a PR gate for hand edits.
 
 ## Rebuild locally
 
 ```bash
-pip install pyyaml
-export GITHUB_TOKEN=$(gh auth token)      # discovery authenticates the search API
-python scripts/build_ecosystem_index.py               # discover + clone/scan all
-python scripts/build_ecosystem_index.py --no-discover # use committed modules.json as-is
-python scripts/build_ecosystem_index.py --only viva-biofilm  # just one repo
+pip install -e ".[dev]"                                        # pyyaml + jsonschema + dev tooling
+export GITHUB_TOKEN=$(gh auth token)                            # discovery authenticates the search API
+python scripts/build_ecosystem_index.py --jobs 8                # discover + clone/scan all -> index + graph
+python scripts/build_ecosystem_index.py --no-discover           # use committed modules.json as-is (offline)
+python scripts/build_ecosystem_index.py --only viva-biofilm     # just one repo (debug)
+python scripts/validate_modules.py                              # schema-check modules.json
+pytest -v                                                        # unit + contract tests
 ```

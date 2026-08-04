@@ -1,0 +1,94 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://vivarium-collective.github.io/viva-marketplace/schemas/ecosystem-index.schema.json",
+  "title": "viva-marketplace ecosystem index",
+  "description": "CI-generated aggregate artifact index (viva_marketplace/ecosystem-index.json). Never hand-edit — rebuilt nightly by scripts/build_ecosystem_index.py. additionalProperties is intentionally permissive throughout so new fields can be added without a breaking schema bump; consumers should read known keys and ignore the rest.",
+  "type": "object",
+  "required": ["repos"],
+  "properties": {
+    "schema_version": { "type": "integer", "minimum": 1 },
+    "generated_at": { "type": ["string", "null"] },
+    "n_repos": { "type": "integer", "minimum": 0 },
+    "n_cloned": { "type": "integer", "minimum": 0 },
+    "repos": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/repo" }
+    }
+  },
+  "additionalProperties": true,
+  "$defs": {
+    "namedItem": {
+      "type": "object",
+      "required": ["name", "description"],
+      "properties": {
+        "name": { "type": "string" },
+        "description": { "type": "string" },
+        "ports": {
+          "type": "object",
+          "description": "Best-effort, only present when inputs()/outputs() resolved to a literal dict (see viva_marketplace.scanner._extract_ports_method). Absence means 'not statically knowable', not 'no ports'.",
+          "properties": {
+            "inputs": { "type": "object", "additionalProperties": { "type": "string" } },
+            "outputs": { "type": "object", "additionalProperties": { "type": "string" } }
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": true
+    },
+    "counts": {
+      "type": "object",
+      "properties": {
+        "processes": { "type": "integer", "minimum": 0 },
+        "steps": { "type": "integer", "minimum": 0 },
+        "composites": { "type": "integer", "minimum": 0 },
+        "studies": { "type": "integer", "minimum": 0 },
+        "investigations": { "type": "integer", "minimum": 0 }
+      },
+      "additionalProperties": true
+    },
+    "attestation": {
+      "type": "object",
+      "description": "A static, mechanically-verifiable reproducibility/FAIR-style heuristic — see viva_marketplace.scanner.attest(). NOT a certification.",
+      "properties": {
+        "pinned_ref": { "type": "boolean" },
+        "pinning_reachable": {
+          "type": "boolean",
+          "description": "False when no repo in the batch this entry was built with is actually SHA-pinned (e.g. the whole registry came from GitHub-topic discovery, which always writes the default branch) — pinned_ref is then excluded from the weighted score instead of penalizing every repo for a gap none of them can close."
+        },
+        "has_lockfile": { "type": "boolean" },
+        "has_license": { "type": "boolean" },
+        "has_citation": { "type": "boolean" },
+        "schema_version_present": { "type": "boolean" },
+        "studies_total": { "type": "integer", "minimum": 0 },
+        "studies_with_acceptance_criteria": { "type": "integer", "minimum": 0 },
+        "studies_with_baseline": { "type": "integer", "minimum": 0 },
+        "score": { "type": "number", "minimum": 0, "maximum": 1 }
+      },
+      "additionalProperties": true
+    },
+    "repo": {
+      "type": "object",
+      "required": [
+        "name", "repo", "source", "cloned",
+        "processes", "steps", "composites", "studies", "investigations", "counts"
+      ],
+      "properties": {
+        "name": { "type": "string" },
+        "repo": { "type": "string" },
+        "source": { "type": "string" },
+        "homepage": { "type": "string" },
+        "description": { "type": "string" },
+        "tags": { "type": "array", "items": { "type": "string" } },
+        "cloned": { "type": "boolean" },
+        "processes": { "type": "array", "items": { "$ref": "#/$defs/namedItem" } },
+        "steps": { "type": "array", "items": { "$ref": "#/$defs/namedItem" } },
+        "composites": { "type": "array", "items": { "$ref": "#/$defs/namedItem" } },
+        "studies": { "type": "array", "items": { "$ref": "#/$defs/namedItem" } },
+        "investigations": { "type": "array", "items": { "$ref": "#/$defs/namedItem" } },
+        "counts": { "$ref": "#/$defs/counts" },
+        "attestation": { "$ref": "#/$defs/attestation" }
+      },
+      "additionalProperties": true
+    }
+  }
+}

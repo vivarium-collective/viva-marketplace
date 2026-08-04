@@ -1,0 +1,38 @@
+name: Test
+
+# pytest + ruff + mypy, run on any change to the package, scripts, tests, or
+# their dependency/config surface.
+on:
+  push:
+    branches: [main]
+  pull_request:
+    paths:
+      - "viva_marketplace/**"
+      - "scripts/**"
+      - "tests/**"
+      - "pyproject.toml"
+      - ".github/workflows/test.yml"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: test-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install package + dev extras
+        run: python -m pip install --quiet -e ".[dev]"
+      - name: ruff check
+        run: ruff check .
+      - name: mypy
+        run: mypy
+      - name: pytest
+        run: pytest -v

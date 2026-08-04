@@ -5,3 +5,5 @@ build/
 *.egg-info/
 public/
 .venv/
+SAVE_SLOT.md
+.idea/
