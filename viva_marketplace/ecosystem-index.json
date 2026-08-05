@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-04T08:18:20+00:00",
+  "generated_at": "2026-08-05T08:16:04+00:00",
   "n_repos": 36,
   "n_cloned": 36,
   "repos": [
@@ -635,6 +635,10 @@
           "description": "v2ecoli Millard kinetic-metabolism cell (baseline_millard) + PopulationAggregator coupled to the BiRD bioreactor (BiRDTransportHours) via ReactorCellCoupler. The Millard arm of reactor_bird_coupled: identical population + reactor coupling layered on the Millard 2017 ODE cell instead of the WCM FBA-metabolism cell. The Millard cell's respiration (CYTBO O2 uptake, emitted as environment.exchange counts) nets additively against the reactor's gas-liquid transport at shared reactor.dissolved_o2/dissolved_co2 stores, so the kinetic cell consumes reactor O2 end-to-end."
         },
         {
+          "name": "parca_prep",
+          "description": "ParCa pull-or-compute prerequisite, as an ordinary study on the investigation-as-composite substrate. Resolves (and, when stale, rebuilds) the candidate (v2ecoli) ParCa cache and, when reference_cache_dir is given, the reference (vEcoli) cache too, via v2ecoli.workflow.parca_study.resolve_or_build_parca. No ParCa science of its own -- a prep marker, not a sim."
+        },
+        {
           "name": "ecoli_time_varying_env",
           "description": "v2ecoli baseline + EnvironmentDriver/Mirror hooks so external physics can drive environment.external_concentrations each tick. Default env_driver_mode=static preserves baseline parity."
         },
@@ -653,6 +657,10 @@
         {
           "name": "millard_fba_bridge_harness",
           "description": "Whole-cell E. coli baseline (real tFBA ecoli-metabolism) with the Millard 2017 central-carbon ODE wired in as a flux SOURCE: the Millard fluxes are mapped+converted by fba-flux-coupler into pinned_flux_targets that ecoli-metabolism hard-pins before its LP solve. Integration climax of the FBA-bridge flux-pin feature."
+        },
+        {
+          "name": "vecoli",
+          "description": "Genuine upstream vEcoli, run on its own vivarium-core Engine inside ONE process-bigraph node (agents/<agent_id>/vivarium_ecoli) \u2014 the REFERENCE model for the v2ecoli<->vEcoli comparison. Wraps v2ecoli.library.vivarium_ecoli_engine.build_vivarium_ecoli (the same engine builder scripts/run_comparison_ensemble.py drives for --composite vecoli --vecoli-source vivarium-process); faithful by construction \u2014 no reimplemented partition/allocation/division."
         },
         {
           "name": "ecoli_population",
@@ -950,7 +958,7 @@
       "counts": {
         "processes": 21,
         "steps": 74,
-        "composites": 11,
+        "composites": 13,
         "studies": 56,
         "investigations": 12
       }
@@ -1958,6 +1966,10 @@
       "processes": [],
       "steps": [
         {
+          "name": "AnnotationCatalogStep",
+          "description": "Produce the annotation (SBML MIRIAM + BTO crosswalk) organ catalog in-graph: load the committed catalog cache if present, else build it live by fetching each model's SBML."
+        },
+        {
           "name": "AnnotationMatchStep",
           "description": "Summarize the annotation-based (SBML MIRIAM + BTO crosswalk) organ-matching catalog: model/organ counts and the qualifier/ontology distribution behind each organ tag."
         },
@@ -2002,8 +2014,16 @@
           "description": "Bind documented HRA-aligned islet beta-cell fractions to the Topp2000 beta-cell-mass model's (BIOMD0000000341) initial beta-cell mass, and run healthy vs beta-depleted composition scenarios to show the glucose-regulation consequence."
         },
         {
+          "name": "FTUPathTableStep",
+          "description": "Load the FTU heart->FTU->heart path table (FTU_Table_S1) from disk and emit the parsed paths + FTU ontology ids in-graph."
+        },
+        {
           "name": "VasculatureNetworkStep",
-          "description": "Load the HRA/VCCF vasculature data (28 FTU heart->FTU->heart paths + VCCF vessel classes) and build a directed whole-body blood-transport graph, validating that every FTU closes a circuit through the heart."
+          "description": "Build a directed whole-body blood-transport graph from the FTU heart->FTU->heart paths (handed over in-graph by an upstream FTUPathTableStep), validating that every FTU closes a circuit through the heart."
+        },
+        {
+          "name": "CorpusCatalogStep",
+          "description": "Produce the full-corpus biomodel-DO catalog in-graph: load the committed catalog cache if present, else build it live from the BioModels registry + HRA reference organs."
         },
         {
           "name": "BiomodelDOCatalogStep",
@@ -2158,7 +2178,7 @@
       ],
       "counts": {
         "processes": 0,
-        "steps": 14,
+        "steps": 17,
         "composites": 15,
         "studies": 16,
         "investigations": 3
