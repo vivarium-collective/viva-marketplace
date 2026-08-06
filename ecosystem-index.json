@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-05T08:16:04+00:00",
+  "generated_at": "2026-08-06T08:14:20+00:00",
   "n_repos": 36,
   "n_cloned": 36,
   "repos": [
@@ -1963,7 +1963,16 @@
       "description": "HRA/WPP modeling workspace",
       "tags": [],
       "cloned": true,
-      "processes": [],
+      "processes": [
+        {
+          "name": "PTHSecretion",
+          "description": ""
+        },
+        {
+          "name": "Ca2Absorption",
+          "description": ""
+        }
+      ],
       "steps": [
         {
           "name": "AnnotationCatalogStep",
@@ -2006,6 +2015,18 @@
           "description": "Cross the ASCT+B-3D crosswalk's anatomical structures with the biomodel-DO organ->models index to mark model coverage, at organ granularity."
         },
         {
+          "name": "BiomodelHraMapStep",
+          "description": "Load (cache-or-build) the BioModels->HRA map DB and emit its path, model count, and coverage summary. The DB itself (a JSON array of per-model molecular ids, publication links, organism, and HRA organ/FTU/cell-type mapping) is downloadable from the workspace Resources; this Step surfaces the count + coverage without emitting the whole 2.7 MB file."
+        },
+        {
+          "name": "AtlasBrowserStep",
+          "description": "Regenerate the HRA Atlas Browser pack from the BioModels->HRA map DB: place each model at the organ subregion(s) its cell types / FTUs resolve to (via HRApop per-AS cell populations + the ASCT+B-3D crosswalk), falling back to the whole organ. Writes atlas.json/config.json to the study's viz/atlas/; emits the manifest summary + placement stats."
+        },
+        {
+          "name": "AsctbTablesStep",
+          "description": "Harvest the HRA ASCT+B tables (Anatomical Structures, Cell Types + Biomarkers) for all ~40 organs and build a gene->Uberon index. Writes the harvested {organ: rows} DB to out_path; emits organ/gene counts plus a summary (not the whole DB)."
+        },
+        {
           "name": "FtuModelCoverageStep",
           "description": "Match the committed full-corpus BioModels catalog's model names against a curated list of HRA functional tissue units (FTUs) by synonym substring, marking which FTUs have at least one matching model."
         },
@@ -2036,28 +2057,8 @@
       ],
       "composites": [
         {
-          "name": "hra-reference-organs",
-          "description": "Fetch HRA reference organs (Uberon-keyed, per-sex GLB assets) from the CCF API."
-        },
-        {
-          "name": "hra-cell-types",
-          "description": "Fetch HRA cell-type term occurrences (Cell Ontology) from the CCF API."
-        },
-        {
-          "name": "hra-anatomical-structures",
-          "description": "Fetch HRA anatomical-structure term occurrences from the CCF API."
-        },
-        {
-          "name": "hra-3d-crosswalk",
-          "description": "Fetch the ASCT+B-3D models crosswalk (1,400+ anatomical structures) from the HRA CDN's `asct-b-3d-models-crosswalk.csv` digital object."
-        },
-        {
-          "name": "ftu-glomerulus",
-          "description": "Fetch the glomerulus 3D functional-tissue-unit (FTU) digital object from the HRA CDN's `3d-ftu/glomerulus` endpoint, resolving its GLB asset URL."
-        },
-        {
-          "name": "ctpop-islet-parameterization",
-          "description": "Bind documented HRA-aligned islet beta-cell-composition fractions to the Topp2000 beta-cell-mass model's (BIOMD0000000341) initial beta-cell mass, and run healthy vs beta-depleted composition scenarios to show the resulting glucose-regulation consequence."
+          "name": "organ-vasculature-scaffold",
+          "description": "Store-hierarchy scaffold for the Whole-Person-Physiome model: a Vasculature tree (parathyroid vessel, renal artery, superior mesenteric artery, blood) and an Organs tree (parathyroid, kidney, small intestines, bone). No processes yet \u2014 just the state topology."
         },
         {
           "name": "corpus-coverage",
@@ -2066,10 +2067,6 @@
         {
           "name": "blood-vasculature-network",
           "description": "Pull the HRA/VCCF vasculature data (28 FTU heart->FTU->heart paths + VCCF vessel classes) and build a directed whole-body blood-transport graph, validating every FTU closes a circuit through the heart. The topology substrate for the planned blood-circulation simulation that couples organ models through a shared blood compartment."
-        },
-        {
-          "name": "spatial-linkage",
-          "description": "Join biomodel-DO organ annotations to ASCT+B-3D crosswalk anatomical-structure nodes on shared Uberon CURIE, so each linked GLB scene node can be colored/labeled by its model."
         },
         {
           "name": "ftu-model-coverage",
@@ -2086,14 +2083,6 @@
         {
           "name": "annotation-recall-gain",
           "description": "Compare the annotation-based organ-matching catalog against the name-synonym catalog to quantify the recall gain (organs/models added) from parsing SBML MIRIAM/BTO annotations."
-        },
-        {
-          "name": "glucose-biomodel-do",
-          "description": "Search BioModels for a text query, annotate hits with HRA Uberon organ terms (synonym-match), and build the inverse organ->models index."
-        },
-        {
-          "name": "model-coverage-3d",
-          "description": "Cross the ASCT+B-3D crosswalk's anatomical structures with the biomodel-DO organ->models index to mark model coverage, at organ granularity."
         }
       ],
       "studies": [
@@ -2135,7 +2124,7 @@
         },
         {
           "name": "hra-atlas-browser",
-          "description": "HRA Atlas Browser \u2014 organ selector + model-count gradient + BioModels links"
+          "description": "HRA Atlas Browser \u2014 organ selector + model-count gradient + subregion placement"
         },
         {
           "name": "ctpop-islet-parameterization",
@@ -2158,6 +2147,10 @@
           "description": "Model Coverage 3D \u2014 AS/Organ Coverage from BioModel-DO Annotations"
         },
         {
+          "name": "biomodel-hra-map",
+          "description": "BioModels \u2192 HRA Map \u2014 Harvesting the Curated Corpus into the Human Reference Atlas"
+        },
+        {
           "name": "hra-3d-crosswalk",
           "description": "HRA 3D Crosswalk \u2014 Full ASCT+B-3D Anatomical-Structure Tree"
         }
@@ -2177,10 +2170,10 @@
         }
       ],
       "counts": {
-        "processes": 0,
-        "steps": 17,
-        "composites": 15,
-        "studies": 16,
+        "processes": 2,
+        "steps": 20,
+        "composites": 7,
+        "studies": 17,
         "investigations": 3
       }
     },
