@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-07T06:59:34+00:00",
+  "generated_at": "2026-08-08T06:33:55+00:00",
   "n_repos": 36,
   "n_cloned": 36,
   "repos": [
@@ -1697,7 +1697,7 @@
       "repo": "viva-cpm",
       "source": "https://github.com/vivarium-collective/viva-cpm",
       "homepage": "https://github.com/vivarium-collective/viva-cpm",
-      "description": "Native process-bigraph Cellular Potts Model (CPM) framework \u2014 fast 2D/3D Rust core, remaking CompuCell3D",
+      "description": "Vivarium-native Cellular Potts Model (CPM) framework \u2014 fast 2D/3D Rust core",
       "tags": [],
       "cloned": true,
       "processes": [
@@ -1715,7 +1715,12 @@
         }
       ],
       "steps": [],
-      "composites": [],
+      "composites": [
+        {
+          "name": "recruitment",
+          "description": "Chemotactic recruitment (single CPMProcess). Source cells secrete a cue; responders chemotax up it. cue_rate=0 removes the cue; chemo_lambda=0 blocks the response."
+        }
+      ],
       "studies": [
         {
           "name": "vacancy_cavity",
@@ -1746,8 +1751,20 @@
           "description": "Simulate gamma_ld=21 from a random IC and show clusters do not separate, contrasting with the gamma_ld=27 case.\n"
         },
         {
+          "name": "recruitment-inhibited",
+          "description": "Repeat the baseline world with the responder chemotaxis strength set to zero (the\nintervention) and measure the recruitment index over 500 MC sweeps.\n"
+        },
+        {
+          "name": "recruitment-baseline",
+          "description": "Simulate the CPM recruitment world (source slab + six responders in the gradient\nzone), equilibrate the secreted field, and measure the recruitment index \u2014\nfraction of responders within 15 px of the source \u2014 over 500 MC sweeps.\n"
+        },
+        {
           "name": "cell_sorting",
           "description": "Simulate the sorting energies from a random IC to 13500 MCS and measure boundary lengths, type correlations, <n> across temperature (2-80) and lambda (0.1-10).\n"
+        },
+        {
+          "name": "recruitment-adversarial",
+          "description": "Run the world with competent responders but the source secretion turned off, and\nconfirm the recruitment index and metric correctly report no recruitment.\n"
         },
         {
           "name": "dispersal_sloughing",
@@ -1764,6 +1781,10 @@
       ],
       "investigations": [
         {
+          "name": "chemotactic-recruitment",
+          "description": "Chemotactic recruitment"
+        },
+        {
           "name": "glazier-graner-1993",
           "description": "Glazier & Graner 1993 \u2014 differential-adhesion cell rearrangement"
         }
@@ -1771,9 +1792,9 @@
       "counts": {
         "processes": 3,
         "steps": 0,
-        "composites": 0,
-        "studies": 11,
-        "investigations": 1
+        "composites": 1,
+        "studies": 14,
+        "investigations": 2
       }
     },
     {
@@ -2007,6 +2028,10 @@
           "description": "Fetch a 3D functional-tissue-unit (FTU) digital object from the HRA CDN's `3d-ftu/<slug>` endpoint, resolving its GLB asset URL."
         },
         {
+          "name": "ModelHarvestStep",
+          "description": "Load (cache-or-harvest) the unified BioModels+PhysioNet -> HRA model DB and emit its path, total count, per-source counts, and coverage summary. Reproducible: run this study to refresh the DB."
+        },
+        {
           "name": "SpatialLinkStep",
           "description": "Join biomodel-DO organ annotations to ASCT+B-3D crosswalk anatomical-structure nodes on shared Uberon CURIE, so each linked GLB scene node can be colored/labeled by its model."
         },
@@ -2135,6 +2160,10 @@
           "description": "Corpus Coverage \u2014 Full 1,096-Model BioModels Catalog on HRA 3D Anatomy"
         },
         {
+          "name": "model-harvest",
+          "description": "Unified Model Harvest \u2014 BioModels + PhysioNet into the HRA Model DB"
+        },
+        {
           "name": "ftu-glomerulus",
           "description": "FTU Glomerulus \u2014 3D Functional-Tissue-Unit Digital Object"
         },
@@ -2171,9 +2200,9 @@
       ],
       "counts": {
         "processes": 2,
-        "steps": 20,
+        "steps": 21,
         "composites": 7,
-        "studies": 17,
+        "studies": 18,
         "investigations": 3
       }
     },

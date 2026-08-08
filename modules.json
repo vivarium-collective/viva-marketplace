@@ -131,7 +131,7 @@
     "ref": "main",
     "package": "viva_cpm",
     "homepage": "https://github.com/vivarium-collective/viva-cpm",
-    "description": "Native process-bigraph Cellular Potts Model (CPM) framework \u2014 fast 2D/3D Rust core, remaking CompuCell3D",
+    "description": "Vivarium-native Cellular Potts Model (CPM) framework \u2014 fast 2D/3D Rust core",
     "tags": []
   },
   {
