@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-08T06:33:55+00:00",
+  "generated_at": "2026-08-09T06:37:44+00:00",
   "n_repos": 36,
   "n_cloned": 36,
   "repos": [
@@ -1697,7 +1697,7 @@
       "repo": "viva-cpm",
       "source": "https://github.com/vivarium-collective/viva-cpm",
       "homepage": "https://github.com/vivarium-collective/viva-cpm",
-      "description": "Vivarium-native Cellular Potts Model (CPM) framework \u2014 fast 2D/3D Rust core",
+      "description": "Vivarium-native Cellular Potts Model framework \u2014 with a fast Rust core",
       "tags": [],
       "cloned": true,
       "processes": [
@@ -2476,7 +2476,7 @@
       "repo": "Viva-munk",
       "source": "https://github.com/vivarium-collective/Viva-munk",
       "homepage": "https://github.com/vivarium-collective/Viva-munk",
-      "description": "",
+      "description": "vivarium wrapper for pymunk",
       "tags": [],
       "cloned": true,
       "processes": [
