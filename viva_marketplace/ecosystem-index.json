@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-09T06:37:44+00:00",
+  "generated_at": "2026-08-10T07:08:38+00:00",
   "n_repos": 36,
   "n_cloned": 36,
   "repos": [
@@ -12,6 +12,70 @@
       "tags": [],
       "cloned": true,
       "processes": [
+        {
+          "name": "Transcription",
+          "description": ""
+        },
+        {
+          "name": "Translation",
+          "description": ""
+        },
+        {
+          "name": "RNADegradation",
+          "description": ""
+        },
+        {
+          "name": "Metabolism",
+          "description": ""
+        },
+        {
+          "name": "MolecularPacking",
+          "description": ""
+        },
+        {
+          "name": "Growth",
+          "description": ""
+        },
+        {
+          "name": "Division",
+          "description": ""
+        },
+        {
+          "name": "Diffusion",
+          "description": ""
+        },
+        {
+          "name": "ABM",
+          "description": ""
+        },
+        {
+          "name": "GeneExpression",
+          "description": ""
+        },
+        {
+          "name": "MetabolismGraph",
+          "description": ""
+        },
+        {
+          "name": "GeneExpressionGraph",
+          "description": ""
+        },
+        {
+          "name": "Grow",
+          "description": ""
+        },
+        {
+          "name": "Express",
+          "description": ""
+        },
+        {
+          "name": "Transport",
+          "description": ""
+        },
+        {
+          "name": "BigraphLink",
+          "description": ""
+        },
         {
           "name": "_ShardFacade",
           "description": "Local Process whose ``invoke()`` enqueues onto a ShardManager"
@@ -167,6 +231,10 @@
           "description": "Particle-only baseline: Brownian motion of agents with mass in continuous space (no fields, no metabolism). Checks integrator + particle state schema."
         },
         {
+          "name": "fig-08",
+          "description": "What does Fig 8 \u2014 the spatio-flux reference model depict, and does its bigraph-loom image generate?"
+        },
+        {
           "name": "ecoli_dfba",
           "description": "Single-cell metabolism (large model): dynamic FBA using iAF1260 with tracked extracellular fields (glucose/formate) and biomass. Stress-tests solver + exchange wiring."
         },
@@ -177,6 +245,10 @@
         {
           "name": "monod_kinetics",
           "description": "Field-only baseline: Monod uptake/growth on a well-mixed substrate pool (no spatial lattice, no particles). Use to sanity-check kinetics + mass balance."
+        },
+        {
+          "name": "fig-01",
+          "description": "What does Fig 1 \u2014 draft processes + multiscale composite depict, and does its bigraph-loom image generate?"
         },
         {
           "name": "spatial_many_dfba",
@@ -203,8 +275,20 @@
           "description": "Field transport primitive: finite-volume diffusion/advection on a 2D lattice. Use to validate boundary conditions, stability, and transport timescales."
         },
         {
+          "name": "fig-07",
+          "description": "What does Fig 7 depict, and do its three panels' bigraph-loom images generate?"
+        },
+        {
           "name": "ecoli_core_dfba",
           "description": "Single-cell metabolism baseline: dynamic FBA for E. coli core with external glucose/acetate and biomass over time (no space, no particles)."
+        },
+        {
+          "name": "fig-03",
+          "description": "What does Fig 3 \u2014 process graph + composite process depict, and does its bigraph-loom image generate?"
+        },
+        {
+          "name": "fig-02",
+          "description": "What does Fig 2 \u2014 Milner bigraph (a) + process bigraph (b) depict, and does its bigraph-loom image generate?"
         },
         {
           "name": "yeast_dfba",
@@ -223,14 +307,18 @@
         {
           "name": "spatio-flux-test-suite",
           "description": "Spatio-Flux Test Suite \u2014 compositional multiscale scenarios"
+        },
+        {
+          "name": "paper-figures",
+          "description": "Process Bigraph paper \u2014 figures"
         }
       ],
       "counts": {
-        "processes": 8,
+        "processes": 24,
         "steps": 4,
         "composites": 19,
-        "studies": 19,
-        "investigations": 1
+        "studies": 24,
+        "investigations": 2
       }
     },
     {
@@ -1802,7 +1890,7 @@
       "repo": "viva-emitters",
       "source": "https://github.com/vivarium-collective/viva-emitters",
       "homepage": "https://github.com/vivarium-collective/viva-emitters",
-      "description": "Focused emitter library for process-bigraph composites",
+      "description": "emitter library for vivarium simulations",
       "tags": [],
       "cloned": true,
       "processes": [],
@@ -2044,8 +2132,8 @@
           "description": "Load (cache-or-build) the BioModels->HRA map DB and emit its path, model count, and coverage summary. The DB itself (a JSON array of per-model molecular ids, publication links, organism, and HRA organ/FTU/cell-type mapping) is downloadable from the workspace Resources; this Step surfaces the count + coverage without emitting the whole 2.7 MB file."
         },
         {
-          "name": "AtlasBrowserStep",
-          "description": "Regenerate the HRA Atlas Browser pack from the BioModels->HRA map DB: place each model at the organ subregion(s) its cell types / FTUs resolve to (via HRApop per-AS cell populations + the ASCT+B-3D crosswalk), falling back to the whole organ. Writes atlas.json/config.json to the study's viz/atlas/; emits the manifest summary + placement stats."
+          "name": "ComputationalModelAtlas",
+          "description": "Regenerate the HRA Computational Model Atlas pack from the BioModels->HRA map DB: place each model at the organ subregion(s) its cell types / FTUs resolve to (via HRApop per-AS cell populations + the ASCT+B-3D crosswalk), falling back to the whole organ. Writes atlas.json/config.json to the study's viz/atlas/; emits the manifest summary + placement stats."
         },
         {
           "name": "AsctbTablesStep",
@@ -2149,7 +2237,7 @@
         },
         {
           "name": "hra-atlas-browser",
-          "description": "HRA Atlas Browser \u2014 organ selector + model-count gradient + subregion placement"
+          "description": "HRA Computational Model Atlas \u2014 organ selector + model-count gradient + subregion placement"
         },
         {
           "name": "ctpop-islet-parameterization",

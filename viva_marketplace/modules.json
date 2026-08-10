@@ -140,7 +140,7 @@
     "ref": "main",
     "package": "viva_emitters",
     "homepage": "https://github.com/vivarium-collective/viva-emitters",
-    "description": "Focused emitter library for process-bigraph composites",
+    "description": "emitter library for vivarium simulations",
     "tags": []
   },
   {
