@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-11T06:46:35+00:00",
+  "generated_at": "2026-08-12T07:07:38+00:00",
   "n_repos": 36,
   "n_cloned": 36,
   "repos": [
@@ -70,6 +70,14 @@
         },
         {
           "name": "Transport",
+          "description": ""
+        },
+        {
+          "name": "TissueDiffusion",
+          "description": ""
+        },
+        {
+          "name": "CellExchange",
           "description": ""
         },
         {
@@ -275,6 +283,10 @@
           "description": "Spatial microenvironment (sitewise dFBA): a lattice where each site runs its own dFBA instance. Useful for validating lattice indexing + per-site state isolation."
         },
         {
+          "name": "fig-05",
+          "description": "What do Fig 5a and Fig 5b depict, and do their bigraph-loom images generate?"
+        },
+        {
           "name": "br_particles_kinetics",
           "description": "Particle\u2013field coupling (kinetics): Brownian agents sample local lattice concentrations and apply Monod-style exchange, modifying both particle mass and fields."
         },
@@ -338,10 +350,10 @@
         }
       ],
       "counts": {
-        "processes": 27,
+        "processes": 29,
         "steps": 4,
         "composites": 21,
-        "studies": 25,
+        "studies": 26,
         "investigations": 2
       }
     },
