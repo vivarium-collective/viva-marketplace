@@ -225,6 +225,15 @@
     "tags": []
   },
   {
+    "name": "viva-opencor",
+    "source": "https://github.com/vivarium-collective/viva-opencor.git",
+    "ref": "main",
+    "package": "viva_opencor",
+    "homepage": "https://github.com/vivarium-collective/viva-opencor",
+    "description": "Process-bigraph wrappers for OpenCOR / CellML (Physiome models) via libOpenCOR \u2014 the CellML counterpart to viva-copasi / viva-tellurium",
+    "tags": []
+  },
+  {
     "name": "viva-openmm",
     "source": "https://github.com/vivarium-collective/viva-openmm.git",
     "ref": "main",
