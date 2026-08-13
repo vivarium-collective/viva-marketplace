@@ -322,5 +322,19 @@
     "homepage": "https://github.com/vivarium-collective/viva-yalla",
     "description": "Process-bigraph wrapper for a NumPy port of ya||a's pair-wise agent-based morphogenesis simulator",
     "tags": []
+  },
+  {
+    "name": "viva-opencor",
+    "display_name": "viva-opencor",
+    "description": "Process-bigraph wrapper for OpenCOR / CellML (Physiome Model Repository models) via libOpenCOR \u2014 CellML counterpart to viva-copasi / viva-tellurium",
+    "source": "https://github.com/vivarium-collective/viva-opencor.git",
+    "ref": "main",
+    "package": "viva_opencor",
+    "homepage": "https://github.com/vivarium-collective/viva-opencor",
+    "tags": [
+      "cellml",
+      "physiome",
+      "ode"
+    ]
   }
 ]
