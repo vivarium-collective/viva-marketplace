@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-08-13T18:53:05+00:00",
-  "n_repos": 36,
-  "n_cloned": 36,
+  "generated_at": "2026-08-13T20:08:43+00:00",
+  "n_repos": 37,
+  "n_cloned": 37,
   "repos": [
     {
       "name": "spatio-flux",
@@ -2815,6 +2815,50 @@
       "counts": {
         "processes": 2,
         "steps": 0,
+        "composites": 2,
+        "studies": 0,
+        "investigations": 0
+      }
+    },
+    {
+      "name": "viva-opencor",
+      "repo": "viva-opencor",
+      "source": "https://github.com/vivarium-collective/viva-opencor",
+      "homepage": "https://github.com/vivarium-collective/viva-opencor",
+      "description": "Process-bigraph wrappers for OpenCOR / CellML (Physiome models) via libOpenCOR \u2014 the CellML counterpart to viva-copasi / viva-tellurium",
+      "tags": [],
+      "cloned": true,
+      "processes": [
+        {
+          "name": "OpenCORProcess",
+          "description": "Bridge Process wrapping a CellML model integrated by libOpenCOR."
+        }
+      ],
+      "steps": [
+        {
+          "name": "OpenCORUTCStep",
+          "description": "Run a full uniform time course in one shot and emit the trajectory."
+        },
+        {
+          "name": "OpenCORSteadyStateStep",
+          "description": "Integrate a CellML model over a long horizon and emit the final state."
+        }
+      ],
+      "composites": [
+        {
+          "name": "decay",
+          "description": "OpenCOR / CellML time-driven bridge: integrates a first-order decay CellML model (dx/dt = -a*x) with libOpenCOR's CVODE, one interval per step, and emits the state variables each step. Demonstrates the OpenCORProcess bridge."
+        },
+        {
+          "name": "van-der-pol",
+          "description": "OpenCOR / CellML one-shot uniform time course: integrates the Van der Pol oscillator (a stiff nonlinear ODE) over a full horizon with libOpenCOR's CVODE and emits the whole trajectory as arrays. Demonstrates the OpenCORUTCStep."
+        }
+      ],
+      "studies": [],
+      "investigations": [],
+      "counts": {
+        "processes": 1,
+        "steps": 2,
         "composites": 2,
         "studies": 0,
         "investigations": 0
