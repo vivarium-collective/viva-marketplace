@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-15T06:19:46+00:00",
+  "generated_at": "2026-08-16T06:22:15+00:00",
   "n_repos": 37,
   "n_cloned": 37,
   "repos": [
@@ -537,20 +537,16 @@
           "description": "Chromosome Structure \u2014 resolve fork collisions, replicate promoters, repartition segments."
         },
         {
-          "name": "Visualization",
-          "description": "A post-sim visualization Step: emits a rendered ``view`` (HTML) + ``data``"
+          "name": "_ArtifactRefFile",
+          "description": "Write an :class:`~process_bigraph.artifacts.ArtifactRef` dict (as"
         },
         {
-          "name": "ReportCardStep",
-          "description": "A report card as a visualization-like Step (sibling of ``Analysis`` and"
+          "name": "_SeedResultPaths",
+          "description": "Adapt ``CompositeTask``'s ``{seed_key: result_path}`` scatter output"
         },
         {
-          "name": "Analysis",
-          "description": "Visualization-like analysis: reads sim output via a DuckDB connection +"
-        },
-        {
-          "name": "AnalysisStep",
-          "description": "Base for result-consuming analysis Steps."
+          "name": "SimGateTest",
+          "description": "Minimal gating Test over a real ``ResultsHandle``."
         },
         {
           "name": "MassFractionSummary",
@@ -663,6 +659,10 @@
         {
           "name": "Allocator",
           "description": "Allocator Step"
+        },
+        {
+          "name": "ParcaBundleStep",
+          "description": "Emit a ``sim_data`` :class:`ArtifactRef` for an existing ParCa bundle."
         },
         {
           "name": "Requester",
@@ -1013,6 +1013,10 @@
           "description": "Knockout and media perturbations on the baseline whole cell"
         },
         {
+          "name": "param-uq-05-strain-design",
+          "description": "Run a forward-UQ on a GFP new-gene v2ecoli strain, sweeping the two public\nstrain-design knobs (expression, translation efficiency), to (a) rank their\nSobol contributions to new-gene product level and growth rate, and (b)\ndemonstrate the milestone's required decomposition across aggregation strategies\n1\u20133. This is the parameter-uq investigation's strain-design extension \u2014 the\n\"systematic sweep across the full parameter space\" the overview anticipates \u2014\nand the concrete demonstration deliverable for the M8 / 08.4.2 UQ milestone,\nbuilt natively in v2ecoli (pbg-uq) rather than the standalone uqEcoli pipeline.\n"
+        },
+        {
           "name": "showcase-2-baseline-figures",
           "description": "Wild-type baseline single-cell\u2192division ensemble reproduces E. coli properties"
         },
@@ -1035,6 +1039,10 @@
         {
           "name": "s01-birth-and-division",
           "description": ""
+        },
+        {
+          "name": "variant-sweep-phenotype-demo",
+          "description": "Variant-sweep phenotype demo (generic template)"
         },
         {
           "name": "pdmp-01-metabolism-ode",
@@ -1107,6 +1115,10 @@
           "description": "Genotype perturbation response: how v2ecoli responds to KO, KD, and OE of native genes"
         },
         {
+          "name": "variant-sweep-phenotype",
+          "description": "Variant-sweep phenotype \u2014 config-declared perturbation sweeps as phenotype comparisons"
+        },
+        {
           "name": "ketchup-baseline-comparison",
           "description": "Does v2ecoli's baseline central-carbon exchange phenotype match KETCHUP kinetic models?"
         },
@@ -1119,8 +1131,8 @@
         "processes": 21,
         "steps": 75,
         "composites": 13,
-        "studies": 57,
-        "investigations": 13
+        "studies": 59,
+        "investigations": 14
       }
     },
     {
@@ -2192,6 +2204,10 @@
           "description": "Compare the annotation-based organ-matching catalog against the name-synonym catalog to quantify the recall gain (organs/models added) from parsing SBML MIRIAM/BTO annotations."
         },
         {
+          "name": "HRApopEnrichStep",
+          "description": "Attach HRApop measured cell-type populations to each model whose organ(s) HRApop covers. Emits how many models were linked."
+        },
+        {
           "name": "SpatialLinkStep",
           "description": "Join biomodel-DO organ annotations to ASCT+B-3D crosswalk anatomical-structure nodes on shared Uberon CURIE, so each linked GLB scene node can be colored/labeled by its model."
         },
@@ -2208,12 +2224,24 @@
           "description": "Regenerate the HRA Computational Model Atlas pack from the BioModels->HRA map DB: place each model at the organ subregion(s) its cell types / FTUs resolve to (via HRApop per-AS cell populations + the ASCT+B-3D crosswalk), falling back to the whole organ. Writes atlas.json/config.json to the study's viz/atlas/; emits the manifest summary + placement stats."
         },
         {
+          "name": "BtoCrosswalkStep",
+          "description": "Build the BTO->Uberon anatomy crosswalk (Brenda Tissue Ontology terms mapped to Uberon via the organ index) used when harvesting each model's annotation-derived anatomy. Emits term/mapping counts."
+        },
+        {
           "name": "AsctbTablesStep",
           "description": "Harvest the HRA ASCT+B tables (Anatomical Structures, Cell Types + Biomarkers) for all ~40 organs and build a gene->Uberon index. Writes the harvested {organ: rows} DB to out_path; emits organ/gene counts plus a summary (not the whole DB)."
         },
         {
           "name": "BiomodelHraMapStep",
           "description": "Load (cache-or-build) the BioModels->HRA map DB and emit its path, model count, and coverage summary. The DB itself (a JSON array of per-model molecular ids, publication links, organism, and HRA organ/FTU/cell-type mapping) is downloadable from the workspace Resources; this Step surfaces the count + coverage without emitting the whole 2.7 MB file."
+        },
+        {
+          "name": "OrganModelSelectStep",
+          "description": "Select every model tagged to an organ from the BioModels/Physiome->HRA map and route it to a simulator (SBML->COPASI, CellML->OpenCOR); PhysioNet dataset entries are excluded."
+        },
+        {
+          "name": "OrganSimulationStep",
+          "description": "Run all of an organ's atlas-mapped models (SBML->COPASI, CellML->OpenCOR), collect timeseries, and write an interactive dashboard. Live run: native simulators + network fetches. Failing models are shown, not dropped."
         },
         {
           "name": "ModelHarvestStep",
@@ -2252,6 +2280,10 @@
           "description": "Search BioModels for a text query, annotate each hit with HRA Uberon organ terms via transparent synonym-matching over the model name, and build the inverse organ->models index."
         },
         {
+          "name": "GeneEnrichStep",
+          "description": "Enrich each model with its organism (from NCBITaxon), HGNC/Ensembl genes (from UniProt), and gene-derived Uberon anatomy (via the ASCT+B gene->Uberon index), re-mapped to HRA organs/FTUs/cell types. Emits how many models carry gene ids and gene-derived anatomy."
+        },
+        {
           "name": "CoverageStep",
           "description": "Cross the ASCT+B-3D crosswalk's anatomical structures with the biomodel-DO organ->models index to mark model coverage, at organ granularity."
         }
@@ -2274,6 +2306,10 @@
           "description": "Compare the annotation-based organ-matching catalog against the name-synonym catalog to quantify the recall gain (organs/models added) from parsing SBML MIRIAM/BTO annotations."
         },
         {
+          "name": "hra-atlas-pipeline",
+          "description": "End-to-end HRA Computational Model Atlas build: harvest models -> gene/organism enrichment -> HRApop linkage -> atlas pack, wired as a connectable Step DAG. Offline (live=false) it replays the committed datasets and regenerates atlas.json identically."
+        },
+        {
           "name": "glucose-regulation",
           "description": "Query BioModels for a text term (default 'glucose regulation'), then run every matching model under COPASI and Tellurium and score their agreement (all-pairs nRMSE)."
         },
@@ -2287,6 +2323,10 @@
         }
       ],
       "studies": [
+        {
+          "name": "kidney-model-simulation",
+          "description": "Kidney model simulation \u2014 run every atlas-mapped kidney model in its compatible simulator"
+        },
         {
           "name": "ctpop-islet-parameterization",
           "description": "CTpop -> Topp2000 Islet Parameterization \u2014 Beta-Cell Composition Shifts the Glucose Setpoint"
@@ -2302,6 +2342,10 @@
         {
           "name": "model-coverage-3d",
           "description": "Model Coverage 3D \u2014 AS/Organ Coverage from BioModel-DO Annotations"
+        },
+        {
+          "name": "atlas-pipeline",
+          "description": "HRA Computational Model Atlas \u2014 the end-to-end, reproducible build pipeline"
         },
         {
           "name": "glucose-regulation",
@@ -2376,9 +2420,9 @@
       ],
       "counts": {
         "processes": 2,
-        "steps": 21,
-        "composites": 7,
-        "studies": 18,
+        "steps": 26,
+        "composites": 8,
+        "studies": 20,
         "investigations": 3
       }
     },
