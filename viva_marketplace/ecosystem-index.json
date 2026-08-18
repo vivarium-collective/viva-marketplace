@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-17T06:33:33+00:00",
+  "generated_at": "2026-08-18T06:24:59+00:00",
   "n_repos": 37,
   "n_cloned": 37,
   "repos": [
@@ -3012,7 +3012,7 @@
       "composites": [
         {
           "name": "parsimony-demo",
-          "description": "Pack a small example cell (a few real PDB structures + a lipid membrane in a capsule) into a 3D molecular scene with the parsimony engine. The result is a *.pack.json explorable in the bundled interactive viewer (see `python -m pbg_parsimony.demo`)."
+          "description": "Pack a small example cell (a few real PDB structures + a lipid membrane in a capsule) into a 3D molecular scene with the parsimony engine. The result is a *.pack.json explorable in the bundled interactive viewer (see `python -m viva_parsimony.demo`)."
         }
       ],
       "studies": [],
