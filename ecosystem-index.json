@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-19T06:25:48+00:00",
+  "generated_at": "2026-08-20T06:26:42+00:00",
   "n_repos": 37,
   "n_cloned": 37,
   "repos": [
@@ -1001,6 +1001,10 @@
           "description": "Implement transcription_jump, translation_jump, and division_threshold as Process Bigraph processes,\nreplace the global resource correction with jump-based competition reactions, and couple all jump\nprocesses with the Phase 1 metabolism ODE under an integrated PDMP runner. Verify the Markov property\n(deterministic between jumps, specified kernels at jumps) and compare trajectory distributions vs. the\nv2ecoli baseline across the Phase 0 conditions.\n"
         },
         {
+          "name": "genotype-01-control-panel",
+          "description": "What do ParCa-level knockout mechanics look like across control gene classes?"
+        },
+        {
           "name": "param-uq-02-observables",
           "description": "Multi-observable robustness \u2014 basal_elongation_rate dominates MASS; growth-rate ranking is window-dependent"
         },
@@ -1131,7 +1135,7 @@
         "processes": 21,
         "steps": 75,
         "composites": 13,
-        "studies": 59,
+        "studies": 60,
         "investigations": 14
       }
     },
@@ -1890,6 +1894,10 @@
           "description": "Minimal per-cell ligand-receptor occupancy model. Reads the local"
         },
         {
+          "name": "AdaptiveReceptorSubcell",
+          "description": "Receptor occupancy with slow adaptation (fold-change detection)."
+        },
+        {
           "name": "BooleanSubcell",
           "description": "A minimal synchronous Boolean fate switch with Notch-style lateral"
         }
@@ -1903,6 +1911,10 @@
         {
           "name": "recruitment",
           "description": "Chemotactic recruitment (single CPMProcess). Source cells secrete a cue; responders chemotax up it. cue_rate=0 removes the cue; chemo_lambda=0 blocks the response."
+        },
+        {
+          "name": "recruitment_adaptive",
+          "description": "Adaptive receptor recruitment (fold-change detection): single CPMProcess + one AdaptiveReceptorSubcell per responder. Responders activate (naive(2) -> activated(3)) once response = max(0, theta - m) crosses threshold, where m is a slow per-cell setpoint adapting toward occupancy theta -- so a rising cue recruits regardless of background level, while a static background does not. blocked=True zeroes the activated lambda (receptor_gating); epsilon=0 disables adaptation (knockout, pure Hill occupancy)."
         }
       ],
       "studies": [
@@ -1967,6 +1979,10 @@
           "description": "Anneal the equilibrated all-light pattern at T=0 and measure bulk/total <n> and moments mu2-4 vs MCS to determine convergence speed.\n"
         },
         {
+          "name": "recruitment-adaptive",
+          "description": "Author the acceptance contract for the adaptive-receptor rung of the\nfaithful chemotaxis mechanism ladder (pbg_cpm_studies.model_building.\nmechanisms): three primary behavior tests plus a receptor-gating control,\nwith pass/fail bands set from real measured recruitment_index values\n(3-12 seeds) already gathered while calibrating the ladder. The loop\ndriver built in the next task runs mechanisms.simulate_condition against\nthese bands; this study does not itself constitute a completed run.\n"
+        },
+        {
           "name": "dispersal_separate",
           "description": "Simulate gamma_ld=27 from a random IC and observe full light/dark cluster separation at 2000 MCS.\n"
         }
@@ -1982,10 +1998,10 @@
         }
       ],
       "counts": {
-        "processes": 4,
+        "processes": 5,
         "steps": 0,
-        "composites": 2,
-        "studies": 16,
+        "composites": 3,
+        "studies": 17,
         "investigations": 2
       }
     },
