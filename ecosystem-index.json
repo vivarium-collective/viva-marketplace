@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-21T06:27:40+00:00",
+  "generated_at": "2026-08-22T06:21:28+00:00",
   "n_repos": 37,
   "n_cloned": 37,
   "repos": [
@@ -733,6 +733,10 @@
           "description": ""
         },
         {
+          "name": "PanelScreenCard",
+          "description": ""
+        },
+        {
           "name": "AcetateOverflowCard",
           "description": ""
         },
@@ -970,7 +974,7 @@
         },
         {
           "name": "mbp-07-millard-kinetic-metabolism",
-          "description": "The Millard kinetic-metabolism arc, end-to-end. Can the Millard 2017\nkinetic central-carbon ODE replace v2ecoli's constraint-based central-\ncarbon FBA as a drop-in cell engine under the cell-side interface\ncontract?\n\nThree linked questions:\n  1. BUILD     \u2014 does the swapped composite (baseline_millard) build and\n                 run, with non-trivial live central fluxes (kinetic ODE\n                 active, not FBA)?\n  2. VALIDATE  \u2014 does the Millard whole-cell model recover growth\n                 comparable to the FBA baseline, and (once the Millard\n                 cell exposes mass-exchange accounting) close mass\n                 conservation?\n  3. COMPARE   \u2014 coupled to the same BiRD reactor and run against the\n                 Beulig WT batch prefix, does the Millard kinetic central\n                 metabolism track the bioreactor (growth, substrate, gas\n                 transfer) BETTER than v2ecoli's WCM-FBA \u2014 and how do both\n                 compare to the iML1515 genome-scale FBA (Palsson)?\n                 Rendered as a structured 3-arm report-card comparison\n                 (per-group axis verdicts + categorized divergences),\n                 NOT a tolerance gate (execute-and-report, per\n                 chris_feedback_2026_05_26 \u00a710).\n"
+          "description": "Can a metabolic engine other than v2ecoli's own be attached behind the same cell-side interface contract, and what does it actually take?\n\nThis study is the investigation's extensibility demonstration. Three\nengines have been attached at three deliberately different depths -- a\nMillard 2017 kinetic ODE swapped in for tFBA Metabolism inside the\nwhole-cell model and coupled to the BiRD reactor; iML1515 genome-scale\nFBA graded against the same Beulig prefix but uncoupled and partly fit\nto it; and the OxidizeME ME-model named as a candidate but not wired.\nThe ladder is the finding: the depths differ, and flattening them would\noverclaim. Full detail, including the coupling's known asymmetry and the\nverification behind each claim, is in the investigation's what_is_this\nand in the comment above this field.\n\nOf the three, the investigation gates only on the iML1515 grading. The\nMillard arm's grading against Beulig is deferred as of 2026-08-20 --\ndeferred, not concluded -- and the original question this study was\nbuilt to answer (does the kinetic ODE recover growth, close mass\nconservation, and track the bioreactor?) is preserved in the behavior\ntests and their recorded results.\nclaims.\n"
         },
         {
           "name": "showcase-3-variant-decide",
@@ -1132,12 +1136,12 @@
         },
         {
           "name": "metabolism-biomass-yield",
-          "description": "Is v2ecoli's central carbon metabolism physically correct?"
+          "description": "Metabolism \u2014 biomass yield"
         }
       ],
       "counts": {
         "processes": 21,
-        "steps": 76,
+        "steps": 77,
         "composites": 13,
         "studies": 60,
         "investigations": 14
