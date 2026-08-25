@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-24T06:35:50+00:00",
+  "generated_at": "2026-08-25T06:27:43+00:00",
   "n_repos": 37,
   "n_cloned": 37,
   "repos": [
@@ -781,6 +781,10 @@
           "description": "Listener for additional RNA synthesis data."
         },
         {
+          "name": "CellGeometry",
+          "description": "Split whole-cell volume into periplasm/cytoplasm; derive outer surface"
+        },
+        {
           "name": "LikelihoodCollector",
           "description": ""
         }
@@ -843,6 +847,10 @@
         {
           "name": "parca",
           "description": "ParCa initial-state agreement \u2014 v2ecoli vs vEcoli"
+        },
+        {
+          "name": "genotype-06-trpr-regulon",
+          "description": "How does v2ecoli realize a transcription-factor knockout?"
         },
         {
           "name": "pdmp-03-inference",
@@ -1141,9 +1149,9 @@
       ],
       "counts": {
         "processes": 21,
-        "steps": 77,
+        "steps": 78,
         "composites": 13,
-        "studies": 60,
+        "studies": 61,
         "investigations": 14
       }
     },
