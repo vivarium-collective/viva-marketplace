@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-27T17:03:18+00:00",
+  "generated_at": "2026-08-28T17:52:05+00:00",
   "n_repos": 37,
   "n_cloned": 37,
   "repos": [
@@ -485,10 +485,6 @@
           "description": "Adapter: accepts vEcoli's ``parameters`` kwarg, delegates to PBG Step."
         },
         {
-          "name": "EcoliPackStep",
-          "description": "Pack a parsimony 3D structural snapshot of the live cell the first"
-        },
-        {
           "name": "TfUnbinding",
           "description": "TfUnbinding \u2014 deterministic release of all DNA-bound TFs to the free active pool."
         },
@@ -791,10 +787,6 @@
       ],
       "composites": [
         {
-          "name": "ecoli_structural",
-          "description": "baseline whole-cell E. coli model plus a parsimony 3D structural packing step (EcoliPackStep) that writes snapshot packs at declared simulation times."
-        },
-        {
           "name": "ecoli_population",
           "description": "v2ecoli baseline + PopulationAggregator Step. Adds top-level population.* store with total_biomass_gDW, cell_count, biomass_concentration_gL, and OD600. Default cells_per_agent=1.0 preserves literal-sum aggregation so regression tests against the unaggregated baseline remain byte-identical."
         },
@@ -1057,10 +1049,6 @@
           "description": "v2ecoli reproduces vEcoli on no_oxygen"
         },
         {
-          "name": "s01-birth-and-division",
-          "description": ""
-        },
-        {
           "name": "variant-sweep-phenotype-demo",
           "description": "Variant-sweep phenotype demo (generic template)"
         },
@@ -1119,10 +1107,6 @@
           "description": "Parameter UQ \u2014 global sensitivity of v2ecoli"
         },
         {
-          "name": "structural-ecoli",
-          "description": "Structural E. coli"
-        },
-        {
           "name": "multiscale-bioprocess",
           "description": "v2ecoli \u2014 Bioprocess Migration & Reactor Coupling"
         },
@@ -1149,10 +1133,10 @@
       ],
       "counts": {
         "processes": 21,
-        "steps": 78,
-        "composites": 13,
-        "studies": 61,
-        "investigations": 14
+        "steps": 77,
+        "composites": 12,
+        "studies": 60,
+        "investigations": 13
       }
     },
     {
