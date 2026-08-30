@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-29T11:56:33+00:00",
+  "generated_at": "2026-08-30T10:54:01+00:00",
   "n_repos": 37,
   "n_cloned": 37,
   "repos": [
@@ -601,6 +601,10 @@
           "description": "Write tRNA attenuation parameters to shared store."
         },
         {
+          "name": "LineageBookkeeper",
+          "description": "Maintain single-lineage population bookkeeping inside the composite."
+        },
+        {
           "name": "ExchangeData",
           "description": "Update metabolism exchange constraints according to environment concs."
         },
@@ -1133,7 +1137,7 @@
       ],
       "counts": {
         "processes": 21,
-        "steps": 77,
+        "steps": 78,
         "composites": 12,
         "studies": 60,
         "investigations": 13
