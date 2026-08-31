@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-30T10:54:01+00:00",
+  "generated_at": "2026-08-31T12:06:34+00:00",
   "n_repos": 37,
   "n_cloned": 37,
   "repos": [
@@ -815,6 +815,10 @@
           "description": "ParCa parameter-calculation pipeline \u2014 the 9-step fit (initialize \u2192 input_adjustments \u2192 \u2026 \u2192 final_adjustments) that produces sim_data. Structural document; run via the v2ecoli-parca CLI / build_parca_composite (which load the KnowledgeBase raw_data)."
         },
         {
+          "name": "ecoli_v1_hybrid",
+          "description": "55-process whole-cell E. coli port, injections sourced from the v1 (vEcoli) fork"
+        },
+        {
           "name": "ecoli_millard",
           "description": "Whole-cell E. coli composite with v2ecoli's tFBA Metabolism replaced by the Millard 2017 kinetic ODE (MillardPDMPMetabolism). The `lqr` flag selects the metabolism wiring: lqr=False (default) drops the LQR setpoint controller and wires the Millard step's external_concentrations input to ('environment', 'external_concentrations') so a bioreactor environment can drive central-carbon kinetics (basico only); lqr=True adds the multi-state LQR controller layer and the setpoint control wiring (lqr_control input, control_applied output) \u2014 the former former millard-pdmp LQR composite. Standalone (no live reactor) => external concentrations default to empty and the ODE runs on internal glucose."
         },
@@ -1138,7 +1142,7 @@
       "counts": {
         "processes": 21,
         "steps": 78,
-        "composites": 12,
+        "composites": 13,
         "studies": 60,
         "investigations": 13
       }
