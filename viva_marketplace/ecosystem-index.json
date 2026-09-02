@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-01T10:43:55+00:00",
+  "generated_at": "2026-09-02T10:09:10+00:00",
   "n_repos": 37,
   "n_cloned": 37,
   "repos": [
@@ -835,6 +835,10 @@
           "description": "Genuine upstream vEcoli, run on its own vivarium-core Engine inside ONE process-bigraph node (agents/<agent_id>/vivarium_ecoli) \u2014 the REFERENCE model for the v2ecoli<->vEcoli comparison. Wraps v2ecoli.library.vivarium_ecoli_engine.build_vivarium_ecoli (the same engine builder scripts/run_comparison_ensemble.py drives for --composite vecoli --vecoli-source vivarium-process); faithful by construction \u2014 no reimplemented partition/allocation/division."
         },
         {
+          "name": "lineage_ray_batch",
+          "description": "Process-bigraph-native multiseed batch: N real LineageProcess nodes, one per seed, wired directly into the composite's own state tree and addressed via the ray: protocol -- unlike batch_baseline's BatchBaselineRunner, which fans seeds out via raw Ray calls hidden inside one opaque Step."
+        },
+        {
           "name": "ecoli_colony",
           "description": "Multi-cell colony \u2014 whole-cell E. coli agents embedded in a pymunk 2D physics environment via the EcoliWCM bridge."
         },
@@ -1142,7 +1146,7 @@
       "counts": {
         "processes": 21,
         "steps": 78,
-        "composites": 13,
+        "composites": 14,
         "studies": 60,
         "investigations": 13
       }
@@ -3226,18 +3230,48 @@
           "description": "Smoldyn diffusion-reaction demo with a wired Visualization Step. Each update produces a Plotly HTML figure of the running molecule-count trajectories, written to the 'viz_html' store."
         },
         {
+          "name": "enzyme-kinetics",
+          "description": "Smoldyn 3D Michaelis-Menten enzyme kinetics: enzyme E (purple) binds substrate S (orange) into complex ES (red), which turns over to product P (blue) and frees E (E + S <-> ES -> E + P). Emits per-molecule positions for a Simularium trajectory."
+        },
+        {
+          "name": "reversible-dimerization",
+          "description": "Smoldyn 3D reversible dimerization: fast red monomers A diffuse and bind pairwise into slower blue dimers B (A + A <-> B) in a reflecting cubic box. Emits per-species counts, per-molecule positions, and time each step \u2014 the positions drive a Simularium trajectory."
+        },
+        {
+          "name": "three-species-crowding",
+          "description": "Smoldyn 3D differential diffusion: three species (fast red A, medium green B, slow blue C) diffuse from the same start in a reflecting cubic box, demixing by mobility. No reactions \u2014 a clean view of Brownian spread rates. Emits per-molecule positions for a Simularium trajectory."
+        },
+        {
           "name": "diffusion-reaction-demo",
           "description": "Tiny Smoldyn diffusion-reaction demo: species A (fast) diffuses and converts to species B (slow) via a first-order reaction in a 2D reflecting box. Emits per-species molecule counts and simulation time each step."
         }
       ],
-      "studies": [],
-      "investigations": [],
+      "studies": [
+        {
+          "name": "smoldyn-crowding",
+          "description": "Three-species differential diffusion (Smoldyn 3D)"
+        },
+        {
+          "name": "smoldyn-enzyme-kinetics",
+          "description": "Michaelis-Menten enzyme kinetics (Smoldyn 3D)"
+        },
+        {
+          "name": "smoldyn-dimerization",
+          "description": ""
+        }
+      ],
+      "investigations": [
+        {
+          "name": "smoldyn-simularium",
+          "description": "smoldyn-simularium"
+        }
+      ],
       "counts": {
         "processes": 1,
         "steps": 0,
-        "composites": 2,
-        "studies": 0,
-        "investigations": 0
+        "composites": 5,
+        "studies": 3,
+        "investigations": 1
       }
     },
     {
