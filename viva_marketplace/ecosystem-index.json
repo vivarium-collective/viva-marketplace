@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-04T10:08:23+00:00",
+  "generated_at": "2026-09-05T09:37:48+00:00",
   "n_repos": 37,
   "n_cloned": 37,
   "repos": [
@@ -533,6 +533,10 @@
           "description": "Multiseed: the v1 *meta-tier report card* measurement."
         },
         {
+          "name": "LineageStep",
+          "description": "Run a complete lineage \u2014 every generation \u2014 as one atomic invocation."
+        },
+        {
           "name": "Ddah",
           "description": "DDAH \u2014 datA-locus-coupled DnaA-ATP hydrolysis. flux = k_ddah * copy_number(datA) * dt, applied as DnaA-ATP + WATER -> DnaA-ADP + Pi + PROTON, capped by free DnaA-ATP."
         },
@@ -681,6 +685,14 @@
           "description": "Protein Degradation \u2014 first-order Poisson hydrolysis of protein monomers."
         },
         {
+          "name": "ParcaTaskStep",
+          "description": "One ParCa build, as a task. Carries no simulation logic \u2014 ports + a script."
+        },
+        {
+          "name": "AnalysisTaskStep",
+          "description": "The gather: one analysis over every sweep the campaign produced."
+        },
+        {
           "name": "PanelScreenCard",
           "description": ""
         },
@@ -795,6 +807,10 @@
           "description": "v2ecoli baseline + PopulationAggregator Step. Adds top-level population.* store with total_biomass_gDW, cell_count, biomass_concentration_gL, and OD600. Default cells_per_agent=1.0 preserves literal-sum aggregation so regression tests against the unaggregated baseline remain byte-identical."
         },
         {
+          "name": "workflow_nf",
+          "description": "The campaign DAG for task-granularity dispatch: one ParCa per variant, each feeding that variant's M LineageStep tasks, all N x M gathering into one analysis. Rendered, never run in-process -- the ParCa and analysis nodes are script declarations."
+        },
+        {
           "name": "ecoli_millard",
           "description": "Whole-cell E. coli composite with v2ecoli's tFBA Metabolism replaced by the Millard 2017 kinetic ODE (MillardPDMPMetabolism). The `lqr` flag selects the metabolism wiring: lqr=False (default) drops the LQR setpoint controller and wires the Millard step's external_concentrations input to ('environment', 'external_concentrations') so a bioreactor environment can drive central-carbon kinetics (basico only); lqr=True adds the multi-state LQR controller layer and the setpoint control wiring (lqr_control input, control_applied output) \u2014 the former former millard-pdmp LQR composite. Standalone (no live reactor) => external concentrations default to empty and the ODE runs on internal glucose."
         },
@@ -901,12 +917,28 @@
           "description": "Does v2ecoli reproduce the aerobic acetate-overflow curve (acetate-carbon yield vs growth rate) \u2014 Vemuri 2006 / Basan 2015?"
         },
         {
+          "name": "mcs-08-rna-protein-composition",
+          "description": "Read RNA and protein mass from native mass listeners at two growth rates (minimal glucose, amino-acid-rich), compute RNA/protein vs growth rate, and compare the slope direction to the Bremer-Dennis law."
+        },
+        {
+          "name": "mcs-01-ppgpp-replication-coupling",
+          "description": "Simulate ecoli_baseline across a poor and a rich nutrient condition and measure origins_per_cell, growth_rate, ppgpp_conc, and initiation mass to determine whether replication timing is slaved to growth via ppGpp."
+        },
+        {
+          "name": "mcs-02-metabolism-energy-balance",
+          "description": "Take the diagnosed energetic defect (metabolism-biomass-yield-s1-diagnostic), apply the smallest principled maintenance-ATP/respiration correction to ecoli_baseline's metabolism, and measure biomass_yield, RQ, O2:glucose, and growth_rate before/after."
+        },
+        {
           "name": "param-uq-01-elongation",
           "description": "Ribosome basal elongation rate dominates growth-rate variance among effective elongation knobs (Sobol \u2248 0.97)"
         },
         {
           "name": "param-uq-00-screen",
           "description": "Parameter screen \u2014 which config-reachable knobs actually drive the observables?"
+        },
+        {
+          "name": "mcs-10-multiseed-robustness",
+          "description": "Run a seed ensemble (>=6 seeds) at both Arc-1 conditions (minimal/basal and rich/with_aa), multi-generation, and re-report origins-per-cell, ppGpp, growth rate, ribosome content and interdivision-time CV as mean +/- CI. Replace the single-seed point estimates in mcs-01, mcs-03 and the capstone with these bands; state which effects survive and which do not."
         },
         {
           "name": "sm-01-nn-surrogate",
@@ -953,6 +985,10 @@
           "description": "Can a metabolic engine other than v2ecoli's own be attached behind the same cell-side interface contract, and what does it actually take?\n\nThis study is the investigation's extensibility demonstration. Three\nengines have been attached at three deliberately different depths -- a\nMillard 2017 kinetic ODE swapped in for tFBA Metabolism inside the\nwhole-cell model and coupled to the BiRD reactor; iML1515 genome-scale\nFBA graded against the same Beulig prefix but uncoupled and partly fit\nto it; and the OxidizeME ME-model named as a candidate but not wired.\nThe ladder is the finding: the depths differ, and flattening them would\noverclaim. Full detail, including the coupling's known asymmetry and the\nverification behind each claim, is in the investigation's what_is_this\nand in the comment above this field.\n\nOf the three, the investigation gates only on the iML1515 grading. The\nMillard arm's grading against Beulig is deferred as of 2026-08-20 --\ndeferred, not concluded -- and the original question this study was\nbuilt to answer (does the kinetic ODE recover growth, close mass\nconservation, and track the bioreactor?) is preserved in the behavior\ntests and their recorded results.\nclaims.\n"
         },
         {
+          "name": "mcs-03-single-cell-heterogeneity",
+          "description": "Run an ecoli_baseline seed ensemble and measure the division_time distribution, its CV, and the added-size vs birth-size relationship to characterize how molecular noise becomes population-level heterogeneity."
+        },
+        {
           "name": "colonies-05-mother-machine",
           "description": "Do the core emergent single-cell phenotypes \u2014 size-at-division,\ninter-division time, added length, the adder size-homeostasis relation, and\ngrowth rate \u2014 stay measurable when simple viva-munk agents run in the\ncanonical mother-machine device geometry?\n"
         },
@@ -973,12 +1009,24 @@
           "description": "Run v2ecoli in diagnostic mode under \u22653 environmental conditions (M9-glucose, M9-acetate, M9-glucose+amino-acid supplementation), categorize every state variable, extract typed PB interface schemas for each major subprocess, deploy the Xarray-format emitter to record full interface time-series, and profile per-step compute to separate marshalling overhead from essential computation."
         },
         {
+          "name": "mcs-07-ribosome-allocation-law",
+          "description": "Run a carbon-quality growth-rate ladder (e.g. acetate/succinate/glucose), measure ribosome fraction vs growth rate, compare the slope to the Scott-Hwa C-line, and correct the allocation gain if it diverges."
+        },
+        {
           "name": "no_oxygen",
           "description": "v2ecoli reproduces vEcoli on no_oxygen"
         },
         {
+          "name": "mcs-06-stochastic-heterogeneity",
+          "description": "Land the smallest principled change (a stochastic D-period in chromosome_replication) behind a default-off knob; run a seed ensemble with the noise OFF (baseline) and ON, and re-measure the interdivision-time CV (target 0.10-0.30) with the mean generation time held out."
+        },
+        {
           "name": "mbp-02-population-aggregation",
           "description": "Can v2ecoli aggregate single-cell-plus-Division output into population-\nlevel biomass observables (total gDW, cell count) that are physically\nmeaningful at the reactor scale (OD \u226b 1) \u2014 using a **representative-\nsampling scaling factor (`cells_per_agent`)** so the simulated lineage\nlegitimately stands in for an N-cell population under the 0D\nwell-mixed assumption \u2014 and consume population-level signals (e.g.\nreactor liquid volume) to maintain correct concentrations?\n"
+        },
+        {
+          "name": "mcs-04-capstone-downshift",
+          "description": "Drive one ecoli_baseline (or ecoli_time_varying_env) run through a rich->minimal media downshift and read ppgpp_conc, exchange fluxes/acetate, origins_per_cell, and the division_time distribution together across the shift."
         },
         {
           "name": "pdmp-02-jump-processes",
@@ -987,6 +1035,10 @@
         {
           "name": "metabolism_redux_with_aa",
           "description": "v2ecoli reproduces vEcoli with MetabolismRedux (with_aa)"
+        },
+        {
+          "name": "mcs-11-etc-heldout-and-downshift",
+          "description": "(1) With the committed ETC fix on, sweep growth rate (across the carbon-quality / +AA conditions) and measure acetate secretion vs growth; test whether overflow ONSET emerges without having been tuned. (2) Run the rich->minimal media downshift (resume a rich-adapted lineage into minimal media) and record the ppGpp / flux / growth transient."
         },
         {
           "name": "colonies-01-hpc-readiness",
@@ -1003,6 +1055,10 @@
         {
           "name": "showcase-4-variant-comparison",
           "description": "Five-variant perturbation sweep \u2014 which perturbation most clearly moves v2ecoli off baseline"
+        },
+        {
+          "name": "mcs-05-etc-stoichiometry-fix",
+          "description": "Instrument the FBA solution to measure ATP production per reaction and the effective P/O ratio at baseline; identify the dominant cheap-ATP route; apply the smallest principled stoichiometry correction; re-measure Yxs, RQ, O2:glucose and growth (held-out)."
         },
         {
           "name": "param-uq-05-strain-design",
@@ -1059,6 +1115,10 @@
         {
           "name": "colonies-02-parallel-multigen-perf",
           "description": "Starting from one whole-cell E. coli agent dividing naturally through 3-4\ngenerations (1 \u2192 2 \u2192 4 \u2192 8), does per-cell compute cost (wall + RSS) stay\nflat, or drift as daughter EcoliWCM internal composites accumulate history?\nAnd does running the growing colony under the process-bigraph Ray protocol\n(one OS process per cell / sharded actor pool) lift the single-process GIL\nceiling colonies-01 measured (~13 cells/process at realtime)?\n"
+        },
+        {
+          "name": "mcs-09-ppgpp-decoupling-control",
+          "description": "Run the native baseline and a RelA-knockdown variant (--perturbation on the relA transcription unit) at matched conditions; measure ppGpp, ribosome content, origins-per-cell and growth; compare the cross-condition coordination (the coupling slope / response magnitude) between ppGpp-competent and ppGpp-suppressed cells. This is the falsification control for H1."
         },
         {
           "name": "sm-00-data-collection",
@@ -1123,6 +1183,10 @@
           "description": "v2ecoli \u2014 Bioprocess Migration & Reactor Coupling"
         },
         {
+          "name": "multiscale-complexity-showcase",
+          "description": "Multiscale Complexity in a Whole-Cell E. coli"
+        },
+        {
           "name": "ketchup-baseline-comparison",
           "description": "Does v2ecoli's baseline central-carbon exchange phenotype match KETCHUP kinetic models?"
         },
@@ -1141,10 +1205,10 @@
       ],
       "counts": {
         "processes": 21,
-        "steps": 78,
-        "composites": 13,
-        "studies": 60,
-        "investigations": 13
+        "steps": 81,
+        "composites": 14,
+        "studies": 71,
+        "investigations": 14
       }
     },
     {
